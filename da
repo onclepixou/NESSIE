@@ -1,0 +1,8494 @@
+--------------------------------------------------------------------------------------------------
+Game Name              : nestest.nes
+Number of 8k PRG banks : 1
+Number of 4k CHR banks : 1
+
+Mirroring              : Horizontal
+Battery memory         : false
+Trainer                : false
+VRAM                   : disabled
+
+Mapper version         : 0
+SubMapper version      : 0
+
+Console                : NES
+Region                 : NTSC
+NES2.0 header style    : false
+
+PRG_RAM_size           : 0
+PRG_NVRAM_size         : 0
+CHR_RAM_size           : 0
+CHR_NVRAM_size         : 0
+
+
+Miscellaneous Rom      : 0
+Expansion device       : 0
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+------------------------
+Start of PRG section : |
+------------------------
+C000 :    JMP  $C5F5
+C003 :    RTS 
+C004 :    SEI 
+C005 :    CLD 
+C006 :    LDX   #$FF
+C008 :    TXS 
+C009 :    LDA  $2002
+C00C :    BPL    $FB
+C00E :    LDA  $2002
+C011 :    BPL    $FB
+C013 :    LDA   #$00
+C015 :    STA  $2000
+C018 :    STA  $2001
+C01B :    STA  $2005
+C01E :    STA  $2005
+C021 :    LDA  $2002
+C024 :    LDX   #$20
+C026 :    STX  $2006
+C029 :    LDX   #$00
+C02B :    STX  $2006
+C02E :    LDX   #$00
+C030 :    LDY   #$0F
+C032 :    LDA   #$00
+C034 :    STA  $2007
+C037 :    DEX 
+C038 :    BNE    $FA
+C03A :    DEY 
+C03B :    BNE    $F7
+C03D :    LDA   #$3F
+C03F :    STA  $2006
+C042 :    LDA   #$00
+C044 :    STA  $2006
+C047 :    LDX   #$00
+C049 :    LDA  $FF78 , X
+C04C :    STA  $2007
+C04F :    INX 
+C050 :    CPX   #$20
+C052 :    BNE    $F5
+C054 :    LDA   #$C0
+C056 :    STA  $4017
+C059 :    LDA   #$00
+C05B :    STA  $4015
+C05E :    LDA   #$78
+C060 :    STA    $D0
+C062 :    LDA   #$FB
+C064 :    STA    $D1
+C066 :    LDA   #$7F
+C068 :    STA    $D3
+C06A :    LDY   #$00
+C06C :    STY  $2006
+C06F :    STY  $2006
+C072 :    LDA   #$00
+C074 :    STA    $D7
+C076 :    LDA   #$07
+C078 :    STA    $D0
+C07A :    LDA   #$C3
+C07C :    STA    $D1
+C07E :    JSR  $C2A7
+C081 :    JSR  $C28D
+C084 :    LDX   #$12
+C086 :    JSR  $C261
+C089 :    LDA    $D5
+C08B :    LSR 
+C08C :    LSR 
+C08D :    LSR 
+C08E :    BCS    $1C
+C090 :    LSR 
+C091 :    BCS    $0C
+C093 :    LSR 
+C094 :    BCS    $27
+C096 :    LSR 
+C097 :    BCS    $03
+C099 :    JMP  $C081
+C09C :    JMP  $C126
+C09F :    JSR  $C66F
+C0A2 :    DEC    $D7
+C0A4 :    BPL    $DB
+C0A6 :    LDA   #$0D
+C0A8 :    STA    $D7
+C0AA :    BNE    $D5
+C0AC :    JSR  $C66F
+C0AF :    INC    $D7
+C0B1 :    LDA    $D7
+C0B3 :    CMP   #$0E
+C0B5 :    BCC    $CA
+C0B7 :    LDA   #$00
+C0B9 :    STA    $D7
+C0BB :    BEQ    $C4
+C0BD :    JSR  $C689
+C0C0 :    LDA    $D7
+C0C2 :    BEQ    $06
+C0C4 :    JSR  $C0ED
+C0C7 :    JMP  $C081
+C0CA :    LDA   #$00
+C0CC :    STA    $D8
+C0CE :    INC    $D7
+C0D0 :    JSR  $C0ED
+C0D3 :    INC    $D7
+C0D5 :    LDA    $D7
+C0D7 :    CMP   #$0E
+C0D9 :    BNE    $F5
+C0DB :    LDA   #$00
+C0DD :    STA    $D7
+C0DF :    LDA    $D8
+C0E1 :    BEQ    $02
+C0E3 :    LDA   #$FF
+C0E5 :    STA    $00
+C0E7 :    JSR  $C1ED
+C0EA :    JMP  $C081
+C0ED :    LDA    $D7
+C0EF :    ASL 
+C0F0 :    TAX 
+C0F1 :    LDA  $C10A , X
+C0F4 :    STA  $0200
+C0F7 :    LDA  $C10B , X
+C0FA :    STA  $0201
+C0FD :    LDA   #$C1
+C0FF :    PHA 
+C100 :    LDA   #$DE
+C102 :    PHA 
+C103 :    LDA   #$00
+C105 :    STA    $00
+C107 :    JMP  $0200
+C10A :    AND  $2DC7
+C10D :    DCP    $DB               ;Illegal OPcode DCP
+C10F :    DCP    $85               ;Illegal OPcode DCP
+C111 :    INY 
+C112 :    DEC  $F8CB , X
+C115 :    CMP  $CEEE
+C118 :    LDX   #$CF
+C11A :    NOP    $D1 , X           ;Illegal OPcode NOP
+C11C :    ISC  $D4D4 , Y           ;Illegal OPcode ISC
+C11F :    CMP   ($4A , X)
+C121 :    DCP  $DBB8               ;Illegal OPcode DCP
+C124 :    TAX 
+C125 :    SBC   ($A9 , X)
+C127 :    BRK 
+C128 :    STA    $D7
+C12A :    LDA   #$92
+C12C :    STA    $D0
+C12E :    LDA   #$C4
+C130 :    STA    $D1
+C132 :    JSR  $C2A7
+C135 :    JSR  $C28D
+C138 :    LDX   #$0F
+C13A :    JSR  $C261
+C13D :    LDA    $D5
+C13F :    LSR 
+C140 :    LSR 
+C141 :    LSR 
+C142 :    BCS    $1C
+C144 :    LSR 
+C145 :    BCS    $0C
+C147 :    LSR 
+C148 :    BCS    $27
+C14A :    LSR 
+C14B :    BCS    $03
+C14D :    JMP  $C135
+C150 :    JMP  $C072
+C153 :    JSR  $C66F
+C156 :    DEC    $D7
+C158 :    BPL    $DB
+C15A :    LDA   #$0A
+C15C :    STA    $D7
+C15E :    BNE    $D5
+C160 :    JSR  $C66F
+C163 :    INC    $D7
+C165 :    LDA    $D7
+C167 :    CMP   #$0B
+C169 :    BCC    $CA
+C16B :    LDA   #$00
+C16D :    STA    $D7
+C16F :    BEQ    $C4
+C171 :    JSR  $C689
+C174 :    LDA    $D7
+C176 :    BEQ    $06
+C178 :    JSR  $C1A1
+C17B :    JMP  $C135
+C17E :    LDA   #$00
+C180 :    STA    $D8
+C182 :    INC    $D7
+C184 :    JSR  $C1A1
+C187 :    INC    $D7
+C189 :    LDA    $D7
+C18B :    CMP   #$0B
+C18D :    BNE    $F5
+C18F :    LDA   #$00
+C191 :    STA    $D7
+C193 :    LDA    $D8
+C195 :    BEQ    $02
+C197 :    LDA   #$FF
+C199 :    STA    $00
+C19B :    JSR  $C1ED
+C19E :    JMP  $C135
+C1A1 :    LDA    $D7
+C1A3 :    ASL 
+C1A4 :    TAX 
+C1A5 :    LDA  $C1BE , X
+C1A8 :    STA  $0200
+C1AB :    LDA  $C1BF , X
+C1AE :    STA  $0201
+C1B1 :    LDA   #$C1
+C1B3 :    PHA 
+C1B4 :    LDA   #$DE
+C1B6 :    PHA 
+C1B7 :    LDA   #$00
+C1B9 :    STA    $00
+C1BB :    JMP  $0200
+C1BE :    LAX   ($C6 , X)          ;Illegal OPcode LAX
+C1C0 :    LAX   ($C6 , X)          ;Illegal OPcode LAX
+C1C2 :    ASL  $3DE5 , X
+C1C5 :    ISC    $D3               ;Illegal OPcode ISC
+C1C7 :    INX 
+C1C8 :    ASL    $E9 , X
+C1CA :    STX    $EB
+C1CC :    INC    $ED , X
+C1CE :    ROR    $F0
+C1D0 :    DEC    $F2 , X
+C1D2 :    LSR    $F5
+C1D4 :    LDA   #$00
+C1D6 :    STA    $00
+C1D8 :    JSR  $D900
+C1DB :    JSR  $DAE0
+C1DE :    NOP 
+C1DF :    NOP 
+C1E0 :    NOP 
+C1E1 :    LDA    $00
+C1E3 :    BEQ    $02
+C1E5 :    STA    $D8
+C1E7 :    JMP  $C1ED
+C1EA :    JMP  $C081
+C1ED :    JSR  $C28D
+C1F0 :    LDA   #$00
+C1F2 :    STA    $D3
+C1F4 :    LDA    $D7
+C1F6 :    CLC 
+C1F7 :    ADC   #$04
+C1F9 :    ASL 
+C1FA :    RLO    $D3
+C1FC :    ASL 
+C1FD :    RLO    $D3
+C1FF :    ASL 
+C200 :    RLO    $D3
+C202 :    ASL 
+C203 :    RLO    $D3
+C205 :    ASL 
+C206 :    RLO    $D3
+C208 :    PHA 
+C209 :    LDA    $D3
+C20B :    ORA   #$20
+C20D :    STA  $2006
+C210 :    PLA 
+C211 :    ORA   #$04
+C213 :    STA  $2006
+C216 :    LDA    $00
+C218 :    BEQ    $1D
+C21A :    CMP   #$FF
+C21C :    BEQ    $26
+C21E :    LSR 
+C21F :    LSR 
+C220 :    LSR 
+C221 :    LSR 
+C222 :    TAX 
+C223 :    LDA  $C251 , X
+C226 :    STA  $2007
+C229 :    LDA    $00
+C22B :    AND   #$0F
+C22D :    TAX 
+C22E :    LDA  $C251 , X
+C231 :    STA  $2007
+C234 :    JMP  $C294
+C237 :    LDA   #$4F
+C239 :    STA  $2007
+C23C :    LDA   #$4B
+C23E :    STA  $2007
+C241 :    JMP  $C294
+C244 :    LDA   #$45
+C246 :    STA  $2007
+C249 :    LDA   #$72
+C24B :    STA  $2007
+C24E :    JMP  $C294
+C251 :    BMI    $31
+C253 :    KIL                      ;Illegal OPcode KIL
+C254 :    RLA   ($34), Y           ;Illegal OPcode RLA
+C256 :    AND    $36 , X
+C258 :    RLA    $38 , X           ;Illegal OPcode RLA
+C25A :    AND  $4241 , Y
+C25D :    SRE   ($44 , X)          ;Illegal OPcode SRE
+C25F :    EOR    $46
+C261 :    LDA    $D7
+C263 :    CLC 
+C264 :    ADC   #$04
+C266 :    TAY 
+C267 :    LDA   #$84
+C269 :    STA  $2000
+C26C :    LDA   #$20
+C26E :    STA  $2006
+C271 :    LDA   #$02
+C273 :    STA  $2006
+C276 :    LDA   #$20
+C278 :    DEY 
+C279 :    INY 
+C27A :    BNE    $02
+C27C :    LDA   #$2A
+C27E :    STA  $2007
+C281 :    DEY 
+C282 :    DEX 
+C283 :    BNE    $F1
+C285 :    LDA   #$80
+C287 :    STA  $2000
+C28A :    JMP  $C294
+C28D :    LDA    $D2
+C28F :    CMP    $D2
+C291 :    BEQ    $FC
+C293 :    RTS 
+C294 :    LDA   #$00
+C296 :    STA  $2005
+C299 :    STA  $2005
+C29C :    LDA   #$00
+C29E :    STA  $2006
+C2A1 :    LDA   #$00
+C2A3 :    STA  $2006
+C2A6 :    RTS 
+C2A7 :    LDA   #$00
+C2A9 :    STA  $2000
+C2AC :    STA  $2001
+C2AF :    JSR  $C2ED
+C2B2 :    LDA   #$20
+C2B4 :    STA  $2006
+C2B7 :    LDY   #$00
+C2B9 :    STY  $2006
+C2BC :    LDX   #$20
+C2BE :    LDA   ($D0), Y
+C2C0 :    BEQ    $20
+C2C2 :    CMP   #$FF
+C2C4 :    BEQ    $0D
+C2C6 :    STA  $2007
+C2C9 :    INY 
+C2CA :    BNE    $02
+C2CC :    INC    $D1
+C2CE :    DEX 
+C2CF :    BNE    $ED
+C2D1 :    BEQ    $E9
+C2D3 :    INY 
+C2D4 :    BNE    $02
+C2D6 :    INC    $D1
+C2D8 :    LDA   #$20
+C2DA :    STA  $2007
+C2DD :    DEX 
+C2DE :    BNE    $F8
+C2E0 :    BEQ    $DA
+C2E2 :    LDA   #$80
+C2E4 :    STA  $2000
+C2E7 :    LDA   #$0E
+C2E9 :    STA  $2001
+C2EC :    RTS 
+C2ED :    LDA   #$20
+C2EF :    STA  $2006
+C2F2 :    LDA   #$00
+C2F4 :    STA  $2006
+C2F7 :    LDX   #$1E
+C2F9 :    LDA   #$20
+C2FB :    LDY   #$20
+C2FD :    STA  $2007
+C300 :    DEY 
+C301 :    BNE    $FA
+C303 :    DEX 
+C304 :    BNE    $F5
+C306 :    RTS 
+C307 :    ISC  $FFFF , X           ;Illegal OPcode ISC
+C30A :    ISC  $2020 , X           ;Illegal OPcode ISC
+C30D :    JSR  $2D20
+C310 :    AND  $5220
+C313 :    ADC    $6E , X
+C315 :    JSR  $6C61
+C318 :    JMP  $7420
+C31B :    ADC    $73
+C31D :    NOP    $73 , X           ;Illegal OPcode NOP
+C31F :    ISC  $2020 , X           ;Illegal OPcode ISC
+C322 :    JSR  $2D20
+C325 :    AND  $4220
+C328 :    KIL                      ;Illegal OPcode KIL
+C329 :    ADC   ($6E , X)
+C32B :    RRA   ($68 , X)          ;Illegal OPcode RRA
+C32D :    JSR  $6574
+C330 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C332 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C334 :    JSR  $2020
+C337 :    JSR  $2D2D
+C33A :    JSR  $6C46
+C33D :    ADC   ($67 , X)
+C33F :    JSR  $6574
+C342 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C344 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C346 :    JSR  $2020
+C349 :    JSR  $2D2D
+C34C :    JSR  $6D49
+C34F :    ADC  $6465
+C352 :    ADC   #$61
+C354 :    NOP    $65 , X           ;Illegal OPcode NOP
+C356 :    JSR  $6574
+C359 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C35B :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C35D :    JSR  $2020
+C360 :    JSR  $2D2D
+C363 :    JSR  $6D49
+C366 :    BVS    $6C
+C368 :    ADC   #$65
+C36A :    NOP    $20               ;Illegal OPcode NOP
+C36C :    NOP    $65 , X           ;Illegal OPcode NOP
+C36E :    RRA   ($74), Y           ;Illegal OPcode RRA
+C370 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C372 :    JSR  $2020
+C375 :    JSR  $2D2D
+C378 :    JSR  $7453
+C37B :    ADC   ($63 , X)
+C37D :    ARR   #$20               ;Illegal OPcode ARR
+C37F :    NOP    $65 , X           ;Illegal OPcode NOP
+C381 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C383 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C385 :    JSR  $2020
+C388 :    JSR  $2D2D
+C38B :    JSR  $6341
+C38E :    RRA   ($75 , X)          ;Illegal OPcode RRA
+C390 :    ADC  $6C75
+C393 :    ADC   ($74 , X)
+C395 :    RRA  $2072               ;Illegal OPcode RRA
+C398 :    NOP    $65 , X           ;Illegal OPcode NOP
+C39A :    RRA   ($74), Y           ;Illegal OPcode RRA
+C39C :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C39E :    JSR  $2020
+C3A1 :    JSR  $2D2D
+C3A4 :    JSR  $4928
+C3A7 :    ROR  $6964
+C3AA :    KIL                      ;Illegal OPcode KIL
+C3AB :    ADC    $63
+C3AD :    NOP    $2C , X           ;Illegal OPcode NOP
+C3AF :    CLI 
+C3B0 :    AND   #$20
+C3B2 :    NOP    $65 , X           ;Illegal OPcode NOP
+C3B4 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C3B6 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C3B8 :    JSR  $2020
+C3BB :    JSR  $2D2D
+C3BE :    JSR  $655A
+C3C1 :    KIL                      ;Illegal OPcode KIL
+C3C2 :    RRA  $6170               ;Illegal OPcode RRA
+C3C5 :    RRA    $65               ;Illegal OPcode RRA
+C3C7 :    JSR  $6574
+C3CA :    RRA   ($74), Y           ;Illegal OPcode RRA
+C3CC :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C3CE :    JSR  $2020
+C3D1 :    JSR  $2D2D
+C3D4 :    JSR  $6241
+C3D7 :    RRA   ($6F), Y           ;Illegal OPcode RRA
+C3D9 :    JMP  $7475
+C3DC :    ADC    $20
+C3DE :    NOP    $65 , X           ;Illegal OPcode NOP
+C3E0 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C3E2 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C3E4 :    JSR  $2020
+C3E7 :    JSR  $2D2D
+C3EA :    JSR  $4928
+C3ED :    ROR  $6964
+C3F0 :    KIL                      ;Illegal OPcode KIL
+C3F1 :    ADC    $63
+C3F3 :    NOP    $29 , X           ;Illegal OPcode NOP
+C3F5 :    BIT  $2059
+C3F8 :    NOP    $65 , X           ;Illegal OPcode NOP
+C3FA :    RRA   ($74), Y           ;Illegal OPcode RRA
+C3FC :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C3FE :    JSR  $2020
+C401 :    JSR  $2D2D
+C404 :    JSR  $6241
+C407 :    RRA   ($6F), Y           ;Illegal OPcode RRA
+C409 :    JMP  $7475
+C40C :    ADC    $2C
+C40E :    EOR  $7420 , Y
+C411 :    ADC    $73
+C413 :    NOP    $73 , X           ;Illegal OPcode NOP
+C415 :    ISC  $2020 , X           ;Illegal OPcode ISC
+C418 :    JSR  $2D20
+C41B :    AND  $5A20
+C41E :    ADC    $72
+C420 :    RRA  $6170               ;Illegal OPcode RRA
+C423 :    RRA    $65               ;Illegal OPcode RRA
+C425 :    BIT  $2058
+C428 :    NOP    $65 , X           ;Illegal OPcode NOP
+C42A :    RRA   ($74), Y           ;Illegal OPcode RRA
+C42C :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C42E :    JSR  $2020
+C431 :    JSR  $2D2D
+C434 :    JSR  $6241
+C437 :    RRA   ($6F), Y           ;Illegal OPcode RRA
+C439 :    JMP  $7475
+C43C :    ADC    $2C
+C43E :    CLI 
+C43F :    JSR  $6574
+C442 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C444 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C446 :    ISC  $20FF , X           ;Illegal OPcode ISC
+C449 :    JSR  $2020
+C44C :    EOR    $70 , X
+C44E :    RLA  $6F44               ;Illegal OPcode RLA
+C451 :    RRA    $6E , X           ;Illegal OPcode RRA
+C453 :    NOP                      ;Illegal OPcode NOP
+C454 :    JSR  $6573
+C457 :    JMP  $6365
+C45A :    NOP    $20 , X           ;Illegal OPcode NOP
+C45C :    NOP    $65 , X           ;Illegal OPcode NOP
+C45E :    RRA   ($74), Y           ;Illegal OPcode RRA
+C460 :    ISC  $2020 , X           ;Illegal OPcode ISC
+C463 :    JSR  $2020
+C466 :    JSR  $7453
+C469 :    ADC   ($72 , X)
+C46B :    NOP    $3A , X           ;Illegal OPcode NOP
+C46D :    JSR  $7572
+C470 :    ROR  $7420
+C473 :    ADC    $73
+C475 :    NOP    $FF , X           ;Illegal OPcode NOP
+C477 :    JSR  $2020
+C47A :    JSR  $5320
+C47D :    ADC    $6C
+C47F :    ADC    $63
+C481 :    NOP    $3A , X           ;Illegal OPcode NOP
+C483 :    JSR  $6E49
+C486 :    ROR    $61 , X
+C488 :    JMP  $6469
+C48B :    JSR  $706F
+C48E :    RRA   ($21), Y           ;Illegal OPcode RRA
+C490 :    ISC  $FF00 , X           ;Illegal OPcode ISC
+C493 :    ISC  $FFFF , X           ;Illegal OPcode ISC
+C496 :    JSR  $2020
+C499 :    JSR  $2D2D
+C49C :    JSR  $7552
+C49F :    ROR  $6120
+C4A2 :    JMP  $206C
+C4A5 :    NOP    $65 , X           ;Illegal OPcode NOP
+C4A7 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C4A9 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C4AB :    JSR  $2020
+C4AE :    JSR  $2D2D
+C4B1 :    JSR  $4F4E
+C4B4 :    BVC    $20
+C4B6 :    NOP    $65 , X           ;Illegal OPcode NOP
+C4B8 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C4BA :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C4BC :    JSR  $2020
+C4BF :    JSR  $2D2D
+C4C2 :    JSR  $414C
+C4C5 :    CLI 
+C4C6 :    JSR  $6574
+C4C9 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C4CB :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C4CD :    JSR  $2020
+C4D0 :    JSR  $2D2D
+C4D3 :    JSR  $4153
+C4D6 :    CLI 
+C4D7 :    JSR  $6574
+C4DA :    RRA   ($74), Y           ;Illegal OPcode RRA
+C4DC :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C4DE :    JSR  $2020
+C4E1 :    JSR  $2D2D
+C4E4 :    JSR  $4253
+C4E7 :    SRE   ($20 , X)          ;Illegal OPcode SRE
+C4E9 :    NOP    $65 , X           ;Illegal OPcode NOP
+C4EB :    RRA   ($74), Y           ;Illegal OPcode RRA
+C4ED :    JSR  $6F28
+C4F0 :    BVS    $63
+C4F2 :    RRA  $6564               ;Illegal OPcode RRA
+C4F5 :    JSR  $4530
+C4F8 :    KIL                      ;Illegal OPcode KIL
+C4F9 :    PLA 
+C4FA :    AND   #$FF
+C4FC :    JSR  $2020
+C4FF :    JSR  $2D2D
+C502 :    JSR  $4344
+C505 :    BVC    $20
+C507 :    NOP    $65 , X           ;Illegal OPcode NOP
+C509 :    RRA   ($74), Y           ;Illegal OPcode RRA
+C50B :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C50D :    JSR  $2020
+C510 :    JSR  $2D2D
+C513 :    JSR  $5349
+C516 :    KIL                      ;Illegal OPcode KIL
+C517 :    JSR  $6574
+C51A :    RRA   ($74), Y           ;Illegal OPcode RRA
+C51C :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C51E :    JSR  $2020
+C521 :    JSR  $2D2D
+C524 :    JSR  $4C53
+C527 :    SRE  $7420               ;Illegal OPcode SRE
+C52A :    ADC    $73
+C52C :    NOP    $73 , X           ;Illegal OPcode NOP
+C52E :    ISC  $2020 , X           ;Illegal OPcode ISC
+C531 :    JSR  $2D20
+C534 :    AND  $5220
+C537 :    JMP  $2041
+C53A :    NOP    $65 , X           ;Illegal OPcode NOP
+C53C :    RRA   ($74), Y           ;Illegal OPcode RRA
+C53E :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C540 :    JSR  $2020
+C543 :    JSR  $2D2D
+C546 :    JSR  $5253
+C549 :    EOR    $20
+C54B :    NOP    $65 , X           ;Illegal OPcode NOP
+C54D :    RRA   ($74), Y           ;Illegal OPcode RRA
+C54F :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C551 :    JSR  $2020
+C554 :    JSR  $2D2D
+C557 :    JSR  $5252
+C55A :    EOR   ($20 , X)
+C55C :    NOP    $65 , X           ;Illegal OPcode NOP
+C55E :    RRA   ($74), Y           ;Illegal OPcode RRA
+C560 :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C562 :    ISC  $FFFF , X           ;Illegal OPcode ISC
+C565 :    ISC  $20FF , X           ;Illegal OPcode ISC
+C568 :    JSR  $2020
+C56B :    EOR    $70 , X
+C56D :    RLA  $6F44               ;Illegal OPcode RLA
+C570 :    RRA    $6E , X           ;Illegal OPcode RRA
+C572 :    NOP                      ;Illegal OPcode NOP
+C573 :    JSR  $6573
+C576 :    JMP  $6365
+C579 :    NOP    $20 , X           ;Illegal OPcode NOP
+C57B :    NOP    $65 , X           ;Illegal OPcode NOP
+C57D :    RRA   ($74), Y           ;Illegal OPcode RRA
+C57F :    ISC  $2020 , X           ;Illegal OPcode ISC
+C582 :    JSR  $2020
+C585 :    JSR  $7453
+C588 :    ADC   ($72 , X)
+C58A :    NOP    $3A , X           ;Illegal OPcode NOP
+C58C :    JSR  $7572
+C58F :    ROR  $7420
+C592 :    ADC    $73
+C594 :    NOP    $FF , X           ;Illegal OPcode NOP
+C596 :    JSR  $2020
+C599 :    JSR  $5320
+C59C :    ADC    $6C
+C59E :    ADC    $63
+C5A0 :    NOP    $3A , X           ;Illegal OPcode NOP
+C5A2 :    JSR  $6F4E
+C5A5 :    KIL                      ;Illegal OPcode KIL
+C5A6 :    ADC  $6C61
+C5A9 :    JSR  $706F
+C5AC :    RRA   ($FF), Y           ;Illegal OPcode RRA
+C5AE :    BRK 
+C5AF :    PHA 
+C5B0 :    TXA 
+C5B1 :    PHA 
+C5B2 :    LDA  $2002
+C5B5 :    LDA   #$20
+C5B7 :    STA  $2006
+C5BA :    LDA   #$40
+C5BC :    STA  $2006
+C5BF :    INC    $D2
+C5C1 :    LDA   #$00
+C5C3 :    STA  $2005
+C5C6 :    STA  $2005
+C5C9 :    LDA   #$00
+C5CB :    STA  $2006
+C5CE :    LDA   #$00
+C5D0 :    STA  $2006
+C5D3 :    LDX   #$09
+C5D5 :    STX  $4016
+C5D8 :    DEX 
+C5D9 :    STX  $4016
+C5DC :    LDA  $4016
+C5DF :    LSR 
+C5E0 :    RLO    $D4
+C5E2 :    DEX 
+C5E3 :    BNE    $F7
+C5E5 :    LDA    $D4
+C5E7 :    TAX 
+C5E8 :    EOR    $D6
+C5EA :    AND    $D4
+C5EC :    STA    $D5
+C5EE :    STX    $D6
+C5F0 :    PLA 
+C5F1 :    TAX 
+C5F2 :    PLA 
+C5F3 :    RTI 
+C5F4 :    RTI 
+C5F5 :    LDX   #$00
+C5F7 :    STX    $00
+C5F9 :    STX    $10
+C5FB :    STX    $11
+C5FD :    JSR  $C72D
+C600 :    JSR  $C7DB
+C603 :    JSR  $C885
+C606 :    JSR  $CBDE
+C609 :    JSR  $CDF8
+C60C :    JSR  $CEEE
+C60F :    JSR  $CFA2
+C612 :    JSR  $D174
+C615 :    JSR  $D4FB
+C618 :    JSR  $D900
+C61B :    LDA    $00
+C61D :    STA    $10
+C61F :    LDA   #$00
+C621 :    STA    $00
+C623 :    JSR  $DAE0
+C626 :    JSR  $DF4A
+C629 :    JSR  $DBB8
+C62C :    JSR  $E1AA
+C62F :    JSR  $C6A3
+C632 :    JSR  $E51E
+C635 :    JSR  $E73D
+C638 :    JSR  $E8D3
+C63B :    JSR  $E916
+C63E :    JSR  $EB86
+C641 :    JSR  $EDF6
+C644 :    JSR  $F066
+C647 :    JSR  $F2D6
+C64A :    LDA    $00
+C64C :    STA    $11
+C64E :    LDA   #$00
+C650 :    STA    $00
+C652 :    JSR  $F546
+C655 :    LDA    $00
+C657 :    ORA    $10
+C659 :    ORA    $11
+C65B :    BEQ    $0E
+C65D :    JSR  $C66F
+C660 :    LDX    $00
+C662 :    STX    $02
+C664 :    LDX    $10
+C666 :    STX    $03
+C668 :    JMP  $C66E
+C66B :    JSR  $C689
+C66E :    RTS 
+C66F :    LDA   #$03
+C671 :    STA  $4015
+C674 :    LDA   #$87
+C676 :    STA  $4000
+C679 :    LDA   #$89
+C67B :    STA  $4001
+C67E :    LDA   #$F0
+C680 :    STA  $4002
+C683 :    LDA   #$00
+C685 :    STA  $4003
+C688 :    RTS 
+C689 :    LDA   #$02
+C68B :    STA  $4015
+C68E :    LDA   #$3F
+C690 :    STA  $4004
+C693 :    LDA   #$9A
+C695 :    STA  $4005
+C698 :    LDA   #$FF
+C69A :    STA  $4006
+C69D :    LDA   #$00
+C69F :    STA  $4007
+C6A2 :    RTS 
+C6A3 :    LDY   #$4E
+C6A5 :    LDA   #$FF
+C6A7 :    STA    $01
+C6A9 :    JSR  $C6B0
+C6AC :    JSR  $C6B7
+C6AF :    RTS 
+C6B0 :    LDA   #$FF
+C6B2 :    PHA 
+C6B3 :    LDA   #$AA
+C6B5 :    BNE    $05
+C6B7 :    LDA   #$34
+C6B9 :    PHA 
+C6BA :    LDA   #$55
+C6BC :    PLP 
+C6BD :    NOP    $A9               ;Illegal OPcode NOP
+C6BF :    NOP    $A9               ;Illegal OPcode NOP
+C6C1 :    NOP    $A9               ;Illegal OPcode NOP
+C6C3 :    NOP 
+C6C4 :    NOP 
+C6C5 :    NOP 
+C6C6 :    NOP 
+C6C7 :    PHP 
+C6C8 :    PHA 
+C6C9 :    NOP  $A9A9               ;Illegal OPcode NOP
+C6CC :    NOP 
+C6CD :    NOP 
+C6CE :    NOP 
+C6CF :    NOP 
+C6D0 :    PHP 
+C6D1 :    PHA 
+C6D2 :    NOP    $A9 , X           ;Illegal OPcode NOP
+C6D4 :    NOP    $A9 , X           ;Illegal OPcode NOP
+C6D6 :    NOP    $A9 , X           ;Illegal OPcode NOP
+C6D8 :    NOP    $A9 , X           ;Illegal OPcode NOP
+C6DA :    NOP    $A9 , X           ;Illegal OPcode NOP
+C6DC :    NOP    $A9 , X           ;Illegal OPcode NOP
+C6DE :    NOP 
+C6DF :    NOP 
+C6E0 :    NOP 
+C6E1 :    NOP 
+C6E2 :    PHP 
+C6E3 :    PHA 
+C6E4 :    NOP                      ;Illegal OPcode NOP
+C6E5 :    NOP                      ;Illegal OPcode NOP
+C6E6 :    NOP                      ;Illegal OPcode NOP
+C6E7 :    NOP  $FADA , X           ;Illegal OPcode NOP
+C6EA :    NOP   #$89               ;Illegal OPcode NOP
+C6EC :    NOP 
+C6ED :    NOP 
+C6EE :    NOP 
+C6EF :    NOP 
+C6F0 :    PHP 
+C6F1 :    PHA 
+C6F2 :    NOP  $A9A9 , X           ;Illegal OPcode NOP
+C6F5 :    NOP  $A9A9 , X           ;Illegal OPcode NOP
+C6F8 :    NOP  $A9A9 , X           ;Illegal OPcode NOP
+C6FB :    NOP  $A9A9 , X           ;Illegal OPcode NOP
+C6FE :    NOP  $A9A9 , X           ;Illegal OPcode NOP
+C701 :    NOP  $A9A9 , X           ;Illegal OPcode NOP
+C704 :    NOP 
+C705 :    NOP 
+C706 :    NOP 
+C707 :    NOP 
+C708 :    PHP 
+C709 :    PHA 
+C70A :    LDX   #$05
+C70C :    PLA 
+C70D :    CMP   #$55
+C70F :    BEQ    $0A
+C711 :    CMP   #$AA
+C713 :    BEQ    $06
+C715 :    PLA 
+C716 :    STY    $00
+C718 :    JMP  $C728
+C71B :    PLA 
+C71C :    AND   #$CB
+C71E :    CMP   #$00
+C720 :    BEQ    $06
+C722 :    CMP   #$CB
+C724 :    BEQ    $02
+C726 :    STY    $00
+C728 :    INY 
+C729 :    DEX 
+C72A :    BNE    $E0
+C72C :    RTS 
+C72D :    NOP 
+C72E :    SEC 
+C72F :    BCS    $04
+C731 :    LDX   #$01
+C733 :    STX    $00
+C735 :    NOP 
+C736 :    CLC 
+C737 :    BCS    $03
+C739 :    JMP  $C740
+C73C :    LDX   #$02
+C73E :    STX    $00
+C740 :    NOP 
+C741 :    SEC 
+C742 :    BCC    $03
+C744 :    JMP  $C74B
+C747 :    LDX   #$03
+C749 :    STX    $00
+C74B :    NOP 
+C74C :    CLC 
+C74D :    BCC    $04
+C74F :    LDX   #$04
+C751 :    STX    $00
+C753 :    NOP 
+C754 :    LDA   #$00
+C756 :    BEQ    $04
+C758 :    LDX   #$05
+C75A :    STX    $00
+C75C :    NOP 
+C75D :    LDA   #$40
+C75F :    BEQ    $03
+C761 :    JMP  $C768
+C764 :    LDX   #$06
+C766 :    STX    $00
+C768 :    NOP 
+C769 :    LDA   #$40
+C76B :    BNE    $04
+C76D :    LDX   #$07
+C76F :    STX    $00
+C771 :    NOP 
+C772 :    LDA   #$00
+C774 :    BNE    $03
+C776 :    JMP  $C77D
+C779 :    LDX   #$08
+C77B :    STX    $00
+C77D :    NOP 
+C77E :    LDA   #$FF
+C780 :    STA    $01
+C782 :    BIT    $01
+C784 :    BVS    $04
+C786 :    LDX   #$09
+C788 :    STX    $00
+C78A :    NOP 
+C78B :    BIT    $01
+C78D :    BVC    $03
+C78F :    JMP  $C796
+C792 :    LDX   #$0A
+C794 :    STX    $00
+C796 :    NOP 
+C797 :    LDA   #$00
+C799 :    STA    $01
+C79B :    BIT    $01
+C79D :    BVC    $04
+C79F :    LDX   #$0B
+C7A1 :    STX    $00
+C7A3 :    NOP 
+C7A4 :    BIT    $01
+C7A6 :    BVS    $03
+C7A8 :    JMP  $C7AF
+C7AB :    LDX   #$0C
+C7AD :    STX    $00
+C7AF :    NOP 
+C7B0 :    LDA   #$00
+C7B2 :    BPL    $04
+C7B4 :    LDX   #$0D
+C7B6 :    STX    $00
+C7B8 :    NOP 
+C7B9 :    LDA   #$80
+C7BB :    BPL    $03
+C7BD :    JMP  $C7D9
+C7C0 :    LDX   #$0E
+C7C2 :    STX    $00
+C7C4 :    NOP 
+C7C5 :    LDA   #$80
+C7C7 :    BMI    $04
+C7C9 :    LDX   #$0F
+C7CB :    STX    $00
+C7CD :    NOP 
+C7CE :    LDA   #$00
+C7D0 :    BMI    $03
+C7D2 :    JMP  $C7D9
+C7D5 :    LDX   #$10
+C7D7 :    STX    $00
+C7D9 :    NOP 
+C7DA :    RTS 
+C7DB :    NOP 
+C7DC :    LDA   #$FF
+C7DE :    STA    $01
+C7E0 :    BIT    $01
+C7E2 :    LDA   #$00
+C7E4 :    SEC 
+C7E5 :    SEI 
+C7E6 :    SED 
+C7E7 :    PHP 
+C7E8 :    PLA 
+C7E9 :    AND   #$EF
+C7EB :    CMP   #$6F
+C7ED :    BEQ    $04
+C7EF :    LDX   #$11
+C7F1 :    STX    $00
+C7F3 :    NOP 
+C7F4 :    LDA   #$40
+C7F6 :    STA    $01
+C7F8 :    BIT    $01
+C7FA :    CLD 
+C7FB :    LDA   #$10
+C7FD :    CLC 
+C7FE :    PHP 
+C7FF :    PLA 
+C800 :    AND   #$EF
+C802 :    CMP   #$64
+C804 :    BEQ    $04
+C806 :    LDX   #$12
+C808 :    STX    $00
+C80A :    NOP 
+C80B :    LDA   #$80
+C80D :    STA    $01
+C80F :    BIT    $01
+C811 :    SED 
+C812 :    LDA   #$00
+C814 :    SEC 
+C815 :    PHP 
+C816 :    PLA 
+C817 :    AND   #$EF
+C819 :    CMP   #$2F
+C81B :    BEQ    $04
+C81D :    LDX   #$13
+C81F :    STX    $00
+C821 :    NOP 
+C822 :    LDA   #$FF
+C824 :    PHA 
+C825 :    PLP 
+C826 :    BNE    $09
+C828 :    BPL    $07
+C82A :    BVC    $05
+C82C :    BCC    $03
+C82E :    JMP  $C835
+C831 :    LDX   #$14
+C833 :    STX    $00
+C835 :    NOP 
+C836 :    LDA   #$04
+C838 :    PHA 
+C839 :    PLP 
+C83A :    BEQ    $09
+C83C :    BMI    $07
+C83E :    BVS    $05
+C840 :    BCS    $03
+C842 :    JMP  $C849
+C845 :    LDX   #$15
+C847 :    STX    $00
+C849 :    NOP 
+C84A :    SED 
+C84B :    LDA   #$FF
+C84D :    STA    $01
+C84F :    BIT    $01
+C851 :    CLC 
+C852 :    LDA   #$00
+C854 :    PHA 
+C855 :    LDA   #$FF
+C857 :    PLA 
+C858 :    BNE    $09
+C85A :    BMI    $07
+C85C :    BVC    $05
+C85E :    BCS    $03
+C860 :    JMP  $C867
+C863 :    LDX   #$16
+C865 :    STX    $00
+C867 :    NOP 
+C868 :    LDA   #$00
+C86A :    STA    $01
+C86C :    BIT    $01
+C86E :    SEC 
+C86F :    LDA   #$FF
+C871 :    PHA 
+C872 :    LDA   #$00
+C874 :    PLA 
+C875 :    BEQ    $09
+C877 :    BPL    $07
+C879 :    BVS    $05
+C87B :    BCC    $03
+C87D :    JMP  $C884
+C880 :    LDX   #$17
+C882 :    STX    $00
+C884 :    RTS 
+C885 :    NOP 
+C886 :    CLC 
+C887 :    LDA   #$FF
+C889 :    STA    $01
+C88B :    BIT    $01
+C88D :    LDA   #$55
+C88F :    ORA   #$AA
+C891 :    BCS    $0B
+C893 :    BPL    $09
+C895 :    CMP   #$FF
+C897 :    BNE    $05
+C899 :    BVC    $03
+C89B :    JMP  $C8A2
+C89E :    LDX   #$18
+C8A0 :    STX    $00
+C8A2 :    NOP 
+C8A3 :    SEC 
+C8A4 :    CLV 
+C8A5 :    LDA   #$00
+C8A7 :    ORA   #$00
+C8A9 :    BNE    $09
+C8AB :    BVS    $07
+C8AD :    BCC    $05
+C8AF :    BMI    $03
+C8B1 :    JMP  $C8B8
+C8B4 :    LDX   #$19
+C8B6 :    STX    $00
+C8B8 :    NOP 
+C8B9 :    CLC 
+C8BA :    BIT    $01
+C8BC :    LDA   #$55
+C8BE :    AND   #$AA
+C8C0 :    BNE    $09
+C8C2 :    BVC    $07
+C8C4 :    BCS    $05
+C8C6 :    BMI    $03
+C8C8 :    JMP  $C8CF
+C8CB :    LDX   #$1A
+C8CD :    STX    $00
+C8CF :    NOP 
+C8D0 :    SEC 
+C8D1 :    CLV 
+C8D2 :    LDA   #$F8
+C8D4 :    AND   #$EF
+C8D6 :    BCC    $0B
+C8D8 :    BPL    $09
+C8DA :    CMP   #$E8
+C8DC :    BNE    $05
+C8DE :    BVS    $03
+C8E0 :    JMP  $C8E7
+C8E3 :    LDX   #$1B
+C8E5 :    STX    $00
+C8E7 :    NOP 
+C8E8 :    CLC 
+C8E9 :    BIT    $01
+C8EB :    LDA   #$5F
+C8ED :    EOR   #$AA
+C8EF :    BCS    $0B
+C8F1 :    BPL    $09
+C8F3 :    CMP   #$F5
+C8F5 :    BNE    $05
+C8F7 :    BVC    $03
+C8F9 :    JMP  $C900
+C8FC :    LDX   #$1C
+C8FE :    STX    $00
+C900 :    NOP 
+C901 :    SEC 
+C902 :    CLV 
+C903 :    LDA   #$70
+C905 :    EOR   #$70
+C907 :    BNE    $09
+C909 :    BVS    $07
+C90B :    BCC    $05
+C90D :    BMI    $03
+C90F :    JMP  $C916
+C912 :    LDX   #$1D
+C914 :    STX    $00
+C916 :    NOP 
+C917 :    CLC 
+C918 :    BIT    $01
+C91A :    LDA   #$00
+C91C :    ADC   #$69
+C91E :    BMI    $0B
+C920 :    BCS    $09
+C922 :    CMP   #$69
+C924 :    BNE    $05
+C926 :    BVS    $03
+C928 :    JMP  $C92F
+C92B :    LDX   #$1E
+C92D :    STX    $00
+C92F :    NOP 
+C930 :    SEC 
+C931 :    SED 
+C932 :    BIT    $01
+C934 :    LDA   #$01
+C936 :    ADC   #$69
+C938 :    BMI    $0B
+C93A :    BCS    $09
+C93C :    CMP   #$6B
+C93E :    BNE    $05
+C940 :    BVS    $03
+C942 :    JMP  $C949
+C945 :    LDX   #$1F
+C947 :    STX    $00
+C949 :    NOP 
+C94A :    CLD 
+C94B :    SEC 
+C94C :    CLV 
+C94D :    LDA   #$7F
+C94F :    ADC   #$7F
+C951 :    BPL    $0B
+C953 :    BCS    $09
+C955 :    CMP   #$FF
+C957 :    BNE    $05
+C959 :    BVC    $03
+C95B :    JMP  $C962
+C95E :    LDX   #$20
+C960 :    STX    $00
+C962 :    NOP 
+C963 :    CLC 
+C964 :    BIT    $01
+C966 :    LDA   #$7F
+C968 :    ADC   #$80
+C96A :    BPL    $0B
+C96C :    BCS    $09
+C96E :    CMP   #$FF
+C970 :    BNE    $05
+C972 :    BVS    $03
+C974 :    JMP  $C97B
+C977 :    LDX   #$21
+C979 :    STX    $00
+C97B :    NOP 
+C97C :    SEC 
+C97D :    CLV 
+C97E :    LDA   #$7F
+C980 :    ADC   #$80
+C982 :    BNE    $09
+C984 :    BMI    $07
+C986 :    BVS    $05
+C988 :    BCC    $03
+C98A :    JMP  $C991
+C98D :    LDX   #$22
+C98F :    STX    $00
+C991 :    NOP 
+C992 :    SEC 
+C993 :    CLV 
+C994 :    LDA   #$9F
+C996 :    BEQ    $09
+C998 :    BPL    $07
+C99A :    BVS    $05
+C99C :    BCC    $03
+C99E :    JMP  $C9A5
+C9A1 :    LDX   #$23
+C9A3 :    STX    $00
+C9A5 :    NOP 
+C9A6 :    CLC 
+C9A7 :    BIT    $01
+C9A9 :    LDA   #$00
+C9AB :    BNE    $09
+C9AD :    BMI    $07
+C9AF :    BVC    $05
+C9B1 :    BCS    $03
+C9B3 :    JMP  $C9BA
+C9B6 :    LDX   #$23
+C9B8 :    STX    $00
+C9BA :    NOP 
+C9BB :    BIT    $01
+C9BD :    LDA   #$40
+C9BF :    CMP   #$40
+C9C1 :    BMI    $09
+C9C3 :    BCC    $07
+C9C5 :    BNE    $05
+C9C7 :    BVC    $03
+C9C9 :    JMP  $C9D0
+C9CC :    LDX   #$24
+C9CE :    STX    $00
+C9D0 :    NOP 
+C9D1 :    CLV 
+C9D2 :    CMP   #$3F
+C9D4 :    BEQ    $09
+C9D6 :    BMI    $07
+C9D8 :    BCC    $05
+C9DA :    BVS    $03
+C9DC :    JMP  $C9E3
+C9DF :    LDX   #$25
+C9E1 :    STX    $00
+C9E3 :    NOP 
+C9E4 :    CMP   #$41
+C9E6 :    BEQ    $07
+C9E8 :    BPL    $05
+C9EA :    BPL    $03
+C9EC :    JMP  $C9F3
+C9EF :    LDX   #$26
+C9F1 :    STX    $00
+C9F3 :    NOP 
+C9F4 :    LDA   #$80
+C9F6 :    CMP   #$00
+C9F8 :    BEQ    $07
+C9FA :    BPL    $05
+C9FC :    BCC    $03
+C9FE :    JMP  $CA05
+CA01 :    LDX   #$27
+CA03 :    STX    $00
+CA05 :    NOP 
+CA06 :    CMP   #$80
+CA08 :    BNE    $07
+CA0A :    BMI    $05
+CA0C :    BCC    $03
+CA0E :    JMP  $CA15
+CA11 :    LDX   #$28
+CA13 :    STX    $00
+CA15 :    NOP 
+CA16 :    CMP   #$81
+CA18 :    BCS    $07
+CA1A :    BEQ    $05
+CA1C :    BPL    $03
+CA1E :    JMP  $CA25
+CA21 :    LDX   #$29
+CA23 :    STX    $00
+CA25 :    NOP 
+CA26 :    CMP   #$7F
+CA28 :    BCC    $07
+CA2A :    BEQ    $05
+CA2C :    BMI    $03
+CA2E :    JMP  $CA35
+CA31 :    LDX   #$2A
+CA33 :    STX    $00
+CA35 :    NOP 
+CA36 :    BIT    $01
+CA38 :    LDY   #$40
+CA3A :    CPY   #$40
+CA3C :    BNE    $09
+CA3E :    BMI    $07
+CA40 :    BCC    $05
+CA42 :    BVC    $03
+CA44 :    JMP  $CA4B
+CA47 :    LDX   #$2B
+CA49 :    STX    $00
+CA4B :    NOP 
+CA4C :    CLV 
+CA4D :    CPY   #$3F
+CA4F :    BEQ    $09
+CA51 :    BMI    $07
+CA53 :    BCC    $05
+CA55 :    BVS    $03
+CA57 :    JMP  $CA5E
+CA5A :    LDX   #$2C
+CA5C :    STX    $00
+CA5E :    NOP 
+CA5F :    CPY   #$41
+CA61 :    BEQ    $07
+CA63 :    BPL    $05
+CA65 :    BPL    $03
+CA67 :    JMP  $CA6E
+CA6A :    LDX   #$2D
+CA6C :    STX    $00
+CA6E :    NOP 
+CA6F :    LDY   #$80
+CA71 :    CPY   #$00
+CA73 :    BEQ    $07
+CA75 :    BPL    $05
+CA77 :    BCC    $03
+CA79 :    JMP  $CA80
+CA7C :    LDX   #$2E
+CA7E :    STX    $00
+CA80 :    NOP 
+CA81 :    CPY   #$80
+CA83 :    BNE    $07
+CA85 :    BMI    $05
+CA87 :    BCC    $03
+CA89 :    JMP  $CA90
+CA8C :    LDX   #$2F
+CA8E :    STX    $00
+CA90 :    NOP 
+CA91 :    CPY   #$81
+CA93 :    BCS    $07
+CA95 :    BEQ    $05
+CA97 :    BPL    $03
+CA99 :    JMP  $CAA0
+CA9C :    LDX   #$30
+CA9E :    STX    $00
+CAA0 :    NOP 
+CAA1 :    CPY   #$7F
+CAA3 :    BCC    $07
+CAA5 :    BEQ    $05
+CAA7 :    BMI    $03
+CAA9 :    JMP  $CAB0
+CAAC :    LDX   #$31
+CAAE :    STX    $00
+CAB0 :    NOP 
+CAB1 :    BIT    $01
+CAB3 :    LDX   #$40
+CAB5 :    CPX   #$40
+CAB7 :    BNE    $09
+CAB9 :    BMI    $07
+CABB :    BCC    $05
+CABD :    BVC    $03
+CABF :    JMP  $CAC6
+CAC2 :    LDA   #$32
+CAC4 :    STA    $00
+CAC6 :    NOP 
+CAC7 :    CLV 
+CAC8 :    CPX   #$3F
+CACA :    BEQ    $09
+CACC :    BMI    $07
+CACE :    BCC    $05
+CAD0 :    BVS    $03
+CAD2 :    JMP  $CAD9
+CAD5 :    LDA   #$33
+CAD7 :    STA    $00
+CAD9 :    NOP 
+CADA :    CPX   #$41
+CADC :    BEQ    $07
+CADE :    BPL    $05
+CAE0 :    BPL    $03
+CAE2 :    JMP  $CAE9
+CAE5 :    LDA   #$34
+CAE7 :    STA    $00
+CAE9 :    NOP 
+CAEA :    LDX   #$80
+CAEC :    CPX   #$00
+CAEE :    BEQ    $07
+CAF0 :    BPL    $05
+CAF2 :    BCC    $03
+CAF4 :    JMP  $CAFB
+CAF7 :    LDA   #$35
+CAF9 :    STA    $00
+CAFB :    NOP 
+CAFC :    CPX   #$80
+CAFE :    BNE    $07
+CB00 :    BMI    $05
+CB02 :    BCC    $03
+CB04 :    JMP  $CB0B
+CB07 :    LDA   #$36
+CB09 :    STA    $00
+CB0B :    NOP 
+CB0C :    CPX   #$81
+CB0E :    BCS    $07
+CB10 :    BEQ    $05
+CB12 :    BPL    $03
+CB14 :    JMP  $CB1B
+CB17 :    LDA   #$37
+CB19 :    STA    $00
+CB1B :    NOP 
+CB1C :    CPX   #$7F
+CB1E :    BCC    $07
+CB20 :    BEQ    $05
+CB22 :    BMI    $03
+CB24 :    JMP  $CB2B
+CB27 :    LDA   #$38
+CB29 :    STA    $00
+CB2B :    NOP 
+CB2C :    SEC 
+CB2D :    CLV 
+CB2E :    LDX   #$9F
+CB30 :    BEQ    $09
+CB32 :    BPL    $07
+CB34 :    BVS    $05
+CB36 :    BCC    $03
+CB38 :    JMP  $CB3F
+CB3B :    LDX   #$39
+CB3D :    STX    $00
+CB3F :    NOP 
+CB40 :    CLC 
+CB41 :    BIT    $01
+CB43 :    LDX   #$00
+CB45 :    BNE    $09
+CB47 :    BMI    $07
+CB49 :    BVC    $05
+CB4B :    BCS    $03
+CB4D :    JMP  $CB54
+CB50 :    LDX   #$3A
+CB52 :    STX    $00
+CB54 :    NOP 
+CB55 :    SEC 
+CB56 :    CLV 
+CB57 :    LDY   #$9F
+CB59 :    BEQ    $09
+CB5B :    BPL    $07
+CB5D :    BVS    $05
+CB5F :    BCC    $03
+CB61 :    JMP  $CB68
+CB64 :    LDX   #$3B
+CB66 :    STX    $00
+CB68 :    NOP 
+CB69 :    CLC 
+CB6A :    BIT    $01
+CB6C :    LDY   #$00
+CB6E :    BNE    $09
+CB70 :    BMI    $07
+CB72 :    BVC    $05
+CB74 :    BCS    $03
+CB76 :    JMP  $CB7D
+CB79 :    LDX   #$3C
+CB7B :    STX    $00
+CB7D :    NOP 
+CB7E :    LDA   #$55
+CB80 :    LDX   #$AA
+CB82 :    LDY   #$33
+CB84 :    CMP   #$55
+CB86 :    BNE    $23
+CB88 :    CPX   #$AA
+CB8A :    BNE    $1F
+CB8C :    CPY   #$33
+CB8E :    BNE    $1B
+CB90 :    CMP   #$55
+CB92 :    BNE    $17
+CB94 :    CPX   #$AA
+CB96 :    BNE    $13
+CB98 :    CPY   #$33
+CB9A :    BNE    $0F
+CB9C :    CMP   #$56
+CB9E :    BEQ    $0B
+CBA0 :    CPX   #$AB
+CBA2 :    BEQ    $07
+CBA4 :    CPY   #$34
+CBA6 :    BEQ    $03
+CBA8 :    JMP  $CBAF
+CBAB :    LDX   #$3D
+CBAD :    STX    $00
+CBAF :    LDY   #$71
+CBB1 :    JSR  $F931
+CBB4 :    SBC   #$40
+CBB6 :    JSR  $F937
+CBB9 :    INY 
+CBBA :    JSR  $F947
+CBBD :    SBC   #$3F
+CBBF :    JSR  $F94C
+CBC2 :    INY 
+CBC3 :    JSR  $F95C
+CBC6 :    SBC   #$41
+CBC8 :    JSR  $F962
+CBCB :    INY 
+CBCC :    JSR  $F972
+CBCF :    SBC   #$00
+CBD1 :    JSR  $F976
+CBD4 :    INY 
+CBD5 :    JSR  $F980
+CBD8 :    SBC   #$7F
+CBDA :    JSR  $F984
+CBDD :    RTS 
+CBDE :    NOP 
+CBDF :    LDA   #$FF
+CBE1 :    STA    $01
+CBE3 :    LDA   #$44
+CBE5 :    LDX   #$55
+CBE7 :    LDY   #$66
+CBE9 :    INX 
+CBEA :    DEY 
+CBEB :    CPX   #$56
+CBED :    BNE    $21
+CBEF :    CPY   #$65
+CBF1 :    BNE    $1D
+CBF3 :    INX 
+CBF4 :    INX 
+CBF5 :    DEY 
+CBF6 :    DEY 
+CBF7 :    CPX   #$58
+CBF9 :    BNE    $15
+CBFB :    CPY   #$63
+CBFD :    BNE    $11
+CBFF :    DEX 
+CC00 :    INY 
+CC01 :    CPX   #$57
+CC03 :    BNE    $0B
+CC05 :    CPY   #$64
+CC07 :    BNE    $07
+CC09 :    CMP   #$44
+CC0B :    BNE    $03
+CC0D :    JMP  $CC14
+CC10 :    LDX   #$3E
+CC12 :    STX    $00
+CC14 :    NOP 
+CC15 :    SEC 
+CC16 :    LDX   #$69
+CC18 :    LDA   #$96
+CC1A :    BIT    $01
+CC1C :    LDY   #$FF
+CC1E :    INY 
+CC1F :    BNE    $3D
+CC21 :    BMI    $3B
+CC23 :    BCC    $39
+CC25 :    BVC    $37
+CC27 :    CPY   #$00
+CC29 :    BNE    $33
+CC2B :    INY 
+CC2C :    BEQ    $30
+CC2E :    BMI    $2E
+CC30 :    BCC    $2C
+CC32 :    BVC    $2A
+CC34 :    CLC 
+CC35 :    CLV 
+CC36 :    LDY   #$00
+CC38 :    DEY 
+CC39 :    BEQ    $23
+CC3B :    BPL    $21
+CC3D :    BCS    $1F
+CC3F :    BVS    $1D
+CC41 :    CPY   #$FF
+CC43 :    BNE    $19
+CC45 :    CLC 
+CC46 :    DEY 
+CC47 :    BEQ    $15
+CC49 :    BPL    $13
+CC4B :    BCS    $11
+CC4D :    BVS    $0F
+CC4F :    CPY   #$FE
+CC51 :    BNE    $0B
+CC53 :    CMP   #$96
+CC55 :    BNE    $07
+CC57 :    CPX   #$69
+CC59 :    BNE    $03
+CC5B :    JMP  $CC62
+CC5E :    LDX   #$3F
+CC60 :    STX    $00
+CC62 :    NOP 
+CC63 :    SEC 
+CC64 :    LDY   #$69
+CC66 :    LDA   #$96
+CC68 :    BIT    $01
+CC6A :    LDX   #$FF
+CC6C :    INX 
+CC6D :    BNE    $3D
+CC6F :    BMI    $3B
+CC71 :    BCC    $39
+CC73 :    BVC    $37
+CC75 :    CPX   #$00
+CC77 :    BNE    $33
+CC79 :    INX 
+CC7A :    BEQ    $30
+CC7C :    BMI    $2E
+CC7E :    BCC    $2C
+CC80 :    BVC    $2A
+CC82 :    CLC 
+CC83 :    CLV 
+CC84 :    LDX   #$00
+CC86 :    DEX 
+CC87 :    BEQ    $23
+CC89 :    BPL    $21
+CC8B :    BCS    $1F
+CC8D :    BVS    $1D
+CC8F :    CPX   #$FF
+CC91 :    BNE    $19
+CC93 :    CLC 
+CC94 :    DEX 
+CC95 :    BEQ    $15
+CC97 :    BPL    $13
+CC99 :    BCS    $11
+CC9B :    BVS    $0F
+CC9D :    CPX   #$FE
+CC9F :    BNE    $0B
+CCA1 :    CMP   #$96
+CCA3 :    BNE    $07
+CCA5 :    CPY   #$69
+CCA7 :    BNE    $03
+CCA9 :    JMP  $CCB0
+CCAC :    LDX   #$40
+CCAE :    STX    $00
+CCB0 :    NOP 
+CCB1 :    LDA   #$85
+CCB3 :    LDX   #$34
+CCB5 :    LDY   #$99
+CCB7 :    CLC 
+CCB8 :    BIT    $01
+CCBA :    TAY 
+CCBB :    BEQ    $2E
+CCBD :    BCS    $2C
+CCBF :    BVC    $2A
+CCC1 :    BPL    $28
+CCC3 :    CMP   #$85
+CCC5 :    BNE    $24
+CCC7 :    CPX   #$34
+CCC9 :    BNE    $20
+CCCB :    CPY   #$85
+CCCD :    BNE    $1C
+CCCF :    LDA   #$00
+CCD1 :    SEC 
+CCD2 :    CLV 
+CCD3 :    TAY 
+CCD4 :    BNE    $15
+CCD6 :    BCC    $13
+CCD8 :    BVS    $11
+CCDA :    BMI    $0F
+CCDC :    CMP   #$00
+CCDE :    BNE    $0B
+CCE0 :    CPX   #$34
+CCE2 :    BNE    $07
+CCE4 :    CPY   #$00
+CCE6 :    BNE    $03
+CCE8 :    JMP  $CCEF
+CCEB :    LDX   #$41
+CCED :    STX    $00
+CCEF :    NOP 
+CCF0 :    LDA   #$85
+CCF2 :    LDX   #$34
+CCF4 :    LDY   #$99
+CCF6 :    CLC 
+CCF7 :    BIT    $01
+CCF9 :    TAX 
+CCFA :    BEQ    $2E
+CCFC :    BCS    $2C
+CCFE :    BVC    $2A
+CD00 :    BPL    $28
+CD02 :    CMP   #$85
+CD04 :    BNE    $24
+CD06 :    CPX   #$85
+CD08 :    BNE    $20
+CD0A :    CPY   #$99
+CD0C :    BNE    $1C
+CD0E :    LDA   #$00
+CD10 :    SEC 
+CD11 :    CLV 
+CD12 :    TAX 
+CD13 :    BNE    $15
+CD15 :    BCC    $13
+CD17 :    BVS    $11
+CD19 :    BMI    $0F
+CD1B :    CMP   #$00
+CD1D :    BNE    $0B
+CD1F :    CPX   #$00
+CD21 :    BNE    $07
+CD23 :    CPY   #$99
+CD25 :    BNE    $03
+CD27 :    JMP  $CD2E
+CD2A :    LDX   #$42
+CD2C :    STX    $00
+CD2E :    NOP 
+CD2F :    LDA   #$85
+CD31 :    LDX   #$34
+CD33 :    LDY   #$99
+CD35 :    CLC 
+CD36 :    BIT    $01
+CD38 :    TYA 
+CD39 :    BEQ    $2E
+CD3B :    BCS    $2C
+CD3D :    BVC    $2A
+CD3F :    BPL    $28
+CD41 :    CMP   #$99
+CD43 :    BNE    $24
+CD45 :    CPX   #$34
+CD47 :    BNE    $20
+CD49 :    CPY   #$99
+CD4B :    BNE    $1C
+CD4D :    LDY   #$00
+CD4F :    SEC 
+CD50 :    CLV 
+CD51 :    TYA 
+CD52 :    BNE    $15
+CD54 :    BCC    $13
+CD56 :    BVS    $11
+CD58 :    BMI    $0F
+CD5A :    CMP   #$00
+CD5C :    BNE    $0B
+CD5E :    CPX   #$34
+CD60 :    BNE    $07
+CD62 :    CPY   #$00
+CD64 :    BNE    $03
+CD66 :    JMP  $CD6D
+CD69 :    LDX   #$43
+CD6B :    STX    $00
+CD6D :    NOP 
+CD6E :    LDA   #$85
+CD70 :    LDX   #$34
+CD72 :    LDY   #$99
+CD74 :    CLC 
+CD75 :    BIT    $01
+CD77 :    TXA 
+CD78 :    BEQ    $2E
+CD7A :    BCS    $2C
+CD7C :    BVC    $2A
+CD7E :    BMI    $28
+CD80 :    CMP   #$34
+CD82 :    BNE    $24
+CD84 :    CPX   #$34
+CD86 :    BNE    $20
+CD88 :    CPY   #$99
+CD8A :    BNE    $1C
+CD8C :    LDX   #$00
+CD8E :    SEC 
+CD8F :    CLV 
+CD90 :    TXA 
+CD91 :    BNE    $15
+CD93 :    BCC    $13
+CD95 :    BVS    $11
+CD97 :    BMI    $0F
+CD99 :    CMP   #$00
+CD9B :    BNE    $0B
+CD9D :    CPX   #$00
+CD9F :    BNE    $07
+CDA1 :    CPY   #$99
+CDA3 :    BNE    $03
+CDA5 :    JMP  $CDAC
+CDA8 :    LDX   #$44
+CDAA :    STX    $00
+CDAC :    NOP 
+CDAD :    TSX 
+CDAE :    STX  $07FF
+CDB1 :    LDY   #$33
+CDB3 :    LDX   #$69
+CDB5 :    LDA   #$84
+CDB7 :    CLC 
+CDB8 :    BIT    $01
+CDBA :    TXS 
+CDBB :    BEQ    $32
+CDBD :    BPL    $30
+CDBF :    BCS    $2E
+CDC1 :    BVC    $2C
+CDC3 :    CMP   #$84
+CDC5 :    BNE    $28
+CDC7 :    CPX   #$69
+CDC9 :    BNE    $24
+CDCB :    CPY   #$33
+CDCD :    BNE    $20
+CDCF :    LDY   #$01
+CDD1 :    LDA   #$04
+CDD3 :    SEC 
+CDD4 :    CLV 
+CDD5 :    LDX   #$00
+CDD7 :    TSX 
+CDD8 :    BEQ    $15
+CDDA :    BMI    $13
+CDDC :    BCC    $11
+CDDE :    BVS    $0F
+CDE0 :    CPX   #$69
+CDE2 :    BNE    $0B
+CDE4 :    CMP   #$04
+CDE6 :    BNE    $07
+CDE8 :    CPY   #$01
+CDEA :    BNE    $03
+CDEC :    JMP  $CDF3
+CDEF :    LDX   #$45
+CDF1 :    STX    $00
+CDF3 :    LDX  $07FF
+CDF6 :    TXS 
+CDF7 :    RTS 
+CDF8 :    LDA   #$FF
+CDFA :    STA    $01
+CDFC :    TSX 
+CDFD :    STX  $07FF
+CE00 :    NOP 
+CE01 :    LDX   #$80
+CE03 :    TXS 
+CE04 :    LDA   #$33
+CE06 :    PHA 
+CE07 :    LDA   #$69
+CE09 :    PHA 
+CE0A :    TSX 
+CE0B :    CPX   #$7E
+CE0D :    BNE    $20
+CE0F :    PLA 
+CE10 :    CMP   #$69
+CE12 :    BNE    $1B
+CE14 :    PLA 
+CE15 :    CMP   #$33
+CE17 :    BNE    $16
+CE19 :    TSX 
+CE1A :    CPX   #$80
+CE1C :    BNE    $11
+CE1E :    LDA  $0180
+CE21 :    CMP   #$33
+CE23 :    BNE    $0A
+CE25 :    LDA  $017F
+CE28 :    CMP   #$69
+CE2A :    BNE    $03
+CE2C :    JMP  $CE33
+CE2F :    LDX   #$46
+CE31 :    STX    $00
+CE33 :    NOP 
+CE34 :    LDX   #$80
+CE36 :    TXS 
+CE37 :    JSR  $CE3D
+CE3A :    JMP  $CE5B
+CE3D :    TSX 
+CE3E :    CPX   #$7E
+CE40 :    BNE    $19
+CE42 :    PLA 
+CE43 :    PLA 
+CE44 :    TSX 
+CE45 :    CPX   #$80
+CE47 :    BNE    $12
+CE49 :    LDA   #$00
+CE4B :    JSR  $CE4E
+CE4E :    PLA 
+CE4F :    CMP   #$4D
+CE51 :    BNE    $08
+CE53 :    PLA 
+CE54 :    CMP   #$CE
+CE56 :    BNE    $03
+CE58 :    JMP  $CE5F
+CE5B :    LDX   #$47
+CE5D :    STX    $00
+CE5F :    NOP 
+CE60 :    LDA   #$CE
+CE62 :    PHA 
+CE63 :    LDA   #$66
+CE65 :    PHA 
+CE66 :    RTS 
+CE67 :    LDX   #$77
+CE69 :    LDY   #$69
+CE6B :    CLC 
+CE6C :    BIT    $01
+CE6E :    LDA   #$83
+CE70 :    JSR  $CE66
+CE73 :    BEQ    $24
+CE75 :    BPL    $22
+CE77 :    BCS    $20
+CE79 :    BVC    $1E
+CE7B :    CMP   #$83
+CE7D :    BNE    $1A
+CE7F :    CPY   #$69
+CE81 :    BNE    $16
+CE83 :    CPX   #$77
+CE85 :    BNE    $12
+CE87 :    SEC 
+CE88 :    CLV 
+CE89 :    LDA   #$00
+CE8B :    JSR  $CE66
+CE8E :    BNE    $09
+CE90 :    BMI    $07
+CE92 :    BCC    $05
+CE94 :    BVS    $03
+CE96 :    JMP  $CE9D
+CE99 :    LDX   #$48
+CE9B :    STX    $00
+CE9D :    NOP 
+CE9E :    LDA   #$CE
+CEA0 :    PHA 
+CEA1 :    LDA   #$AE
+CEA3 :    PHA 
+CEA4 :    LDA   #$65
+CEA6 :    PHA 
+CEA7 :    LDA   #$55
+CEA9 :    LDY   #$88
+CEAB :    LDX   #$99
+CEAD :    RTI 
+CEAE :    BMI    $35
+CEB0 :    BVC    $33
+CEB2 :    BEQ    $31
+CEB4 :    BCC    $2F
+CEB6 :    CMP   #$55
+CEB8 :    BNE    $2B
+CEBA :    CPY   #$88
+CEBC :    BNE    $27
+CEBE :    CPX   #$99
+CEC0 :    BNE    $23
+CEC2 :    LDA   #$CE
+CEC4 :    PHA 
+CEC5 :    LDA   #$CE
+CEC7 :    PHA 
+CEC8 :    LDA   #$87
+CECA :    PHA 
+CECB :    LDA   #$55
+CECD :    RTI 
+CECE :    BPL    $15
+CED0 :    BVS    $13
+CED2 :    BNE    $11
+CED4 :    BCC    $0F
+CED6 :    CMP   #$55
+CED8 :    BNE    $0B
+CEDA :    CPY   #$88
+CEDC :    BNE    $07
+CEDE :    CPX   #$99
+CEE0 :    BNE    $03
+CEE2 :    JMP  $CEE9
+CEE5 :    LDX   #$49
+CEE7 :    STX    $00
+CEE9 :    LDX  $07FF
+CEEC :    TXS 
+CEED :    RTS 
+CEEE :    LDX   #$55
+CEF0 :    LDY   #$69
+CEF2 :    LDA   #$FF
+CEF4 :    STA    $01
+CEF6 :    NOP 
+CEF7 :    BIT    $01
+CEF9 :    SEC 
+CEFA :    LDA   #$01
+CEFC :    LSR 
+CEFD :    BCC    $1D
+CEFF :    BNE    $1B
+CF01 :    BMI    $19
+CF03 :    BVC    $17
+CF05 :    CMP   #$00
+CF07 :    BNE    $13
+CF09 :    CLV 
+CF0A :    LDA   #$AA
+CF0C :    LSR 
+CF0D :    BCS    $0D
+CF0F :    BEQ    $0B
+CF11 :    BMI    $09
+CF13 :    BVS    $07
+CF15 :    CMP   #$55
+CF17 :    BNE    $03
+CF19 :    JMP  $CF20
+CF1C :    LDX   #$4A
+CF1E :    STX    $00
+CF20 :    NOP 
+CF21 :    BIT    $01
+CF23 :    SEC 
+CF24 :    LDA   #$80
+CF26 :    ASL 
+CF27 :    BCC    $1E
+CF29 :    BNE    $1C
+CF2B :    BMI    $1A
+CF2D :    BVC    $18
+CF2F :    CMP   #$00
+CF31 :    BNE    $14
+CF33 :    CLV 
+CF34 :    SEC 
+CF35 :    LDA   #$55
+CF37 :    ASL 
+CF38 :    BCS    $0D
+CF3A :    BEQ    $0B
+CF3C :    BPL    $09
+CF3E :    BVS    $07
+CF40 :    CMP   #$AA
+CF42 :    BNE    $03
+CF44 :    JMP  $CF4B
+CF47 :    LDX   #$4B
+CF49 :    STX    $00
+CF4B :    NOP 
+CF4C :    BIT    $01
+CF4E :    SEC 
+CF4F :    LDA   #$01
+CF51 :    ROR 
+CF52 :    BCC    $1E
+CF54 :    BEQ    $1C
+CF56 :    BPL    $1A
+CF58 :    BVC    $18
+CF5A :    CMP   #$80
+CF5C :    BNE    $14
+CF5E :    CLV 
+CF5F :    CLC 
+CF60 :    LDA   #$55
+CF62 :    ROR 
+CF63 :    BCC    $0D
+CF65 :    BEQ    $0B
+CF67 :    BMI    $09
+CF69 :    BVS    $07
+CF6B :    CMP   #$2A
+CF6D :    BNE    $03
+CF6F :    JMP  $CF76
+CF72 :    LDX   #$4C
+CF74 :    STX    $00
+CF76 :    NOP 
+CF77 :    BIT    $01
+CF79 :    SEC 
+CF7A :    LDA   #$80
+CF7C :    ROL 
+CF7D :    BCC    $1E
+CF7F :    BEQ    $1C
+CF81 :    BMI    $1A
+CF83 :    BVC    $18
+CF85 :    CMP   #$01
+CF87 :    BNE    $14
+CF89 :    CLV 
+CF8A :    CLC 
+CF8B :    LDA   #$55
+CF8D :    ROL 
+CF8E :    BCS    $0D
+CF90 :    BEQ    $0B
+CF92 :    BPL    $09
+CF94 :    BVS    $07
+CF96 :    CMP   #$AA
+CF98 :    BNE    $03
+CF9A :    JMP  $CFA1
+CF9D :    LDX   #$4D
+CF9F :    STX    $00
+CFA1 :    RTS 
+CFA2 :    LDA    $00
+CFA4 :    STA  $07FF
+CFA7 :    LDA   #$00
+CFA9 :    STA    $80
+CFAB :    LDA   #$02
+CFAD :    STA    $81
+CFAF :    LDA   #$FF
+CFB1 :    STA    $01
+CFB3 :    LDA   #$00
+CFB5 :    STA    $82
+CFB7 :    LDA   #$03
+CFB9 :    STA    $83
+CFBB :    STA    $84
+CFBD :    LDA   #$00
+CFBF :    STA    $FF
+CFC1 :    LDA   #$04
+CFC3 :    STA    $00
+CFC5 :    LDA   #$5A
+CFC7 :    STA  $0200
+CFCA :    LDA   #$5B
+CFCC :    STA  $0300
+CFCF :    LDA   #$5C
+CFD1 :    STA  $0303
+CFD4 :    LDA   #$5D
+CFD6 :    STA  $0400
+CFD9 :    LDX   #$00
+CFDB :    LDA   ($80 , X)
+CFDD :    CMP   #$5A
+CFDF :    BNE    $1F
+CFE1 :    INX 
+CFE2 :    INX 
+CFE3 :    LDA   ($80 , X)
+CFE5 :    CMP   #$5B
+CFE7 :    BNE    $17
+CFE9 :    INX 
+CFEA :    LDA   ($80 , X)
+CFEC :    CMP   #$5C
+CFEE :    BNE    $10
+CFF0 :    LDX   #$00
+CFF2 :    LDA   ($FF , X)
+CFF4 :    CMP   #$5D
+CFF6 :    BNE    $08
+CFF8 :    LDX   #$81
+CFFA :    LDA   ($FF , X)
+CFFC :    CMP   #$5A
+CFFE :    BEQ    $05
+D000 :    LDA   #$58
+D002 :    STA  $07FF
+D005 :    LDA   #$AA
+D007 :    LDX   #$00
+D009 :    STA   ($80 , X)
+D00B :    INX 
+D00C :    INX 
+D00D :    LDA   #$AB
+D00F :    STA   ($80 , X)
+D011 :    INX 
+D012 :    LDA   #$AC
+D014 :    STA   ($80 , X)
+D016 :    LDX   #$00
+D018 :    LDA   #$AD
+D01A :    STA   ($FF , X)
+D01C :    LDA  $0200
+D01F :    CMP   #$AA
+D021 :    BNE    $15
+D023 :    LDA  $0300
+D026 :    CMP   #$AB
+D028 :    BNE    $0E
+D02A :    LDA  $0303
+D02D :    CMP   #$AC
+D02F :    BNE    $07
+D031 :    LDA  $0400
+D034 :    CMP   #$AD
+D036 :    BEQ    $05
+D038 :    LDA   #$59
+D03A :    STA  $07FF
+D03D :    LDA  $07FF
+D040 :    STA    $00
+D042 :    LDA   #$00
+D044 :    STA  $0300
+D047 :    LDA   #$AA
+D049 :    STA  $0200
+D04C :    LDX   #$00
+D04E :    LDY   #$5A
+D050 :    JSR  $F7B6
+D053 :    ORA   ($80 , X)
+D055 :    JSR  $F7C0
+D058 :    INY 
+D059 :    JSR  $F7CE
+D05C :    ORA   ($82 , X)
+D05E :    JSR  $F7D3
+D061 :    INY 
+D062 :    JSR  $F7DF
+D065 :    AND   ($80 , X)
+D067 :    JSR  $F7E5
+D06A :    INY 
+D06B :    LDA   #$EF
+D06D :    STA  $0300
+D070 :    JSR  $F7F1
+D073 :    AND   ($82 , X)
+D075 :    JSR  $F7F6
+D078 :    INY 
+D079 :    JSR  $F804
+D07C :    EOR   ($80 , X)
+D07E :    JSR  $F80A
+D081 :    INY 
+D082 :    LDA   #$70
+D084 :    STA  $0300
+D087 :    JSR  $F818
+D08A :    EOR   ($82 , X)
+D08C :    JSR  $F81D
+D08F :    INY 
+D090 :    LDA   #$69
+D092 :    STA  $0200
+D095 :    JSR  $F829
+D098 :    ADC   ($80 , X)
+D09A :    JSR  $F82F
+D09D :    INY 
+D09E :    JSR  $F83D
+D0A1 :    ADC   ($80 , X)
+D0A3 :    JSR  $F843
+D0A6 :    INY 
+D0A7 :    LDA   #$7F
+D0A9 :    STA  $0200
+D0AC :    JSR  $F851
+D0AF :    ADC   ($80 , X)
+D0B1 :    JSR  $F856
+D0B4 :    INY 
+D0B5 :    LDA   #$80
+D0B7 :    STA  $0200
+D0BA :    JSR  $F864
+D0BD :    ADC   ($80 , X)
+D0BF :    JSR  $F86A
+D0C2 :    INY 
+D0C3 :    JSR  $F878
+D0C6 :    ADC   ($80 , X)
+D0C8 :    JSR  $F87D
+D0CB :    INY 
+D0CC :    LDA   #$40
+D0CE :    STA  $0200
+D0D1 :    JSR  $F889
+D0D4 :    CMP   ($80 , X)
+D0D6 :    JSR  $F88E
+D0D9 :    INY 
+D0DA :    PHA 
+D0DB :    LDA   #$3F
+D0DD :    STA  $0200
+D0E0 :    PLA 
+D0E1 :    JSR  $F89A
+D0E4 :    CMP   ($80 , X)
+D0E6 :    JSR  $F89C
+D0E9 :    INY 
+D0EA :    PHA 
+D0EB :    LDA   #$41
+D0ED :    STA  $0200
+D0F0 :    PLA 
+D0F1 :    CMP   ($80 , X)
+D0F3 :    JSR  $F8A8
+D0F6 :    INY 
+D0F7 :    PHA 
+D0F8 :    LDA   #$00
+D0FA :    STA  $0200
+D0FD :    PLA 
+D0FE :    JSR  $F8B2
+D101 :    CMP   ($80 , X)
+D103 :    JSR  $F8B5
+D106 :    INY 
+D107 :    PHA 
+D108 :    LDA   #$80
+D10A :    STA  $0200
+D10D :    PLA 
+D10E :    CMP   ($80 , X)
+D110 :    JSR  $F8BF
+D113 :    INY 
+D114 :    PHA 
+D115 :    LDA   #$81
+D117 :    STA  $0200
+D11A :    PLA 
+D11B :    CMP   ($80 , X)
+D11D :    JSR  $F8C9
+D120 :    INY 
+D121 :    PHA 
+D122 :    LDA   #$7F
+D124 :    STA  $0200
+D127 :    PLA 
+D128 :    CMP   ($80 , X)
+D12A :    JSR  $F8D3
+D12D :    INY 
+D12E :    LDA   #$40
+D130 :    STA  $0200
+D133 :    JSR  $F931
+D136 :    SBC   ($80 , X)
+D138 :    JSR  $F937
+D13B :    INY 
+D13C :    LDA   #$3F
+D13E :    STA  $0200
+D141 :    JSR  $F947
+D144 :    SBC   ($80 , X)
+D146 :    JSR  $F94C
+D149 :    INY 
+D14A :    LDA   #$41
+D14C :    STA  $0200
+D14F :    JSR  $F95C
+D152 :    SBC   ($80 , X)
+D154 :    JSR  $F962
+D157 :    INY 
+D158 :    LDA   #$00
+D15A :    STA  $0200
+D15D :    JSR  $F972
+D160 :    SBC   ($80 , X)
+D162 :    JSR  $F976
+D165 :    INY 
+D166 :    LDA   #$7F
+D168 :    STA  $0200
+D16B :    JSR  $F980
+D16E :    SBC   ($80 , X)
+D170 :    JSR  $F984
+D173 :    RTS 
+D174 :    LDA   #$55
+D176 :    STA    $78
+D178 :    LDA   #$FF
+D17A :    STA    $01
+D17C :    BIT    $01
+D17E :    LDY   #$11
+D180 :    LDX   #$23
+D182 :    LDA   #$00
+D184 :    LDA    $78
+D186 :    BEQ    $10
+D188 :    BMI    $0E
+D18A :    CMP   #$55
+D18C :    BNE    $0A
+D18E :    CPY   #$11
+D190 :    BNE    $06
+D192 :    CPX   #$23
+D194 :    BVC    $02
+D196 :    BEQ    $04
+D198 :    LDA   #$76
+D19A :    STA    $00
+D19C :    LDA   #$46
+D19E :    BIT    $01
+D1A0 :    STA    $78
+D1A2 :    BEQ    $0A
+D1A4 :    BPL    $08
+D1A6 :    BVC    $06
+D1A8 :    LDA    $78
+D1AA :    CMP   #$46
+D1AC :    BEQ    $04
+D1AE :    LDA   #$77
+D1B0 :    STA    $00
+D1B2 :    LDA   #$55
+D1B4 :    STA    $78
+D1B6 :    BIT    $01
+D1B8 :    LDA   #$11
+D1BA :    LDX   #$23
+D1BC :    LDY   #$00
+D1BE :    LDY    $78
+D1C0 :    BEQ    $10
+D1C2 :    BMI    $0E
+D1C4 :    CPY   #$55
+D1C6 :    BNE    $0A
+D1C8 :    CMP   #$11
+D1CA :    BNE    $06
+D1CC :    CPX   #$23
+D1CE :    BVC    $02
+D1D0 :    BEQ    $04
+D1D2 :    LDA   #$78
+D1D4 :    STA    $00
+D1D6 :    LDY   #$46
+D1D8 :    BIT    $01
+D1DA :    STY    $78
+D1DC :    BEQ    $0A
+D1DE :    BPL    $08
+D1E0 :    BVC    $06
+D1E2 :    LDY    $78
+D1E4 :    CPY   #$46
+D1E6 :    BEQ    $04
+D1E8 :    LDA   #$79
+D1EA :    STA    $00
+D1EC :    BIT    $01
+D1EE :    LDA   #$55
+D1F0 :    STA    $78
+D1F2 :    LDY   #$11
+D1F4 :    LDA   #$23
+D1F6 :    LDX   #$00
+D1F8 :    LDX    $78
+D1FA :    BEQ    $10
+D1FC :    BMI    $0E
+D1FE :    CPX   #$55
+D200 :    BNE    $0A
+D202 :    CPY   #$11
+D204 :    BNE    $06
+D206 :    CMP   #$23
+D208 :    BVC    $02
+D20A :    BEQ    $04
+D20C :    LDA   #$7A
+D20E :    STA    $00
+D210 :    LDX   #$46
+D212 :    BIT    $01
+D214 :    STX    $78
+D216 :    BEQ    $0A
+D218 :    BPL    $08
+D21A :    BVC    $06
+D21C :    LDX    $78
+D21E :    CPX   #$46
+D220 :    BEQ    $04
+D222 :    LDA   #$7B
+D224 :    STA    $00
+D226 :    LDA   #$C0
+D228 :    STA    $78
+D22A :    LDX   #$33
+D22C :    LDY   #$88
+D22E :    LDA   #$05
+D230 :    BIT    $78
+D232 :    BPL    $10
+D234 :    BVC    $0E
+D236 :    BNE    $0C
+D238 :    CMP   #$05
+D23A :    BNE    $08
+D23C :    CPX   #$33
+D23E :    BNE    $04
+D240 :    CPY   #$88
+D242 :    BEQ    $04
+D244 :    LDA   #$7C
+D246 :    STA    $00
+D248 :    LDA   #$03
+D24A :    STA    $78
+D24C :    LDA   #$01
+D24E :    BIT    $78
+D250 :    BMI    $08
+D252 :    BVS    $06
+D254 :    BEQ    $04
+D256 :    CMP   #$01
+D258 :    BEQ    $04
+D25A :    LDA   #$7D
+D25C :    STA    $00
+D25E :    LDY   #$7E
+D260 :    LDA   #$AA
+D262 :    STA    $78
+D264 :    JSR  $F7B6
+D267 :    ORA    $78
+D269 :    JSR  $F7C0
+D26C :    INY 
+D26D :    LDA   #$00
+D26F :    STA    $78
+D271 :    JSR  $F7CE
+D274 :    ORA    $78
+D276 :    JSR  $F7D3
+D279 :    INY 
+D27A :    LDA   #$AA
+D27C :    STA    $78
+D27E :    JSR  $F7DF
+D281 :    AND    $78
+D283 :    JSR  $F7E5
+D286 :    INY 
+D287 :    LDA   #$EF
+D289 :    STA    $78
+D28B :    JSR  $F7F1
+D28E :    AND    $78
+D290 :    JSR  $F7F6
+D293 :    INY 
+D294 :    LDA   #$AA
+D296 :    STA    $78
+D298 :    JSR  $F804
+D29B :    EOR    $78
+D29D :    JSR  $F80A
+D2A0 :    INY 
+D2A1 :    LDA   #$70
+D2A3 :    STA    $78
+D2A5 :    JSR  $F818
+D2A8 :    EOR    $78
+D2AA :    JSR  $F81D
+D2AD :    INY 
+D2AE :    LDA   #$69
+D2B0 :    STA    $78
+D2B2 :    JSR  $F829
+D2B5 :    ADC    $78
+D2B7 :    JSR  $F82F
+D2BA :    INY 
+D2BB :    JSR  $F83D
+D2BE :    ADC    $78
+D2C0 :    JSR  $F843
+D2C3 :    INY 
+D2C4 :    LDA   #$7F
+D2C6 :    STA    $78
+D2C8 :    JSR  $F851
+D2CB :    ADC    $78
+D2CD :    JSR  $F856
+D2D0 :    INY 
+D2D1 :    LDA   #$80
+D2D3 :    STA    $78
+D2D5 :    JSR  $F864
+D2D8 :    ADC    $78
+D2DA :    JSR  $F86A
+D2DD :    INY 
+D2DE :    JSR  $F878
+D2E1 :    ADC    $78
+D2E3 :    JSR  $F87D
+D2E6 :    INY 
+D2E7 :    LDA   #$40
+D2E9 :    STA    $78
+D2EB :    JSR  $F889
+D2EE :    CMP    $78
+D2F0 :    JSR  $F88E
+D2F3 :    INY 
+D2F4 :    PHA 
+D2F5 :    LDA   #$3F
+D2F7 :    STA    $78
+D2F9 :    PLA 
+D2FA :    JSR  $F89A
+D2FD :    CMP    $78
+D2FF :    JSR  $F89C
+D302 :    INY 
+D303 :    PHA 
+D304 :    LDA   #$41
+D306 :    STA    $78
+D308 :    PLA 
+D309 :    CMP    $78
+D30B :    JSR  $F8A8
+D30E :    INY 
+D30F :    PHA 
+D310 :    LDA   #$00
+D312 :    STA    $78
+D314 :    PLA 
+D315 :    JSR  $F8B2
+D318 :    CMP    $78
+D31A :    JSR  $F8B5
+D31D :    INY 
+D31E :    PHA 
+D31F :    LDA   #$80
+D321 :    STA    $78
+D323 :    PLA 
+D324 :    CMP    $78
+D326 :    JSR  $F8BF
+D329 :    INY 
+D32A :    PHA 
+D32B :    LDA   #$81
+D32D :    STA    $78
+D32F :    PLA 
+D330 :    CMP    $78
+D332 :    JSR  $F8C9
+D335 :    INY 
+D336 :    PHA 
+D337 :    LDA   #$7F
+D339 :    STA    $78
+D33B :    PLA 
+D33C :    CMP    $78
+D33E :    JSR  $F8D3
+D341 :    INY 
+D342 :    LDA   #$40
+D344 :    STA    $78
+D346 :    JSR  $F931
+D349 :    SBC    $78
+D34B :    JSR  $F937
+D34E :    INY 
+D34F :    LDA   #$3F
+D351 :    STA    $78
+D353 :    JSR  $F947
+D356 :    SBC    $78
+D358 :    JSR  $F94C
+D35B :    INY 
+D35C :    LDA   #$41
+D35E :    STA    $78
+D360 :    JSR  $F95C
+D363 :    SBC    $78
+D365 :    JSR  $F962
+D368 :    INY 
+D369 :    LDA   #$00
+D36B :    STA    $78
+D36D :    JSR  $F972
+D370 :    SBC    $78
+D372 :    JSR  $F976
+D375 :    INY 
+D376 :    LDA   #$7F
+D378 :    STA    $78
+D37A :    JSR  $F980
+D37D :    SBC    $78
+D37F :    JSR  $F984
+D382 :    INY 
+D383 :    LDA   #$40
+D385 :    STA    $78
+D387 :    JSR  $F889
+D38A :    TAX 
+D38B :    CPX    $78
+D38D :    JSR  $F88E
+D390 :    INY 
+D391 :    LDA   #$3F
+D393 :    STA    $78
+D395 :    JSR  $F89A
+D398 :    CPX    $78
+D39A :    JSR  $F89C
+D39D :    INY 
+D39E :    LDA   #$41
+D3A0 :    STA    $78
+D3A2 :    CPX    $78
+D3A4 :    JSR  $F8A8
+D3A7 :    INY 
+D3A8 :    LDA   #$00
+D3AA :    STA    $78
+D3AC :    JSR  $F8B2
+D3AF :    TAX 
+D3B0 :    CPX    $78
+D3B2 :    JSR  $F8B5
+D3B5 :    INY 
+D3B6 :    LDA   #$80
+D3B8 :    STA    $78
+D3BA :    CPX    $78
+D3BC :    JSR  $F8BF
+D3BF :    INY 
+D3C0 :    LDA   #$81
+D3C2 :    STA    $78
+D3C4 :    CPX    $78
+D3C6 :    JSR  $F8C9
+D3C9 :    INY 
+D3CA :    LDA   #$7F
+D3CC :    STA    $78
+D3CE :    CPX    $78
+D3D0 :    JSR  $F8D3
+D3D3 :    INY 
+D3D4 :    TYA 
+D3D5 :    TAX 
+D3D6 :    LDA   #$40
+D3D8 :    STA    $78
+D3DA :    JSR  $F8DD
+D3DD :    CPY    $78
+D3DF :    JSR  $F8E2
+D3E2 :    INX 
+D3E3 :    LDA   #$3F
+D3E5 :    STA    $78
+D3E7 :    JSR  $F8EE
+D3EA :    CPY    $78
+D3EC :    JSR  $F8F0
+D3EF :    INX 
+D3F0 :    LDA   #$41
+D3F2 :    STA    $78
+D3F4 :    CPY    $78
+D3F6 :    JSR  $F8FC
+D3F9 :    INX 
+D3FA :    LDA   #$00
+D3FC :    STA    $78
+D3FE :    JSR  $F906
+D401 :    CPY    $78
+D403 :    JSR  $F909
+D406 :    INX 
+D407 :    LDA   #$80
+D409 :    STA    $78
+D40B :    CPY    $78
+D40D :    JSR  $F913
+D410 :    INX 
+D411 :    LDA   #$81
+D413 :    STA    $78
+D415 :    CPY    $78
+D417 :    JSR  $F91D
+D41A :    INX 
+D41B :    LDA   #$7F
+D41D :    STA    $78
+D41F :    CPY    $78
+D421 :    JSR  $F927
+D424 :    INX 
+D425 :    TXA 
+D426 :    TAY 
+D427 :    JSR  $F990
+D42A :    STA    $78
+D42C :    LSR    $78
+D42E :    LDA    $78
+D430 :    JSR  $F99D
+D433 :    INY 
+D434 :    STA    $78
+D436 :    LSR    $78
+D438 :    LDA    $78
+D43A :    JSR  $F9AD
+D43D :    INY 
+D43E :    JSR  $F9BD
+D441 :    STA    $78
+D443 :    ASL    $78
+D445 :    LDA    $78
+D447 :    JSR  $F9C3
+D44A :    INY 
+D44B :    STA    $78
+D44D :    ASL    $78
+D44F :    LDA    $78
+D451 :    JSR  $F9D4
+D454 :    INY 
+D455 :    JSR  $F9E4
+D458 :    STA    $78
+D45A :    ROR    $78
+D45C :    LDA    $78
+D45E :    JSR  $F9EA
+D461 :    INY 
+D462 :    STA    $78
+D464 :    ROR    $78
+D466 :    LDA    $78
+D468 :    JSR  $F9FB
+D46B :    INY 
+D46C :    JSR  $FA0A
+D46F :    STA    $78
+D471 :    RLO    $78
+D473 :    LDA    $78
+D475 :    JSR  $FA10
+D478 :    INY 
+D479 :    STA    $78
+D47B :    RLO    $78
+D47D :    LDA    $78
+D47F :    JSR  $FA21
+D482 :    LDA   #$FF
+D484 :    STA    $78
+D486 :    STA    $01
+D488 :    BIT    $01
+D48A :    SEC 
+D48B :    INC    $78
+D48D :    BNE    $0C
+D48F :    BMI    $0A
+D491 :    BVC    $08
+D493 :    BCC    $06
+D495 :    LDA    $78
+D497 :    CMP   #$00
+D499 :    BEQ    $04
+D49B :    LDA   #$AB
+D49D :    STA    $00
+D49F :    LDA   #$7F
+D4A1 :    STA    $78
+D4A3 :    CLV 
+D4A4 :    CLC 
+D4A5 :    INC    $78
+D4A7 :    BEQ    $0C
+D4A9 :    BPL    $0A
+D4AB :    BVS    $08
+D4AD :    BCS    $06
+D4AF :    LDA    $78
+D4B1 :    CMP   #$80
+D4B3 :    BEQ    $04
+D4B5 :    LDA   #$AC
+D4B7 :    STA    $00
+D4B9 :    LDA   #$00
+D4BB :    STA    $78
+D4BD :    BIT    $01
+D4BF :    SEC 
+D4C0 :    DEC    $78
+D4C2 :    BEQ    $0C
+D4C4 :    BPL    $0A
+D4C6 :    BVC    $08
+D4C8 :    BCC    $06
+D4CA :    LDA    $78
+D4CC :    CMP   #$FF
+D4CE :    BEQ    $04
+D4D0 :    LDA   #$AD
+D4D2 :    STA    $00
+D4D4 :    LDA   #$80
+D4D6 :    STA    $78
+D4D8 :    CLV 
+D4D9 :    CLC 
+D4DA :    DEC    $78
+D4DC :    BEQ    $0C
+D4DE :    BMI    $0A
+D4E0 :    BVS    $08
+D4E2 :    BCS    $06
+D4E4 :    LDA    $78
+D4E6 :    CMP   #$7F
+D4E8 :    BEQ    $04
+D4EA :    LDA   #$AE
+D4EC :    STA    $00
+D4EE :    LDA   #$01
+D4F0 :    STA    $78
+D4F2 :    DEC    $78
+D4F4 :    BEQ    $04
+D4F6 :    LDA   #$AF
+D4F8 :    STA    $00
+D4FA :    RTS 
+D4FB :    LDA   #$55
+D4FD :    STA  $0678
+D500 :    LDA   #$FF
+D502 :    STA    $01
+D504 :    BIT    $01
+D506 :    LDY   #$11
+D508 :    LDX   #$23
+D50A :    LDA   #$00
+D50C :    LDA  $0678
+D50F :    BEQ    $10
+D511 :    BMI    $0E
+D513 :    CMP   #$55
+D515 :    BNE    $0A
+D517 :    CPY   #$11
+D519 :    BNE    $06
+D51B :    CPX   #$23
+D51D :    BVC    $02
+D51F :    BEQ    $04
+D521 :    LDA   #$B0
+D523 :    STA    $00
+D525 :    LDA   #$46
+D527 :    BIT    $01
+D529 :    STA  $0678
+D52C :    BEQ    $0B
+D52E :    BPL    $09
+D530 :    BVC    $07
+D532 :    LDA  $0678
+D535 :    CMP   #$46
+D537 :    BEQ    $04
+D539 :    LDA   #$B1
+D53B :    STA    $00
+D53D :    LDA   #$55
+D53F :    STA  $0678
+D542 :    BIT    $01
+D544 :    LDA   #$11
+D546 :    LDX   #$23
+D548 :    LDY   #$00
+D54A :    LDY  $0678
+D54D :    BEQ    $10
+D54F :    BMI    $0E
+D551 :    CPY   #$55
+D553 :    BNE    $0A
+D555 :    CMP   #$11
+D557 :    BNE    $06
+D559 :    CPX   #$23
+D55B :    BVC    $02
+D55D :    BEQ    $04
+D55F :    LDA   #$B2
+D561 :    STA    $00
+D563 :    LDY   #$46
+D565 :    BIT    $01
+D567 :    STY  $0678
+D56A :    BEQ    $0B
+D56C :    BPL    $09
+D56E :    BVC    $07
+D570 :    LDY  $0678
+D573 :    CPY   #$46
+D575 :    BEQ    $04
+D577 :    LDA   #$B3
+D579 :    STA    $00
+D57B :    BIT    $01
+D57D :    LDA   #$55
+D57F :    STA  $0678
+D582 :    LDY   #$11
+D584 :    LDA   #$23
+D586 :    LDX   #$00
+D588 :    LDX  $0678
+D58B :    BEQ    $10
+D58D :    BMI    $0E
+D58F :    CPX   #$55
+D591 :    BNE    $0A
+D593 :    CPY   #$11
+D595 :    BNE    $06
+D597 :    CMP   #$23
+D599 :    BVC    $02
+D59B :    BEQ    $04
+D59D :    LDA   #$B4
+D59F :    STA    $00
+D5A1 :    LDX   #$46
+D5A3 :    BIT    $01
+D5A5 :    STX  $0678
+D5A8 :    BEQ    $0B
+D5AA :    BPL    $09
+D5AC :    BVC    $07
+D5AE :    LDX  $0678
+D5B1 :    CPX   #$46
+D5B3 :    BEQ    $04
+D5B5 :    LDA   #$B5
+D5B7 :    STA    $00
+D5B9 :    LDA   #$C0
+D5BB :    STA  $0678
+D5BE :    LDX   #$33
+D5C0 :    LDY   #$88
+D5C2 :    LDA   #$05
+D5C4 :    BIT  $0678
+D5C7 :    BPL    $10
+D5C9 :    BVC    $0E
+D5CB :    BNE    $0C
+D5CD :    CMP   #$05
+D5CF :    BNE    $08
+D5D1 :    CPX   #$33
+D5D3 :    BNE    $04
+D5D5 :    CPY   #$88
+D5D7 :    BEQ    $04
+D5D9 :    LDA   #$B6
+D5DB :    STA    $00
+D5DD :    LDA   #$03
+D5DF :    STA  $0678
+D5E2 :    LDA   #$01
+D5E4 :    BIT  $0678
+D5E7 :    BMI    $08
+D5E9 :    BVS    $06
+D5EB :    BEQ    $04
+D5ED :    CMP   #$01
+D5EF :    BEQ    $04
+D5F1 :    LDA   #$B7
+D5F3 :    STA    $00
+D5F5 :    LDY   #$B8
+D5F7 :    LDA   #$AA
+D5F9 :    STA  $0678
+D5FC :    JSR  $F7B6
+D5FF :    ORA  $0678
+D602 :    JSR  $F7C0
+D605 :    INY 
+D606 :    LDA   #$00
+D608 :    STA  $0678
+D60B :    JSR  $F7CE
+D60E :    ORA  $0678
+D611 :    JSR  $F7D3
+D614 :    INY 
+D615 :    LDA   #$AA
+D617 :    STA  $0678
+D61A :    JSR  $F7DF
+D61D :    AND  $0678
+D620 :    JSR  $F7E5
+D623 :    INY 
+D624 :    LDA   #$EF
+D626 :    STA  $0678
+D629 :    JSR  $F7F1
+D62C :    AND  $0678
+D62F :    JSR  $F7F6
+D632 :    INY 
+D633 :    LDA   #$AA
+D635 :    STA  $0678
+D638 :    JSR  $F804
+D63B :    EOR  $0678
+D63E :    JSR  $F80A
+D641 :    INY 
+D642 :    LDA   #$70
+D644 :    STA  $0678
+D647 :    JSR  $F818
+D64A :    EOR  $0678
+D64D :    JSR  $F81D
+D650 :    INY 
+D651 :    LDA   #$69
+D653 :    STA  $0678
+D656 :    JSR  $F829
+D659 :    ADC  $0678
+D65C :    JSR  $F82F
+D65F :    INY 
+D660 :    JSR  $F83D
+D663 :    ADC  $0678
+D666 :    JSR  $F843
+D669 :    INY 
+D66A :    LDA   #$7F
+D66C :    STA  $0678
+D66F :    JSR  $F851
+D672 :    ADC  $0678
+D675 :    JSR  $F856
+D678 :    INY 
+D679 :    LDA   #$80
+D67B :    STA  $0678
+D67E :    JSR  $F864
+D681 :    ADC  $0678
+D684 :    JSR  $F86A
+D687 :    INY 
+D688 :    JSR  $F878
+D68B :    ADC  $0678
+D68E :    JSR  $F87D
+D691 :    INY 
+D692 :    LDA   #$40
+D694 :    STA  $0678
+D697 :    JSR  $F889
+D69A :    CMP  $0678
+D69D :    JSR  $F88E
+D6A0 :    INY 
+D6A1 :    PHA 
+D6A2 :    LDA   #$3F
+D6A4 :    STA  $0678
+D6A7 :    PLA 
+D6A8 :    JSR  $F89A
+D6AB :    CMP  $0678
+D6AE :    JSR  $F89C
+D6B1 :    INY 
+D6B2 :    PHA 
+D6B3 :    LDA   #$41
+D6B5 :    STA  $0678
+D6B8 :    PLA 
+D6B9 :    CMP  $0678
+D6BC :    JSR  $F8A8
+D6BF :    INY 
+D6C0 :    PHA 
+D6C1 :    LDA   #$00
+D6C3 :    STA  $0678
+D6C6 :    PLA 
+D6C7 :    JSR  $F8B2
+D6CA :    CMP  $0678
+D6CD :    JSR  $F8B5
+D6D0 :    INY 
+D6D1 :    PHA 
+D6D2 :    LDA   #$80
+D6D4 :    STA  $0678
+D6D7 :    PLA 
+D6D8 :    CMP  $0678
+D6DB :    JSR  $F8BF
+D6DE :    INY 
+D6DF :    PHA 
+D6E0 :    LDA   #$81
+D6E2 :    STA  $0678
+D6E5 :    PLA 
+D6E6 :    CMP  $0678
+D6E9 :    JSR  $F8C9
+D6EC :    INY 
+D6ED :    PHA 
+D6EE :    LDA   #$7F
+D6F0 :    STA  $0678
+D6F3 :    PLA 
+D6F4 :    CMP  $0678
+D6F7 :    JSR  $F8D3
+D6FA :    INY 
+D6FB :    LDA   #$40
+D6FD :    STA  $0678
+D700 :    JSR  $F931
+D703 :    SBC  $0678
+D706 :    JSR  $F937
+D709 :    INY 
+D70A :    LDA   #$3F
+D70C :    STA  $0678
+D70F :    JSR  $F947
+D712 :    SBC  $0678
+D715 :    JSR  $F94C
+D718 :    INY 
+D719 :    LDA   #$41
+D71B :    STA  $0678
+D71E :    JSR  $F95C
+D721 :    SBC  $0678
+D724 :    JSR  $F962
+D727 :    INY 
+D728 :    LDA   #$00
+D72A :    STA  $0678
+D72D :    JSR  $F972
+D730 :    SBC  $0678
+D733 :    JSR  $F976
+D736 :    INY 
+D737 :    LDA   #$7F
+D739 :    STA  $0678
+D73C :    JSR  $F980
+D73F :    SBC  $0678
+D742 :    JSR  $F984
+D745 :    INY 
+D746 :    LDA   #$40
+D748 :    STA  $0678
+D74B :    JSR  $F889
+D74E :    TAX 
+D74F :    CPX  $0678
+D752 :    JSR  $F88E
+D755 :    INY 
+D756 :    LDA   #$3F
+D758 :    STA  $0678
+D75B :    JSR  $F89A
+D75E :    CPX  $0678
+D761 :    JSR  $F89C
+D764 :    INY 
+D765 :    LDA   #$41
+D767 :    STA  $0678
+D76A :    CPX  $0678
+D76D :    JSR  $F8A8
+D770 :    INY 
+D771 :    LDA   #$00
+D773 :    STA  $0678
+D776 :    JSR  $F8B2
+D779 :    TAX 
+D77A :    CPX  $0678
+D77D :    JSR  $F8B5
+D780 :    INY 
+D781 :    LDA   #$80
+D783 :    STA  $0678
+D786 :    CPX  $0678
+D789 :    JSR  $F8BF
+D78C :    INY 
+D78D :    LDA   #$81
+D78F :    STA  $0678
+D792 :    CPX  $0678
+D795 :    JSR  $F8C9
+D798 :    INY 
+D799 :    LDA   #$7F
+D79B :    STA  $0678
+D79E :    CPX  $0678
+D7A1 :    JSR  $F8D3
+D7A4 :    INY 
+D7A5 :    TYA 
+D7A6 :    TAX 
+D7A7 :    LDA   #$40
+D7A9 :    STA  $0678
+D7AC :    JSR  $F8DD
+D7AF :    CPY  $0678
+D7B2 :    JSR  $F8E2
+D7B5 :    INX 
+D7B6 :    LDA   #$3F
+D7B8 :    STA  $0678
+D7BB :    JSR  $F8EE
+D7BE :    CPY  $0678
+D7C1 :    JSR  $F8F0
+D7C4 :    INX 
+D7C5 :    LDA   #$41
+D7C7 :    STA  $0678
+D7CA :    CPY  $0678
+D7CD :    JSR  $F8FC
+D7D0 :    INX 
+D7D1 :    LDA   #$00
+D7D3 :    STA  $0678
+D7D6 :    JSR  $F906
+D7D9 :    CPY  $0678
+D7DC :    JSR  $F909
+D7DF :    INX 
+D7E0 :    LDA   #$80
+D7E2 :    STA  $0678
+D7E5 :    CPY  $0678
+D7E8 :    JSR  $F913
+D7EB :    INX 
+D7EC :    LDA   #$81
+D7EE :    STA  $0678
+D7F1 :    CPY  $0678
+D7F4 :    JSR  $F91D
+D7F7 :    INX 
+D7F8 :    LDA   #$7F
+D7FA :    STA  $0678
+D7FD :    CPY  $0678
+D800 :    JSR  $F927
+D803 :    INX 
+D804 :    TXA 
+D805 :    TAY 
+D806 :    JSR  $F990
+D809 :    STA  $0678
+D80C :    LSR  $0678
+D80F :    LDA  $0678
+D812 :    JSR  $F99D
+D815 :    INY 
+D816 :    STA  $0678
+D819 :    LSR  $0678
+D81C :    LDA  $0678
+D81F :    JSR  $F9AD
+D822 :    INY 
+D823 :    JSR  $F9BD
+D826 :    STA  $0678
+D829 :    ASL  $0678
+D82C :    LDA  $0678
+D82F :    JSR  $F9C3
+D832 :    INY 
+D833 :    STA  $0678
+D836 :    ASL  $0678
+D839 :    LDA  $0678
+D83C :    JSR  $F9D4
+D83F :    INY 
+D840 :    JSR  $F9E4
+D843 :    STA  $0678
+D846 :    ROR  $0678
+D849 :    LDA  $0678
+D84C :    JSR  $F9EA
+D84F :    INY 
+D850 :    STA  $0678
+D853 :    ROR  $0678
+D856 :    LDA  $0678
+D859 :    JSR  $F9FB
+D85C :    INY 
+D85D :    JSR  $FA0A
+D860 :    STA  $0678
+D863 :    ROL  $0678
+D866 :    LDA  $0678
+D869 :    JSR  $FA10
+D86C :    INY 
+D86D :    STA  $0678
+D870 :    ROL  $0678
+D873 :    LDA  $0678
+D876 :    JSR  $FA21
+D879 :    LDA   #$FF
+D87B :    STA  $0678
+D87E :    STA    $01
+D880 :    BIT    $01
+D882 :    SEC 
+D883 :    INC  $0678
+D886 :    BNE    $0D
+D888 :    BMI    $0B
+D88A :    BVC    $09
+D88C :    BCC    $07
+D88E :    LDA  $0678
+D891 :    CMP   #$00
+D893 :    BEQ    $04
+D895 :    LDA   #$E5
+D897 :    STA    $00
+D899 :    LDA   #$7F
+D89B :    STA  $0678
+D89E :    CLV 
+D89F :    CLC 
+D8A0 :    INC  $0678
+D8A3 :    BEQ    $0D
+D8A5 :    BPL    $0B
+D8A7 :    BVS    $09
+D8A9 :    BCS    $07
+D8AB :    LDA  $0678
+D8AE :    CMP   #$80
+D8B0 :    BEQ    $04
+D8B2 :    LDA   #$E6
+D8B4 :    STA    $00
+D8B6 :    LDA   #$00
+D8B8 :    STA  $0678
+D8BB :    BIT    $01
+D8BD :    SEC 
+D8BE :    DEC  $0678
+D8C1 :    BEQ    $0D
+D8C3 :    BPL    $0B
+D8C5 :    BVC    $09
+D8C7 :    BCC    $07
+D8C9 :    LDA  $0678
+D8CC :    CMP   #$FF
+D8CE :    BEQ    $04
+D8D0 :    LDA   #$E7
+D8D2 :    STA    $00
+D8D4 :    LDA   #$80
+D8D6 :    STA  $0678
+D8D9 :    CLV 
+D8DA :    CLC 
+D8DB :    DEC  $0678
+D8DE :    BEQ    $0D
+D8E0 :    BMI    $0B
+D8E2 :    BVS    $09
+D8E4 :    BCS    $07
+D8E6 :    LDA  $0678
+D8E9 :    CMP   #$7F
+D8EB :    BEQ    $04
+D8ED :    LDA   #$E8
+D8EF :    STA    $00
+D8F1 :    LDA   #$01
+D8F3 :    STA  $0678
+D8F6 :    DEC  $0678
+D8F9 :    BEQ    $04
+D8FB :    LDA   #$E9
+D8FD :    STA    $00
+D8FF :    RTS 
+D900 :    LDA   #$A3
+D902 :    STA    $33
+D904 :    LDA   #$89
+D906 :    STA  $0300
+D909 :    LDA   #$12
+D90B :    STA  $0245
+D90E :    LDA   #$FF
+D910 :    STA    $01
+D912 :    LDX   #$65
+D914 :    LDA   #$00
+D916 :    STA    $89
+D918 :    LDA   #$03
+D91A :    STA    $8A
+D91C :    LDY   #$00
+D91E :    SEC 
+D91F :    LDA   #$00
+D921 :    CLV 
+D922 :    LDA   ($89), Y
+D924 :    BEQ    $0C
+D926 :    BCC    $0A
+D928 :    BVS    $08
+D92A :    CMP   #$89
+D92C :    BNE    $04
+D92E :    CPX   #$65
+D930 :    BEQ    $04
+D932 :    LDA   #$EA
+D934 :    STA    $00
+D936 :    LDA   #$FF
+D938 :    STA    $97
+D93A :    STA    $98
+D93C :    BIT    $98
+D93E :    LDY   #$34
+D940 :    LDA   ($97), Y
+D942 :    CMP   #$A3
+D944 :    BNE    $02
+D946 :    BCS    $04
+D948 :    LDA   #$EB
+D94A :    STA    $00
+D94C :    LDA    $00
+D94E :    PHA 
+D94F :    LDA   #$46
+D951 :    STA    $FF
+D953 :    LDA   #$01
+D955 :    STA    $00
+D957 :    LDY   #$FF
+D959 :    LDA   ($FF), Y
+D95B :    CMP   #$12
+D95D :    BEQ    $04
+D95F :    PLA 
+D960 :    LDA   #$EC
+D962 :    PHA 
+D963 :    PLA 
+D964 :    STA    $00
+D966 :    LDX   #$ED
+D968 :    LDA   #$00
+D96A :    STA    $33
+D96C :    LDA   #$04
+D96E :    STA    $34
+D970 :    LDY   #$00
+D972 :    CLC 
+D973 :    LDA   #$FF
+D975 :    STA    $01
+D977 :    BIT    $01
+D979 :    LDA   #$AA
+D97B :    STA  $0400
+D97E :    LDA   #$55
+D980 :    ORA   ($33), Y
+D982 :    BCS    $08
+D984 :    BPL    $06
+D986 :    CMP   #$FF
+D988 :    BNE    $02
+D98A :    BVS    $02
+D98C :    STX    $00
+D98E :    INX 
+D98F :    SEC 
+D990 :    CLV 
+D991 :    LDA   #$00
+D993 :    ORA   ($33), Y
+D995 :    BEQ    $06
+D997 :    BVS    $04
+D999 :    BCC    $02
+D99B :    BMI    $02
+D99D :    STX    $00
+D99F :    INX 
+D9A0 :    CLC 
+D9A1 :    BIT    $01
+D9A3 :    LDA   #$55
+D9A5 :    AND   ($33), Y
+D9A7 :    BNE    $06
+D9A9 :    BVC    $04
+D9AB :    BCS    $02
+D9AD :    BPL    $02
+D9AF :    STX    $00
+D9B1 :    INX 
+D9B2 :    SEC 
+D9B3 :    CLV 
+D9B4 :    LDA   #$EF
+D9B6 :    STA  $0400
+D9B9 :    LDA   #$F8
+D9BB :    AND   ($33), Y
+D9BD :    BCC    $08
+D9BF :    BPL    $06
+D9C1 :    CMP   #$E8
+D9C3 :    BNE    $02
+D9C5 :    BVC    $02
+D9C7 :    STX    $00
+D9C9 :    INX 
+D9CA :    CLC 
+D9CB :    BIT    $01
+D9CD :    LDA   #$AA
+D9CF :    STA  $0400
+D9D2 :    LDA   #$5F
+D9D4 :    EOR   ($33), Y
+D9D6 :    BCS    $08
+D9D8 :    BPL    $06
+D9DA :    CMP   #$F5
+D9DC :    BNE    $02
+D9DE :    BVS    $02
+D9E0 :    STX    $00
+D9E2 :    INX 
+D9E3 :    SEC 
+D9E4 :    CLV 
+D9E5 :    LDA   #$70
+D9E7 :    STA  $0400
+D9EA :    EOR   ($33), Y
+D9EC :    BNE    $06
+D9EE :    BVS    $04
+D9F0 :    BCC    $02
+D9F2 :    BPL    $02
+D9F4 :    STX    $00
+D9F6 :    INX 
+D9F7 :    CLC 
+D9F8 :    BIT    $01
+D9FA :    LDA   #$69
+D9FC :    STA  $0400
+D9FF :    LDA   #$00
+DA01 :    ADC   ($33), Y
+DA03 :    BMI    $08
+DA05 :    BCS    $06
+DA07 :    CMP   #$69
+DA09 :    BNE    $02
+DA0B :    BVC    $02
+DA0D :    STX    $00
+DA0F :    INX 
+DA10 :    SEC 
+DA11 :    BIT    $01
+DA13 :    LDA   #$00
+DA15 :    ADC   ($33), Y
+DA17 :    BMI    $08
+DA19 :    BCS    $06
+DA1B :    CMP   #$6A
+DA1D :    BNE    $02
+DA1F :    BVC    $02
+DA21 :    STX    $00
+DA23 :    INX 
+DA24 :    SEC 
+DA25 :    CLV 
+DA26 :    LDA   #$7F
+DA28 :    STA  $0400
+DA2B :    ADC   ($33), Y
+DA2D :    BPL    $08
+DA2F :    BCS    $06
+DA31 :    CMP   #$FF
+DA33 :    BNE    $02
+DA35 :    BVS    $02
+DA37 :    STX    $00
+DA39 :    INX 
+DA3A :    CLC 
+DA3B :    BIT    $01
+DA3D :    LDA   #$80
+DA3F :    STA  $0400
+DA42 :    LDA   #$7F
+DA44 :    ADC   ($33), Y
+DA46 :    BPL    $08
+DA48 :    BCS    $06
+DA4A :    CMP   #$FF
+DA4C :    BNE    $02
+DA4E :    BVC    $02
+DA50 :    STX    $00
+DA52 :    INX 
+DA53 :    SEC 
+DA54 :    CLV 
+DA55 :    LDA   #$80
+DA57 :    STA  $0400
+DA5A :    LDA   #$7F
+DA5C :    ADC   ($33), Y
+DA5E :    BNE    $06
+DA60 :    BMI    $04
+DA62 :    BVS    $02
+DA64 :    BCS    $02
+DA66 :    STX    $00
+DA68 :    INX 
+DA69 :    BIT    $01
+DA6B :    LDA   #$40
+DA6D :    STA  $0400
+DA70 :    CMP   ($33), Y
+DA72 :    BMI    $06
+DA74 :    BCC    $04
+DA76 :    BNE    $02
+DA78 :    BVS    $02
+DA7A :    STX    $00
+DA7C :    INX 
+DA7D :    CLV 
+DA7E :    DEC  $0400
+DA81 :    CMP   ($33), Y
+DA83 :    BEQ    $06
+DA85 :    BMI    $04
+DA87 :    BCC    $02
+DA89 :    BVC    $02
+DA8B :    STX    $00
+DA8D :    INX 
+DA8E :    INC  $0400
+DA91 :    INC  $0400
+DA94 :    CMP   ($33), Y
+DA96 :    BEQ    $02
+DA98 :    BMI    $02
+DA9A :    STX    $00
+DA9C :    INX 
+DA9D :    LDA   #$00
+DA9F :    STA  $0400
+DAA2 :    LDA   #$80
+DAA4 :    CMP   ($33), Y
+DAA6 :    BEQ    $04
+DAA8 :    BPL    $02
+DAAA :    BCS    $02
+DAAC :    STX    $00
+DAAE :    INX 
+DAAF :    LDY   #$80
+DAB1 :    STY  $0400
+DAB4 :    LDY   #$00
+DAB6 :    CMP   ($33), Y
+DAB8 :    BNE    $04
+DABA :    BMI    $02
+DABC :    BCS    $02
+DABE :    STX    $00
+DAC0 :    INX 
+DAC1 :    INC  $0400
+DAC4 :    CMP   ($33), Y
+DAC6 :    BCS    $04
+DAC8 :    BEQ    $02
+DACA :    BMI    $02
+DACC :    STX    $00
+DACE :    INX 
+DACF :    DEC  $0400
+DAD2 :    DEC  $0400
+DAD5 :    CMP   ($33), Y
+DAD7 :    BCC    $04
+DAD9 :    BEQ    $02
+DADB :    BPL    $02
+DADD :    STX    $00
+DADF :    RTS 
+DAE0 :    LDA   #$00
+DAE2 :    STA    $33
+DAE4 :    LDA   #$04
+DAE6 :    STA    $34
+DAE8 :    LDY   #$00
+DAEA :    LDX   #$01
+DAEC :    BIT    $01
+DAEE :    LDA   #$40
+DAF0 :    STA  $0400
+DAF3 :    SEC 
+DAF4 :    SBC   ($33), Y
+DAF6 :    BMI    $0A
+DAF8 :    BCC    $08
+DAFA :    BNE    $06
+DAFC :    BVS    $04
+DAFE :    CMP   #$00
+DB00 :    BEQ    $02
+DB02 :    STX    $00
+DB04 :    INX 
+DB05 :    CLV 
+DB06 :    SEC 
+DB07 :    LDA   #$40
+DB09 :    DEC  $0400
+DB0C :    SBC   ($33), Y
+DB0E :    BEQ    $0A
+DB10 :    BMI    $08
+DB12 :    BCC    $06
+DB14 :    BVS    $04
+DB16 :    CMP   #$01
+DB18 :    BEQ    $02
+DB1A :    STX    $00
+DB1C :    INX 
+DB1D :    LDA   #$40
+DB1F :    SEC 
+DB20 :    BIT    $01
+DB22 :    INC  $0400
+DB25 :    INC  $0400
+DB28 :    SBC   ($33), Y
+DB2A :    BCS    $0A
+DB2C :    BEQ    $08
+DB2E :    BPL    $06
+DB30 :    BVS    $04
+DB32 :    CMP   #$FF
+DB34 :    BEQ    $02
+DB36 :    STX    $00
+DB38 :    INX 
+DB39 :    CLC 
+DB3A :    LDA   #$00
+DB3C :    STA  $0400
+DB3F :    LDA   #$80
+DB41 :    SBC   ($33), Y
+DB43 :    BCC    $04
+DB45 :    CMP   #$7F
+DB47 :    BEQ    $02
+DB49 :    STX    $00
+DB4B :    INX 
+DB4C :    SEC 
+DB4D :    LDA   #$7F
+DB4F :    STA  $0400
+DB52 :    LDA   #$81
+DB54 :    SBC   ($33), Y
+DB56 :    BVC    $06
+DB58 :    BCC    $04
+DB5A :    CMP   #$02
+DB5C :    BEQ    $02
+DB5E :    STX    $00
+DB60 :    INX 
+DB61 :    LDA   #$00
+DB63 :    LDA   #$87
+DB65 :    STA   ($33), Y
+DB67 :    LDA  $0400
+DB6A :    CMP   #$87
+DB6C :    BEQ    $02
+DB6E :    STX    $00
+DB70 :    INX 
+DB71 :    LDA   #$7E
+DB73 :    STA  $0200
+DB76 :    LDA   #$DB
+DB78 :    STA  $0201
+DB7B :    JMP  $0200
+DB7E :    LDA   #$00
+DB80 :    STA  $02FF
+DB83 :    LDA   #$01
+DB85 :    STA  $0300
+DB88 :    LDA   #$03
+DB8A :    STA  $0200
+DB8D :    LDA   #$A9
+DB8F :    STA  $0100
+DB92 :    LDA   #$55
+DB94 :    STA  $0101
+DB97 :    LDA   #$60
+DB99 :    STA  $0102
+DB9C :    LDA   #$A9
+DB9E :    STA  $0300
+DBA1 :    LDA   #$AA
+DBA3 :    STA  $0301
+DBA6 :    LDA   #$60
+DBA8 :    STA  $0302
+DBAB :    JSR  $DBB5
+DBAE :    CMP   #$AA
+DBB0 :    BEQ    $02
+DBB2 :    STX    $00
+DBB4 :    RTS 
+DBB5 :    JMP  $02FF
+DBB8 :    LDA   #$FF
+DBBA :    STA    $01
+DBBC :    LDA   #$AA
+DBBE :    STA    $33
+DBC0 :    LDA   #$BB
+DBC2 :    STA    $89
+DBC4 :    LDX   #$00
+DBC6 :    LDA   #$66
+DBC8 :    BIT    $01
+DBCA :    SEC 
+DBCB :    LDY   #$00
+DBCD :    LDY    $33 , X
+DBCF :    BPL    $12
+DBD1 :    BEQ    $10
+DBD3 :    BVC    $0E
+DBD5 :    BCC    $0C
+DBD7 :    CMP   #$66
+DBD9 :    BNE    $08
+DBDB :    CPX   #$00
+DBDD :    BNE    $04
+DBDF :    CPY   #$AA
+DBE1 :    BEQ    $04
+DBE3 :    LDA   #$08
+DBE5 :    STA    $00
+DBE7 :    LDX   #$8A
+DBE9 :    LDA   #$66
+DBEB :    CLV 
+DBEC :    CLC 
+DBED :    LDY   #$00
+DBEF :    LDY    $FF , X
+DBF1 :    BPL    $12
+DBF3 :    BEQ    $10
+DBF5 :    BVS    $0E
+DBF7 :    BCS    $0C
+DBF9 :    CPY   #$BB
+DBFB :    BNE    $08
+DBFD :    CMP   #$66
+DBFF :    BNE    $04
+DC01 :    CPX   #$8A
+DC03 :    BEQ    $04
+DC05 :    LDA   #$09
+DC07 :    STA    $00
+DC09 :    BIT    $01
+DC0B :    SEC 
+DC0C :    LDY   #$44
+DC0E :    LDX   #$00
+DC10 :    STY    $33 , X
+DC12 :    LDA    $33
+DC14 :    BCC    $18
+DC16 :    CMP   #$44
+DC18 :    BNE    $14
+DC1A :    BVC    $12
+DC1C :    CLC 
+DC1D :    CLV 
+DC1E :    LDY   #$99
+DC20 :    LDX   #$80
+DC22 :    STY    $85 , X
+DC24 :    LDA    $05
+DC26 :    BCS    $06
+DC28 :    CMP   #$99
+DC2A :    BNE    $02
+DC2C :    BVC    $04
+DC2E :    LDA   #$0A
+DC30 :    STA    $00
+DC32 :    LDY   #$0B
+DC34 :    LDA   #$AA
+DC36 :    LDX   #$78
+DC38 :    STA    $78
+DC3A :    JSR  $F7B6
+DC3D :    ORA    $00 , X
+DC3F :    JSR  $F7C0
+DC42 :    INY 
+DC43 :    LDA   #$00
+DC45 :    STA    $78
+DC47 :    JSR  $F7CE
+DC4A :    ORA    $00 , X
+DC4C :    JSR  $F7D3
+DC4F :    INY 
+DC50 :    LDA   #$AA
+DC52 :    STA    $78
+DC54 :    JSR  $F7DF
+DC57 :    AND    $00 , X
+DC59 :    JSR  $F7E5
+DC5C :    INY 
+DC5D :    LDA   #$EF
+DC5F :    STA    $78
+DC61 :    JSR  $F7F1
+DC64 :    AND    $00 , X
+DC66 :    JSR  $F7F6
+DC69 :    INY 
+DC6A :    LDA   #$AA
+DC6C :    STA    $78
+DC6E :    JSR  $F804
+DC71 :    EOR    $00 , X
+DC73 :    JSR  $F80A
+DC76 :    INY 
+DC77 :    LDA   #$70
+DC79 :    STA    $78
+DC7B :    JSR  $F818
+DC7E :    EOR    $00 , X
+DC80 :    JSR  $F81D
+DC83 :    INY 
+DC84 :    LDA   #$69
+DC86 :    STA    $78
+DC88 :    JSR  $F829
+DC8B :    ADC    $00 , X
+DC8D :    JSR  $F82F
+DC90 :    INY 
+DC91 :    JSR  $F83D
+DC94 :    ADC    $00 , X
+DC96 :    JSR  $F843
+DC99 :    INY 
+DC9A :    LDA   #$7F
+DC9C :    STA    $78
+DC9E :    JSR  $F851
+DCA1 :    ADC    $00 , X
+DCA3 :    JSR  $F856
+DCA6 :    INY 
+DCA7 :    LDA   #$80
+DCA9 :    STA    $78
+DCAB :    JSR  $F864
+DCAE :    ADC    $00 , X
+DCB0 :    JSR  $F86A
+DCB3 :    INY 
+DCB4 :    JSR  $F878
+DCB7 :    ADC    $00 , X
+DCB9 :    JSR  $F87D
+DCBC :    INY 
+DCBD :    LDA   #$40
+DCBF :    STA    $78
+DCC1 :    JSR  $F889
+DCC4 :    CMP    $00 , X
+DCC6 :    JSR  $F88E
+DCC9 :    INY 
+DCCA :    PHA 
+DCCB :    LDA   #$3F
+DCCD :    STA    $78
+DCCF :    PLA 
+DCD0 :    JSR  $F89A
+DCD3 :    CMP    $00 , X
+DCD5 :    JSR  $F89C
+DCD8 :    INY 
+DCD9 :    PHA 
+DCDA :    LDA   #$41
+DCDC :    STA    $78
+DCDE :    PLA 
+DCDF :    CMP    $00 , X
+DCE1 :    JSR  $F8A8
+DCE4 :    INY 
+DCE5 :    PHA 
+DCE6 :    LDA   #$00
+DCE8 :    STA    $78
+DCEA :    PLA 
+DCEB :    JSR  $F8B2
+DCEE :    CMP    $00 , X
+DCF0 :    JSR  $F8B5
+DCF3 :    INY 
+DCF4 :    PHA 
+DCF5 :    LDA   #$80
+DCF7 :    STA    $78
+DCF9 :    PLA 
+DCFA :    CMP    $00 , X
+DCFC :    JSR  $F8BF
+DCFF :    INY 
+DD00 :    PHA 
+DD01 :    LDA   #$81
+DD03 :    STA    $78
+DD05 :    PLA 
+DD06 :    CMP    $00 , X
+DD08 :    JSR  $F8C9
+DD0B :    INY 
+DD0C :    PHA 
+DD0D :    LDA   #$7F
+DD0F :    STA    $78
+DD11 :    PLA 
+DD12 :    CMP    $00 , X
+DD14 :    JSR  $F8D3
+DD17 :    INY 
+DD18 :    LDA   #$40
+DD1A :    STA    $78
+DD1C :    JSR  $F931
+DD1F :    SBC    $00 , X
+DD21 :    JSR  $F937
+DD24 :    INY 
+DD25 :    LDA   #$3F
+DD27 :    STA    $78
+DD29 :    JSR  $F947
+DD2C :    SBC    $00 , X
+DD2E :    JSR  $F94C
+DD31 :    INY 
+DD32 :    LDA   #$41
+DD34 :    STA    $78
+DD36 :    JSR  $F95C
+DD39 :    SBC    $00 , X
+DD3B :    JSR  $F962
+DD3E :    INY 
+DD3F :    LDA   #$00
+DD41 :    STA    $78
+DD43 :    JSR  $F972
+DD46 :    SBC    $00 , X
+DD48 :    JSR  $F976
+DD4B :    INY 
+DD4C :    LDA   #$7F
+DD4E :    STA    $78
+DD50 :    JSR  $F980
+DD53 :    SBC    $00 , X
+DD55 :    JSR  $F984
+DD58 :    LDA   #$AA
+DD5A :    STA    $33
+DD5C :    LDA   #$BB
+DD5E :    STA    $89
+DD60 :    LDX   #$00
+DD62 :    LDY   #$66
+DD64 :    BIT    $01
+DD66 :    SEC 
+DD67 :    LDA   #$00
+DD69 :    LDA    $33 , X
+DD6B :    BPL    $12
+DD6D :    BEQ    $10
+DD6F :    BVC    $0E
+DD71 :    BCC    $0C
+DD73 :    CPY   #$66
+DD75 :    BNE    $08
+DD77 :    CPX   #$00
+DD79 :    BNE    $04
+DD7B :    CMP   #$AA
+DD7D :    BEQ    $04
+DD7F :    LDA   #$22
+DD81 :    STA    $00
+DD83 :    LDX   #$8A
+DD85 :    LDY   #$66
+DD87 :    CLV 
+DD88 :    CLC 
+DD89 :    LDA   #$00
+DD8B :    LDA    $FF , X
+DD8D :    BPL    $12
+DD8F :    BEQ    $10
+DD91 :    BVS    $0E
+DD93 :    BCS    $0C
+DD95 :    CMP   #$BB
+DD97 :    BNE    $08
+DD99 :    CPY   #$66
+DD9B :    BNE    $04
+DD9D :    CPX   #$8A
+DD9F :    BEQ    $04
+DDA1 :    LDA   #$23
+DDA3 :    STA    $00
+DDA5 :    BIT    $01
+DDA7 :    SEC 
+DDA8 :    LDA   #$44
+DDAA :    LDX   #$00
+DDAC :    STA    $33 , X
+DDAE :    LDA    $33
+DDB0 :    BCC    $18
+DDB2 :    CMP   #$44
+DDB4 :    BNE    $14
+DDB6 :    BVC    $12
+DDB8 :    CLC 
+DDB9 :    CLV 
+DDBA :    LDA   #$99
+DDBC :    LDX   #$80
+DDBE :    STA    $85 , X
+DDC0 :    LDA    $05
+DDC2 :    BCS    $06
+DDC4 :    CMP   #$99
+DDC6 :    BNE    $02
+DDC8 :    BVC    $04
+DDCA :    LDA   #$24
+DDCC :    STA    $00
+DDCE :    LDY   #$25
+DDD0 :    LDX   #$78
+DDD2 :    JSR  $F990
+DDD5 :    STA    $00 , X
+DDD7 :    LSR    $00 , X
+DDD9 :    LDA    $00 , X
+DDDB :    JSR  $F99D
+DDDE :    INY 
+DDDF :    STA    $00 , X
+DDE1 :    LSR    $00 , X
+DDE3 :    LDA    $00 , X
+DDE5 :    JSR  $F9AD
+DDE8 :    INY 
+DDE9 :    JSR  $F9BD
+DDEC :    STA    $00 , X
+DDEE :    ASL    $00 , X
+DDF0 :    LDA    $00 , X
+DDF2 :    JSR  $F9C3
+DDF5 :    INY 
+DDF6 :    STA    $00 , X
+DDF8 :    ASL    $00 , X
+DDFA :    LDA    $00 , X
+DDFC :    JSR  $F9D4
+DDFF :    INY 
+DE00 :    JSR  $F9E4
+DE03 :    STA    $00 , X
+DE05 :    ROR    $00 , X
+DE07 :    LDA    $00 , X
+DE09 :    JSR  $F9EA
+DE0C :    INY 
+DE0D :    STA    $00 , X
+DE0F :    ROR    $00 , X
+DE11 :    LDA    $00 , X
+DE13 :    JSR  $F9FB
+DE16 :    INY 
+DE17 :    JSR  $FA0A
+DE1A :    STA    $00 , X
+DE1C :    ROL    $00 , X
+DE1E :    LDA    $00 , X
+DE20 :    JSR  $FA10
+DE23 :    INY 
+DE24 :    STA    $00 , X
+DE26 :    ROL    $00 , X
+DE28 :    LDA    $00 , X
+DE2A :    JSR  $FA21
+DE2D :    LDA   #$FF
+DE2F :    STA    $00 , X
+DE31 :    STA    $01
+DE33 :    BIT    $01
+DE35 :    SEC 
+DE36 :    INC    $00 , X
+DE38 :    BNE    $0C
+DE3A :    BMI    $0A
+DE3C :    BVC    $08
+DE3E :    BCC    $06
+DE40 :    LDA    $00 , X
+DE42 :    CMP   #$00
+DE44 :    BEQ    $04
+DE46 :    LDA   #$2D
+DE48 :    STA    $00
+DE4A :    LDA   #$7F
+DE4C :    STA    $00 , X
+DE4E :    CLV 
+DE4F :    CLC 
+DE50 :    INC    $00 , X
+DE52 :    BEQ    $0C
+DE54 :    BPL    $0A
+DE56 :    BVS    $08
+DE58 :    BCS    $06
+DE5A :    LDA    $00 , X
+DE5C :    CMP   #$80
+DE5E :    BEQ    $04
+DE60 :    LDA   #$2E
+DE62 :    STA    $00
+DE64 :    LDA   #$00
+DE66 :    STA    $00 , X
+DE68 :    BIT    $01
+DE6A :    SEC 
+DE6B :    DEC    $00 , X
+DE6D :    BEQ    $0C
+DE6F :    BPL    $0A
+DE71 :    BVC    $08
+DE73 :    BCC    $06
+DE75 :    LDA    $00 , X
+DE77 :    CMP   #$FF
+DE79 :    BEQ    $04
+DE7B :    LDA   #$2F
+DE7D :    STA    $00
+DE7F :    LDA   #$80
+DE81 :    STA    $00 , X
+DE83 :    CLV 
+DE84 :    CLC 
+DE85 :    DEC    $00 , X
+DE87 :    BEQ    $0C
+DE89 :    BMI    $0A
+DE8B :    BVS    $08
+DE8D :    BCS    $06
+DE8F :    LDA    $00 , X
+DE91 :    CMP   #$7F
+DE93 :    BEQ    $04
+DE95 :    LDA   #$30
+DE97 :    STA    $00
+DE99 :    LDA   #$01
+DE9B :    STA    $00 , X
+DE9D :    DEC    $00 , X
+DE9F :    BEQ    $04
+DEA1 :    LDA   #$31
+DEA3 :    STA    $00
+DEA5 :    LDA   #$33
+DEA7 :    STA    $78
+DEA9 :    LDA   #$44
+DEAB :    LDY   #$78
+DEAD :    LDX   #$00
+DEAF :    SEC 
+DEB0 :    BIT    $01
+DEB2 :    LDX    $00 , Y           ;Illegal OPcode LDX
+DEB4 :    BCC    $12
+DEB6 :    BVC    $10
+DEB8 :    BMI    $0E
+DEBA :    BEQ    $0C
+DEBC :    CPX   #$33
+DEBE :    BNE    $08
+DEC0 :    CPY   #$78
+DEC2 :    BNE    $04
+DEC4 :    CMP   #$44
+DEC6 :    BEQ    $04
+DEC8 :    LDA   #$32
+DECA :    STA    $00
+DECC :    LDA   #$97
+DECE :    STA    $7F
+DED0 :    LDA   #$47
+DED2 :    LDY   #$FF
+DED4 :    LDX   #$00
+DED6 :    CLC 
+DED7 :    CLV 
+DED8 :    LDX    $80 , Y           ;Illegal OPcode LDX
+DEDA :    BCS    $12
+DEDC :    BVS    $10
+DEDE :    BPL    $0E
+DEE0 :    BEQ    $0C
+DEE2 :    CPX   #$97
+DEE4 :    BNE    $08
+DEE6 :    CPY   #$FF
+DEE8 :    BNE    $04
+DEEA :    CMP   #$47
+DEEC :    BEQ    $04
+DEEE :    LDA   #$33
+DEF0 :    STA    $00
+DEF2 :    LDA   #$00
+DEF4 :    STA    $7F
+DEF6 :    LDA   #$47
+DEF8 :    LDY   #$FF
+DEFA :    LDX   #$69
+DEFC :    CLC 
+DEFD :    CLV 
+DEFE :    STX    $80 , Y           ;Illegal OPcode STX
+DF00 :    BCS    $18
+DF02 :    BVS    $16
+DF04 :    BMI    $14
+DF06 :    BEQ    $12
+DF08 :    CPX   #$69
+DF0A :    BNE    $0E
+DF0C :    CPY   #$FF
+DF0E :    BNE    $0A
+DF10 :    CMP   #$47
+DF12 :    BNE    $06
+DF14 :    LDA    $7F
+DF16 :    CMP   #$69
+DF18 :    BEQ    $04
+DF1A :    LDA   #$34
+DF1C :    STA    $00
+DF1E :    LDA   #$F5
+DF20 :    STA    $4F
+DF22 :    LDA   #$47
+DF24 :    LDY   #$4F
+DF26 :    BIT    $01
+DF28 :    LDX   #$00
+DF2A :    SEC 
+DF2B :    STX    $00 , Y           ;Illegal OPcode STX
+DF2D :    BCC    $16
+DF2F :    BVC    $14
+DF31 :    BMI    $12
+DF33 :    BNE    $10
+DF35 :    CPX   #$00
+DF37 :    BNE    $0C
+DF39 :    CPY   #$4F
+DF3B :    BNE    $08
+DF3D :    CMP   #$47
+DF3F :    BNE    $04
+DF41 :    LDA    $4F
+DF43 :    BEQ    $04
+DF45 :    LDA   #$35
+DF47 :    STA    $00
+DF49 :    RTS 
+DF4A :    LDA   #$89
+DF4C :    STA  $0300
+DF4F :    LDA   #$A3
+DF51 :    STA    $33
+DF53 :    LDA   #$12
+DF55 :    STA  $0245
+DF58 :    LDX   #$65
+DF5A :    LDY   #$00
+DF5C :    SEC 
+DF5D :    LDA   #$00
+DF5F :    CLV 
+DF60 :    LDA  $0300 , Y
+DF63 :    BEQ    $0C
+DF65 :    BCC    $0A
+DF67 :    BVS    $08
+DF69 :    CMP   #$89
+DF6B :    BNE    $04
+DF6D :    CPX   #$65
+DF6F :    BEQ    $04
+DF71 :    LDA   #$36
+DF73 :    STA    $00
+DF75 :    LDA   #$FF
+DF77 :    STA    $01
+DF79 :    BIT    $01
+DF7B :    LDY   #$34
+DF7D :    LDA  $FFFF , Y
+DF80 :    CMP   #$A3
+DF82 :    BNE    $02
+DF84 :    BCS    $04
+DF86 :    LDA   #$37
+DF88 :    STA    $00
+DF8A :    LDA   #$46
+DF8C :    STA    $FF
+DF8E :    LDY   #$FF
+DF90 :    LDA  $0146 , Y
+DF93 :    CMP   #$12
+DF95 :    BEQ    $04
+DF97 :    LDA   #$38
+DF99 :    STA    $00
+DF9B :    LDX   #$39
+DF9D :    CLC 
+DF9E :    LDA   #$FF
+DFA0 :    STA    $01
+DFA2 :    BIT    $01
+DFA4 :    LDA   #$AA
+DFA6 :    STA  $0400
+DFA9 :    LDA   #$55
+DFAB :    LDY   #$00
+DFAD :    ORA  $0400 , Y
+DFB0 :    BCS    $08
+DFB2 :    BPL    $06
+DFB4 :    CMP   #$FF
+DFB6 :    BNE    $02
+DFB8 :    BVS    $02
+DFBA :    STX    $00
+DFBC :    INX 
+DFBD :    SEC 
+DFBE :    CLV 
+DFBF :    LDA   #$00
+DFC1 :    ORA  $0400 , Y
+DFC4 :    BEQ    $06
+DFC6 :    BVS    $04
+DFC8 :    BCC    $02
+DFCA :    BMI    $02
+DFCC :    STX    $00
+DFCE :    INX 
+DFCF :    CLC 
+DFD0 :    BIT    $01
+DFD2 :    LDA   #$55
+DFD4 :    AND  $0400 , Y
+DFD7 :    BNE    $06
+DFD9 :    BVC    $04
+DFDB :    BCS    $02
+DFDD :    BPL    $02
+DFDF :    STX    $00
+DFE1 :    INX 
+DFE2 :    SEC 
+DFE3 :    CLV 
+DFE4 :    LDA   #$EF
+DFE6 :    STA  $0400
+DFE9 :    LDA   #$F8
+DFEB :    AND  $0400 , Y
+DFEE :    BCC    $08
+DFF0 :    BPL    $06
+DFF2 :    CMP   #$E8
+DFF4 :    BNE    $02
+DFF6 :    BVC    $02
+DFF8 :    STX    $00
+DFFA :    INX 
+DFFB :    CLC 
+DFFC :    BIT    $01
+DFFE :    LDA   #$AA
+E000 :    STA  $0400
+E003 :    LDA   #$5F
+E005 :    EOR  $0400 , Y
+E008 :    BCS    $08
+E00A :    BPL    $06
+E00C :    CMP   #$F5
+E00E :    BNE    $02
+E010 :    BVS    $02
+E012 :    STX    $00
+E014 :    INX 
+E015 :    SEC 
+E016 :    CLV 
+E017 :    LDA   #$70
+E019 :    STA  $0400
+E01C :    EOR  $0400 , Y
+E01F :    BNE    $06
+E021 :    BVS    $04
+E023 :    BCC    $02
+E025 :    BPL    $02
+E027 :    STX    $00
+E029 :    INX 
+E02A :    CLC 
+E02B :    BIT    $01
+E02D :    LDA   #$69
+E02F :    STA  $0400
+E032 :    LDA   #$00
+E034 :    ADC  $0400 , Y
+E037 :    BMI    $08
+E039 :    BCS    $06
+E03B :    CMP   #$69
+E03D :    BNE    $02
+E03F :    BVC    $02
+E041 :    STX    $00
+E043 :    INX 
+E044 :    SEC 
+E045 :    BIT    $01
+E047 :    LDA   #$00
+E049 :    ADC  $0400 , Y
+E04C :    BMI    $08
+E04E :    BCS    $06
+E050 :    CMP   #$6A
+E052 :    BNE    $02
+E054 :    BVC    $02
+E056 :    STX    $00
+E058 :    INX 
+E059 :    SEC 
+E05A :    CLV 
+E05B :    LDA   #$7F
+E05D :    STA  $0400
+E060 :    ADC  $0400 , Y
+E063 :    BPL    $08
+E065 :    BCS    $06
+E067 :    CMP   #$FF
+E069 :    BNE    $02
+E06B :    BVS    $02
+E06D :    STX    $00
+E06F :    INX 
+E070 :    CLC 
+E071 :    BIT    $01
+E073 :    LDA   #$80
+E075 :    STA  $0400
+E078 :    LDA   #$7F
+E07A :    ADC  $0400 , Y
+E07D :    BPL    $08
+E07F :    BCS    $06
+E081 :    CMP   #$FF
+E083 :    BNE    $02
+E085 :    BVC    $02
+E087 :    STX    $00
+E089 :    INX 
+E08A :    SEC 
+E08B :    CLV 
+E08C :    LDA   #$80
+E08E :    STA  $0400
+E091 :    LDA   #$7F
+E093 :    ADC  $0400 , Y
+E096 :    BNE    $06
+E098 :    BMI    $04
+E09A :    BVS    $02
+E09C :    BCS    $02
+E09E :    STX    $00
+E0A0 :    INX 
+E0A1 :    BIT    $01
+E0A3 :    LDA   #$40
+E0A5 :    STA  $0400
+E0A8 :    CMP  $0400 , Y
+E0AB :    BMI    $06
+E0AD :    BCC    $04
+E0AF :    BNE    $02
+E0B1 :    BVS    $02
+E0B3 :    STX    $00
+E0B5 :    INX 
+E0B6 :    CLV 
+E0B7 :    DEC  $0400
+E0BA :    CMP  $0400 , Y
+E0BD :    BEQ    $06
+E0BF :    BMI    $04
+E0C1 :    BCC    $02
+E0C3 :    BVC    $02
+E0C5 :    STX    $00
+E0C7 :    INX 
+E0C8 :    INC  $0400
+E0CB :    INC  $0400
+E0CE :    CMP  $0400 , Y
+E0D1 :    BEQ    $02
+E0D3 :    BMI    $02
+E0D5 :    STX    $00
+E0D7 :    INX 
+E0D8 :    LDA   #$00
+E0DA :    STA  $0400
+E0DD :    LDA   #$80
+E0DF :    CMP  $0400 , Y
+E0E2 :    BEQ    $04
+E0E4 :    BPL    $02
+E0E6 :    BCS    $02
+E0E8 :    STX    $00
+E0EA :    INX 
+E0EB :    LDY   #$80
+E0ED :    STY  $0400
+E0F0 :    LDY   #$00
+E0F2 :    CMP  $0400 , Y
+E0F5 :    BNE    $04
+E0F7 :    BMI    $02
+E0F9 :    BCS    $02
+E0FB :    STX    $00
+E0FD :    INX 
+E0FE :    INC  $0400
+E101 :    CMP  $0400 , Y
+E104 :    BCS    $04
+E106 :    BEQ    $02
+E108 :    BMI    $02
+E10A :    STX    $00
+E10C :    INX 
+E10D :    DEC  $0400
+E110 :    DEC  $0400
+E113 :    CMP  $0400 , Y
+E116 :    BCC    $04
+E118 :    BEQ    $02
+E11A :    BPL    $02
+E11C :    STX    $00
+E11E :    INX 
+E11F :    BIT    $01
+E121 :    LDA   #$40
+E123 :    STA  $0400
+E126 :    SEC 
+E127 :    SBC  $0400 , Y
+E12A :    BMI    $0A
+E12C :    BCC    $08
+E12E :    BNE    $06
+E130 :    BVS    $04
+E132 :    CMP   #$00
+E134 :    BEQ    $02
+E136 :    STX    $00
+E138 :    INX 
+E139 :    CLV 
+E13A :    SEC 
+E13B :    LDA   #$40
+E13D :    DEC  $0400
+E140 :    SBC  $0400 , Y
+E143 :    BEQ    $0A
+E145 :    BMI    $08
+E147 :    BCC    $06
+E149 :    BVS    $04
+E14B :    CMP   #$01
+E14D :    BEQ    $02
+E14F :    STX    $00
+E151 :    INX 
+E152 :    LDA   #$40
+E154 :    SEC 
+E155 :    BIT    $01
+E157 :    INC  $0400
+E15A :    INC  $0400
+E15D :    SBC  $0400 , Y
+E160 :    BCS    $0A
+E162 :    BEQ    $08
+E164 :    BPL    $06
+E166 :    BVS    $04
+E168 :    CMP   #$FF
+E16A :    BEQ    $02
+E16C :    STX    $00
+E16E :    INX 
+E16F :    CLC 
+E170 :    LDA   #$00
+E172 :    STA  $0400
+E175 :    LDA   #$80
+E177 :    SBC  $0400 , Y
+E17A :    BCC    $04
+E17C :    CMP   #$7F
+E17E :    BEQ    $02
+E180 :    STX    $00
+E182 :    INX 
+E183 :    SEC 
+E184 :    LDA   #$7F
+E186 :    STA  $0400
+E189 :    LDA   #$81
+E18B :    SBC  $0400 , Y
+E18E :    BVC    $06
+E190 :    BCC    $04
+E192 :    CMP   #$02
+E194 :    BEQ    $02
+E196 :    STX    $00
+E198 :    INX 
+E199 :    LDA   #$00
+E19B :    LDA   #$87
+E19D :    STA  $0400 , Y
+E1A0 :    LDA  $0400
+E1A3 :    CMP   #$87
+E1A5 :    BEQ    $02
+E1A7 :    STX    $00
+E1A9 :    RTS 
+E1AA :    LDA   #$FF
+E1AC :    STA    $01
+E1AE :    LDA   #$AA
+E1B0 :    STA  $0633
+E1B3 :    LDA   #$BB
+E1B5 :    STA  $0689
+E1B8 :    LDX   #$00
+E1BA :    LDA   #$66
+E1BC :    BIT    $01
+E1BE :    SEC 
+E1BF :    LDY   #$00
+E1C1 :    LDY  $0633 , X
+E1C4 :    BPL    $12
+E1C6 :    BEQ    $10
+E1C8 :    BVC    $0E
+E1CA :    BCC    $0C
+E1CC :    CMP   #$66
+E1CE :    BNE    $08
+E1D0 :    CPX   #$00
+E1D2 :    BNE    $04
+E1D4 :    CPY   #$AA
+E1D6 :    BEQ    $04
+E1D8 :    LDA   #$51
+E1DA :    STA    $00
+E1DC :    LDX   #$8A
+E1DE :    LDA   #$66
+E1E0 :    CLV 
+E1E1 :    CLC 
+E1E2 :    LDY   #$00
+E1E4 :    LDY  $05FF , X
+E1E7 :    BPL    $12
+E1E9 :    BEQ    $10
+E1EB :    BVS    $0E
+E1ED :    BCS    $0C
+E1EF :    CPY   #$BB
+E1F1 :    BNE    $08
+E1F3 :    CMP   #$66
+E1F5 :    BNE    $04
+E1F7 :    CPX   #$8A
+E1F9 :    BEQ    $04
+E1FB :    LDA   #$52
+E1FD :    STA    $00
+E1FF :    LDY   #$53
+E201 :    LDA   #$AA
+E203 :    LDX   #$78
+E205 :    STA  $0678
+E208 :    JSR  $F7B6
+E20B :    ORA  $0600 , X
+E20E :    JSR  $F7C0
+E211 :    INY 
+E212 :    LDA   #$00
+E214 :    STA  $0678
+E217 :    JSR  $F7CE
+E21A :    ORA  $0600 , X
+E21D :    JSR  $F7D3
+E220 :    INY 
+E221 :    LDA   #$AA
+E223 :    STA  $0678
+E226 :    JSR  $F7DF
+E229 :    AND  $0600 , X
+E22C :    JSR  $F7E5
+E22F :    INY 
+E230 :    LDA   #$EF
+E232 :    STA  $0678
+E235 :    JSR  $F7F1
+E238 :    AND  $0600 , X
+E23B :    JSR  $F7F6
+E23E :    INY 
+E23F :    LDA   #$AA
+E241 :    STA  $0678
+E244 :    JSR  $F804
+E247 :    EOR  $0600 , X
+E24A :    JSR  $F80A
+E24D :    INY 
+E24E :    LDA   #$70
+E250 :    STA  $0678
+E253 :    JSR  $F818
+E256 :    EOR  $0600 , X
+E259 :    JSR  $F81D
+E25C :    INY 
+E25D :    LDA   #$69
+E25F :    STA  $0678
+E262 :    JSR  $F829
+E265 :    ADC  $0600 , X
+E268 :    JSR  $F82F
+E26B :    INY 
+E26C :    JSR  $F83D
+E26F :    ADC  $0600 , X
+E272 :    JSR  $F843
+E275 :    INY 
+E276 :    LDA   #$7F
+E278 :    STA  $0678
+E27B :    JSR  $F851
+E27E :    ADC  $0600 , X
+E281 :    JSR  $F856
+E284 :    INY 
+E285 :    LDA   #$80
+E287 :    STA  $0678
+E28A :    JSR  $F864
+E28D :    ADC  $0600 , X
+E290 :    JSR  $F86A
+E293 :    INY 
+E294 :    JSR  $F878
+E297 :    ADC  $0600 , X
+E29A :    JSR  $F87D
+E29D :    INY 
+E29E :    LDA   #$40
+E2A0 :    STA  $0678
+E2A3 :    JSR  $F889
+E2A6 :    CMP  $0600 , X
+E2A9 :    JSR  $F88E
+E2AC :    INY 
+E2AD :    PHA 
+E2AE :    LDA   #$3F
+E2B0 :    STA  $0678
+E2B3 :    PLA 
+E2B4 :    JSR  $F89A
+E2B7 :    CMP  $0600 , X
+E2BA :    JSR  $F89C
+E2BD :    INY 
+E2BE :    PHA 
+E2BF :    LDA   #$41
+E2C1 :    STA  $0678
+E2C4 :    PLA 
+E2C5 :    CMP  $0600 , X
+E2C8 :    JSR  $F8A8
+E2CB :    INY 
+E2CC :    PHA 
+E2CD :    LDA   #$00
+E2CF :    STA  $0678
+E2D2 :    PLA 
+E2D3 :    JSR  $F8B2
+E2D6 :    CMP  $0600 , X
+E2D9 :    JSR  $F8B5
+E2DC :    INY 
+E2DD :    PHA 
+E2DE :    LDA   #$80
+E2E0 :    STA  $0678
+E2E3 :    PLA 
+E2E4 :    CMP  $0600 , X
+E2E7 :    JSR  $F8BF
+E2EA :    INY 
+E2EB :    PHA 
+E2EC :    LDA   #$81
+E2EE :    STA  $0678
+E2F1 :    PLA 
+E2F2 :    CMP  $0600 , X
+E2F5 :    JSR  $F8C9
+E2F8 :    INY 
+E2F9 :    PHA 
+E2FA :    LDA   #$7F
+E2FC :    STA  $0678
+E2FF :    PLA 
+E300 :    CMP  $0600 , X
+E303 :    JSR  $F8D3
+E306 :    INY 
+E307 :    LDA   #$40
+E309 :    STA  $0678
+E30C :    JSR  $F931
+E30F :    SBC  $0600 , X
+E312 :    JSR  $F937
+E315 :    INY 
+E316 :    LDA   #$3F
+E318 :    STA  $0678
+E31B :    JSR  $F947
+E31E :    SBC  $0600 , X
+E321 :    JSR  $F94C
+E324 :    INY 
+E325 :    LDA   #$41
+E327 :    STA  $0678
+E32A :    JSR  $F95C
+E32D :    SBC  $0600 , X
+E330 :    JSR  $F962
+E333 :    INY 
+E334 :    LDA   #$00
+E336 :    STA  $0678
+E339 :    JSR  $F972
+E33C :    SBC  $0600 , X
+E33F :    JSR  $F976
+E342 :    INY 
+E343 :    LDA   #$7F
+E345 :    STA  $0678
+E348 :    JSR  $F980
+E34B :    SBC  $0600 , X
+E34E :    JSR  $F984
+E351 :    LDA   #$AA
+E353 :    STA  $0633
+E356 :    LDA   #$BB
+E358 :    STA  $0689
+E35B :    LDX   #$00
+E35D :    LDY   #$66
+E35F :    BIT    $01
+E361 :    SEC 
+E362 :    LDA   #$00
+E364 :    LDA  $0633 , X
+E367 :    BPL    $12
+E369 :    BEQ    $10
+E36B :    BVC    $0E
+E36D :    BCC    $0C
+E36F :    CPY   #$66
+E371 :    BNE    $08
+E373 :    CPX   #$00
+E375 :    BNE    $04
+E377 :    CMP   #$AA
+E379 :    BEQ    $04
+E37B :    LDA   #$6A
+E37D :    STA    $00
+E37F :    LDX   #$8A
+E381 :    LDY   #$66
+E383 :    CLV 
+E384 :    CLC 
+E385 :    LDA   #$00
+E387 :    LDA  $05FF , X
+E38A :    BPL    $12
+E38C :    BEQ    $10
+E38E :    BVS    $0E
+E390 :    BCS    $0C
+E392 :    CMP   #$BB
+E394 :    BNE    $08
+E396 :    CPY   #$66
+E398 :    BNE    $04
+E39A :    CPX   #$8A
+E39C :    BEQ    $04
+E39E :    LDA   #$6B
+E3A0 :    STA    $00
+E3A2 :    BIT    $01
+E3A4 :    SEC 
+E3A5 :    LDA   #$44
+E3A7 :    LDX   #$00
+E3A9 :    STA  $0633 , X
+E3AC :    LDA  $0633
+E3AF :    BCC    $1A
+E3B1 :    CMP   #$44
+E3B3 :    BNE    $16
+E3B5 :    BVC    $14
+E3B7 :    CLC 
+E3B8 :    CLV 
+E3B9 :    LDA   #$99
+E3BB :    LDX   #$80
+E3BD :    STA  $0585 , X
+E3C0 :    LDA  $0605
+E3C3 :    BCS    $06
+E3C5 :    CMP   #$99
+E3C7 :    BNE    $02
+E3C9 :    BVC    $04
+E3CB :    LDA   #$6C
+E3CD :    STA    $00
+E3CF :    LDY   #$6D
+E3D1 :    LDX   #$6D
+E3D3 :    JSR  $F990
+E3D6 :    STA  $0600 , X
+E3D9 :    LSR  $0600 , X
+E3DC :    LDA  $0600 , X
+E3DF :    JSR  $F99D
+E3E2 :    INY 
+E3E3 :    STA  $0600 , X
+E3E6 :    LSR  $0600 , X
+E3E9 :    LDA  $0600 , X
+E3EC :    JSR  $F9AD
+E3EF :    INY 
+E3F0 :    JSR  $F9BD
+E3F3 :    STA  $0600 , X
+E3F6 :    ASL  $0600 , X
+E3F9 :    LDA  $0600 , X
+E3FC :    JSR  $F9C3
+E3FF :    INY 
+E400 :    STA  $0600 , X
+E403 :    ASL  $0600 , X
+E406 :    LDA  $0600 , X
+E409 :    JSR  $F9D4
+E40C :    INY 
+E40D :    JSR  $F9E4
+E410 :    STA  $0600 , X
+E413 :    ROR  $0600 , X
+E416 :    LDA  $0600 , X
+E419 :    JSR  $F9EA
+E41C :    INY 
+E41D :    STA  $0600 , X
+E420 :    ROR  $0600 , X
+E423 :    LDA  $0600 , X
+E426 :    JSR  $F9FB
+E429 :    INY 
+E42A :    JSR  $FA0A
+E42D :    STA  $0600 , X
+E430 :    ROL  $0600 , X
+E433 :    LDA  $0600 , X
+E436 :    JSR  $FA10
+E439 :    INY 
+E43A :    STA  $0600 , X
+E43D :    ROL  $0600 , X
+E440 :    LDA  $0600 , X
+E443 :    JSR  $FA21
+E446 :    LDA   #$FF
+E448 :    STA  $0600 , X
+E44B :    STA    $01
+E44D :    BIT    $01
+E44F :    SEC 
+E450 :    INC  $0600 , X
+E453 :    BNE    $0D
+E455 :    BMI    $0B
+E457 :    BVC    $09
+E459 :    BCC    $07
+E45B :    LDA  $0600 , X
+E45E :    CMP   #$00
+E460 :    BEQ    $04
+E462 :    LDA   #$75
+E464 :    STA    $00
+E466 :    LDA   #$7F
+E468 :    STA  $0600 , X
+E46B :    CLV 
+E46C :    CLC 
+E46D :    INC  $0600 , X
+E470 :    BEQ    $0D
+E472 :    BPL    $0B
+E474 :    BVS    $09
+E476 :    BCS    $07
+E478 :    LDA  $0600 , X
+E47B :    CMP   #$80
+E47D :    BEQ    $04
+E47F :    LDA   #$76
+E481 :    STA    $00
+E483 :    LDA   #$00
+E485 :    STA  $0600 , X
+E488 :    BIT    $01
+E48A :    SEC 
+E48B :    DEC  $0600 , X
+E48E :    BEQ    $0D
+E490 :    BPL    $0B
+E492 :    BVC    $09
+E494 :    BCC    $07
+E496 :    LDA  $0600 , X
+E499 :    CMP   #$FF
+E49B :    BEQ    $04
+E49D :    LDA   #$77
+E49F :    STA    $00
+E4A1 :    LDA   #$80
+E4A3 :    STA  $0600 , X
+E4A6 :    CLV 
+E4A7 :    CLC 
+E4A8 :    DEC  $0600 , X
+E4AB :    BEQ    $0D
+E4AD :    BMI    $0B
+E4AF :    BVS    $09
+E4B1 :    BCS    $07
+E4B3 :    LDA  $0600 , X
+E4B6 :    CMP   #$7F
+E4B8 :    BEQ    $04
+E4BA :    LDA   #$78
+E4BC :    STA    $00
+E4BE :    LDA   #$01
+E4C0 :    STA  $0600 , X
+E4C3 :    DEC  $0600 , X
+E4C6 :    BEQ    $04
+E4C8 :    LDA   #$79
+E4CA :    STA    $00
+E4CC :    LDA   #$33
+E4CE :    STA  $0678
+E4D1 :    LDA   #$44
+E4D3 :    LDY   #$78
+E4D5 :    LDX   #$00
+E4D7 :    SEC 
+E4D8 :    BIT    $01
+E4DA :    LDX  $0600 , Y
+E4DD :    BCC    $12
+E4DF :    BVC    $10
+E4E1 :    BMI    $0E
+E4E3 :    BEQ    $0C
+E4E5 :    CPX   #$33
+E4E7 :    BNE    $08
+E4E9 :    CPY   #$78
+E4EB :    BNE    $04
+E4ED :    CMP   #$44
+E4EF :    BEQ    $04
+E4F1 :    LDA   #$7A
+E4F3 :    STA    $00
+E4F5 :    LDA   #$97
+E4F7 :    STA  $067F
+E4FA :    LDA   #$47
+E4FC :    LDY   #$FF
+E4FE :    LDX   #$00
+E500 :    CLC 
+E501 :    CLV 
+E502 :    LDX  $0580 , Y
+E505 :    BCS    $12
+E507 :    BVS    $10
+E509 :    BPL    $0E
+E50B :    BEQ    $0C
+E50D :    CPX   #$97
+E50F :    BNE    $08
+E511 :    CPY   #$FF
+E513 :    BNE    $04
+E515 :    CMP   #$47
+E517 :    BEQ    $04
+E519 :    LDA   #$7B
+E51B :    STA    $00
+E51D :    RTS 
+E51E :    LDA   #$55
+E520 :    STA  $0580
+E523 :    LDA   #$AA
+E525 :    STA  $0432
+E528 :    LDA   #$80
+E52A :    STA    $43
+E52C :    LDA   #$05
+E52E :    STA    $44
+E530 :    LDA   #$32
+E532 :    STA    $45
+E534 :    LDA   #$04
+E536 :    STA    $46
+E538 :    LDX   #$03
+E53A :    LDY   #$77
+E53C :    LDA   #$FF
+E53E :    STA    $01
+E540 :    BIT    $01
+E542 :    SEC 
+E543 :    LDA   #$00
+E545 :    LAX   ($40 , X)          ;Illegal OPcode LAX
+E547 :    NOP 
+E548 :    NOP 
+E549 :    NOP 
+E54A :    NOP 
+E54B :    BEQ    $12
+E54D :    BMI    $10
+E54F :    BVC    $0E
+E551 :    BCC    $0C
+E553 :    CMP   #$55
+E555 :    BNE    $08
+E557 :    CPX   #$55
+E559 :    BNE    $04
+E55B :    CPY   #$77
+E55D :    BEQ    $04
+E55F :    LDA   #$7C
+E561 :    STA    $00
+E563 :    LDX   #$05
+E565 :    LDY   #$33
+E567 :    CLV 
+E568 :    CLC 
+E569 :    LDA   #$00
+E56B :    LAX   ($40 , X)          ;Illegal OPcode LAX
+E56D :    NOP 
+E56E :    NOP 
+E56F :    NOP 
+E570 :    NOP 
+E571 :    BEQ    $12
+E573 :    BPL    $10
+E575 :    BVS    $0E
+E577 :    BCS    $0C
+E579 :    CMP   #$AA
+E57B :    BNE    $08
+E57D :    CPX   #$AA
+E57F :    BNE    $04
+E581 :    CPY   #$33
+E583 :    BEQ    $04
+E585 :    LDA   #$7D
+E587 :    STA    $00
+E589 :    LDA   #$87
+E58B :    STA    $67
+E58D :    LDA   #$32
+E58F :    STA    $68
+E591 :    LDY   #$57
+E593 :    BIT    $01
+E595 :    SEC 
+E596 :    LDA   #$00
+E598 :    LAX    $67               ;Illegal OPcode LAX
+E59A :    NOP 
+E59B :    NOP 
+E59C :    NOP 
+E59D :    NOP 
+E59E :    BEQ    $12
+E5A0 :    BPL    $10
+E5A2 :    BVC    $0E
+E5A4 :    BCC    $0C
+E5A6 :    CMP   #$87
+E5A8 :    BNE    $08
+E5AA :    CPX   #$87
+E5AC :    BNE    $04
+E5AE :    CPY   #$57
+E5B0 :    BEQ    $04
+E5B2 :    LDA   #$7E
+E5B4 :    STA    $00
+E5B6 :    LDY   #$53
+E5B8 :    CLV 
+E5B9 :    CLC 
+E5BA :    LDA   #$00
+E5BC :    LAX    $68               ;Illegal OPcode LAX
+E5BE :    NOP 
+E5BF :    NOP 
+E5C0 :    NOP 
+E5C1 :    NOP 
+E5C2 :    BEQ    $12
+E5C4 :    BMI    $10
+E5C6 :    BVS    $0E
+E5C8 :    BCS    $0C
+E5CA :    CMP   #$32
+E5CC :    BNE    $08
+E5CE :    CPX   #$32
+E5D0 :    BNE    $04
+E5D2 :    CPY   #$53
+E5D4 :    BEQ    $04
+E5D6 :    LDA   #$7F
+E5D8 :    STA    $00
+E5DA :    LDA   #$87
+E5DC :    STA  $0577
+E5DF :    LDA   #$32
+E5E1 :    STA  $0578
+E5E4 :    LDY   #$57
+E5E6 :    BIT    $01
+E5E8 :    SEC 
+E5E9 :    LDA   #$00
+E5EB :    LAX  $0577               ;Illegal OPcode LAX
+E5EE :    NOP 
+E5EF :    NOP 
+E5F0 :    NOP 
+E5F1 :    NOP 
+E5F2 :    BEQ    $12
+E5F4 :    BPL    $10
+E5F6 :    BVC    $0E
+E5F8 :    BCC    $0C
+E5FA :    CMP   #$87
+E5FC :    BNE    $08
+E5FE :    CPX   #$87
+E600 :    BNE    $04
+E602 :    CPY   #$57
+E604 :    BEQ    $04
+E606 :    LDA   #$80
+E608 :    STA    $00
+E60A :    LDY   #$53
+E60C :    CLV 
+E60D :    CLC 
+E60E :    LDA   #$00
+E610 :    LAX  $0578               ;Illegal OPcode LAX
+E613 :    NOP 
+E614 :    NOP 
+E615 :    NOP 
+E616 :    NOP 
+E617 :    BEQ    $12
+E619 :    BMI    $10
+E61B :    BVS    $0E
+E61D :    BCS    $0C
+E61F :    CMP   #$32
+E621 :    BNE    $08
+E623 :    CPX   #$32
+E625 :    BNE    $04
+E627 :    CPY   #$53
+E629 :    BEQ    $04
+E62B :    LDA   #$81
+E62D :    STA    $00
+E62F :    LDA   #$FF
+E631 :    STA    $43
+E633 :    LDA   #$04
+E635 :    STA    $44
+E637 :    LDA   #$32
+E639 :    STA    $45
+E63B :    LDA   #$04
+E63D :    STA    $46
+E63F :    LDA   #$55
+E641 :    STA  $0580
+E644 :    LDA   #$AA
+E646 :    STA  $0432
+E649 :    LDX   #$03
+E64B :    LDY   #$81
+E64D :    BIT    $01
+E64F :    SEC 
+E650 :    LDA   #$00
+E652 :    LAX   ($43), Y           ;Illegal OPcode LAX
+E654 :    NOP 
+E655 :    NOP 
+E656 :    NOP 
+E657 :    NOP 
+E658 :    BEQ    $12
+E65A :    BMI    $10
+E65C :    BVC    $0E
+E65E :    BCC    $0C
+E660 :    CMP   #$55
+E662 :    BNE    $08
+E664 :    CPX   #$55
+E666 :    BNE    $04
+E668 :    CPY   #$81
+E66A :    BEQ    $04
+E66C :    LDA   #$82
+E66E :    STA    $00
+E670 :    LDX   #$05
+E672 :    LDY   #$00
+E674 :    CLV 
+E675 :    CLC 
+E676 :    LDA   #$00
+E678 :    LAX   ($45), Y           ;Illegal OPcode LAX
+E67A :    NOP 
+E67B :    NOP 
+E67C :    NOP 
+E67D :    NOP 
+E67E :    BEQ    $12
+E680 :    BPL    $10
+E682 :    BVS    $0E
+E684 :    BCS    $0C
+E686 :    CMP   #$AA
+E688 :    BNE    $08
+E68A :    CPX   #$AA
+E68C :    BNE    $04
+E68E :    CPY   #$00
+E690 :    BEQ    $04
+E692 :    LDA   #$83
+E694 :    STA    $00
+E696 :    LDA   #$87
+E698 :    STA    $67
+E69A :    LDA   #$32
+E69C :    STA    $68
+E69E :    LDY   #$57
+E6A0 :    BIT    $01
+E6A2 :    SEC 
+E6A3 :    LDA   #$00
+E6A5 :    LAX    $10 , Y
+E6A7 :    NOP 
+E6A8 :    NOP 
+E6A9 :    NOP 
+E6AA :    NOP 
+E6AB :    BEQ    $12
+E6AD :    BPL    $10
+E6AF :    BVC    $0E
+E6B1 :    BCC    $0C
+E6B3 :    CMP   #$87
+E6B5 :    BNE    $08
+E6B7 :    CPX   #$87
+E6B9 :    BNE    $04
+E6BB :    CPY   #$57
+E6BD :    BEQ    $04
+E6BF :    LDA   #$84
+E6C1 :    STA    $00
+E6C3 :    LDY   #$FF
+E6C5 :    CLV 
+E6C6 :    CLC 
+E6C7 :    LDA   #$00
+E6C9 :    LAX    $69 , Y
+E6CB :    NOP 
+E6CC :    NOP 
+E6CD :    NOP 
+E6CE :    NOP 
+E6CF :    BEQ    $12
+E6D1 :    BMI    $10
+E6D3 :    BVS    $0E
+E6D5 :    BCS    $0C
+E6D7 :    CMP   #$32
+E6D9 :    BNE    $08
+E6DB :    CPX   #$32
+E6DD :    BNE    $04
+E6DF :    CPY   #$FF
+E6E1 :    BEQ    $04
+E6E3 :    LDA   #$85
+E6E5 :    STA    $00
+E6E7 :    LDA   #$87
+E6E9 :    STA  $0587
+E6EC :    LDA   #$32
+E6EE :    STA  $0588
+E6F1 :    LDY   #$30
+E6F3 :    BIT    $01
+E6F5 :    SEC 
+E6F6 :    LDA   #$00
+E6F8 :    LAX  $0557 , Y           ;Illegal OPcode LAX
+E6FB :    NOP 
+E6FC :    NOP 
+E6FD :    NOP 
+E6FE :    NOP 
+E6FF :    BEQ    $12
+E701 :    BPL    $10
+E703 :    BVC    $0E
+E705 :    BCC    $0C
+E707 :    CMP   #$87
+E709 :    BNE    $08
+E70B :    CPX   #$87
+E70D :    BNE    $04
+E70F :    CPY   #$30
+E711 :    BEQ    $04
+E713 :    LDA   #$86
+E715 :    STA    $00
+E717 :    LDY   #$40
+E719 :    CLV 
+E71A :    CLC 
+E71B :    LDA   #$00
+E71D :    LAX  $0548 , Y           ;Illegal OPcode LAX
+E720 :    NOP 
+E721 :    NOP 
+E722 :    NOP 
+E723 :    NOP 
+E724 :    BEQ    $12
+E726 :    BMI    $10
+E728 :    BVS    $0E
+E72A :    BCS    $0C
+E72C :    CMP   #$32
+E72E :    BNE    $08
+E730 :    CPX   #$32
+E732 :    BNE    $04
+E734 :    CPY   #$40
+E736 :    BEQ    $04
+E738 :    LDA   #$87
+E73A :    STA    $00
+E73C :    RTS 
+E73D :    LDA   #$C0
+E73F :    STA    $01
+E741 :    LDA   #$00
+E743 :    STA  $0489
+E746 :    LDA   #$89
+E748 :    STA    $60
+E74A :    LDA   #$04
+E74C :    STA    $61
+E74E :    LDY   #$44
+E750 :    LDX   #$17
+E752 :    LDA   #$3E
+E754 :    BIT    $01
+E756 :    CLC 
+E757 :    SAX   ($49 , X)          ;Illegal OPcode SAX
+E759 :    NOP 
+E75A :    NOP 
+E75B :    NOP 
+E75C :    NOP 
+E75D :    BNE    $19
+E75F :    BCS    $17
+E761 :    BVC    $15
+E763 :    BPL    $13
+E765 :    CMP   #$3E
+E767 :    BNE    $0F
+E769 :    CPY   #$44
+E76B :    BNE    $0B
+E76D :    CPX   #$17
+E76F :    BNE    $07
+E771 :    LDA  $0489
+E774 :    CMP   #$16
+E776 :    BEQ    $04
+E778 :    LDA   #$88
+E77A :    STA    $00
+E77C :    LDY   #$44
+E77E :    LDX   #$7A
+E780 :    LDA   #$66
+E782 :    SEC 
+E783 :    CLV 
+E784 :    SAX   ($E6 , X)          ;Illegal OPcode SAX
+E786 :    NOP 
+E787 :    NOP 
+E788 :    NOP 
+E789 :    NOP 
+E78A :    BEQ    $19
+E78C :    BCC    $17
+E78E :    BVS    $15
+E790 :    BMI    $13
+E792 :    CMP   #$66
+E794 :    BNE    $0F
+E796 :    CPY   #$44
+E798 :    BNE    $0B
+E79A :    CPX   #$7A
+E79C :    BNE    $07
+E79E :    LDA  $0489
+E7A1 :    CMP   #$62
+E7A3 :    BEQ    $04
+E7A5 :    LDA   #$89
+E7A7 :    STA    $00
+E7A9 :    LDA   #$FF
+E7AB :    STA    $49
+E7AD :    LDY   #$44
+E7AF :    LDX   #$AA
+E7B1 :    LDA   #$55
+E7B3 :    BIT    $01
+E7B5 :    CLC 
+E7B6 :    SAX    $49               ;Illegal OPcode SAX
+E7B8 :    NOP 
+E7B9 :    NOP 
+E7BA :    NOP 
+E7BB :    NOP 
+E7BC :    BEQ    $18
+E7BE :    BCS    $16
+E7C0 :    BVC    $14
+E7C2 :    BPL    $12
+E7C4 :    CMP   #$55
+E7C6 :    BNE    $0E
+E7C8 :    CPY   #$44
+E7CA :    BNE    $0A
+E7CC :    CPX   #$AA
+E7CE :    BNE    $06
+E7D0 :    LDA    $49
+E7D2 :    CMP   #$00
+E7D4 :    BEQ    $04
+E7D6 :    LDA   #$8A
+E7D8 :    STA    $00
+E7DA :    LDA   #$00
+E7DC :    STA    $56
+E7DE :    LDY   #$58
+E7E0 :    LDX   #$EF
+E7E2 :    LDA   #$66
+E7E4 :    SEC 
+E7E5 :    CLV 
+E7E6 :    SAX    $56               ;Illegal OPcode SAX
+E7E8 :    NOP 
+E7E9 :    NOP 
+E7EA :    NOP 
+E7EB :    NOP 
+E7EC :    BEQ    $18
+E7EE :    BCC    $16
+E7F0 :    BVS    $14
+E7F2 :    BMI    $12
+E7F4 :    CMP   #$66
+E7F6 :    BNE    $0E
+E7F8 :    CPY   #$58
+E7FA :    BNE    $0A
+E7FC :    CPX   #$EF
+E7FE :    BNE    $06
+E800 :    LDA    $56
+E802 :    CMP   #$66
+E804 :    BEQ    $04
+E806 :    LDA   #$8B
+E808 :    STA    $00
+E80A :    LDA   #$FF
+E80C :    STA  $0549
+E80F :    LDY   #$E5
+E811 :    LDX   #$AF
+E813 :    LDA   #$F5
+E815 :    BIT    $01
+E817 :    CLC 
+E818 :    SAX  $0549               ;Illegal OPcode SAX
+E81B :    NOP 
+E81C :    NOP 
+E81D :    NOP 
+E81E :    NOP 
+E81F :    BEQ    $19
+E821 :    BCS    $17
+E823 :    BVC    $15
+E825 :    BPL    $13
+E827 :    CMP   #$F5
+E829 :    BNE    $0F
+E82B :    CPY   #$E5
+E82D :    BNE    $0B
+E82F :    CPX   #$AF
+E831 :    BNE    $07
+E833 :    LDA  $0549
+E836 :    CMP   #$A5
+E838 :    BEQ    $04
+E83A :    LDA   #$8C
+E83C :    STA    $00
+E83E :    LDA   #$00
+E840 :    STA  $0556
+E843 :    LDY   #$58
+E845 :    LDX   #$B3
+E847 :    LDA   #$97
+E849 :    SEC 
+E84A :    CLV 
+E84B :    SAX  $0556               ;Illegal OPcode SAX
+E84E :    NOP 
+E84F :    NOP 
+E850 :    NOP 
+E851 :    NOP 
+E852 :    BEQ    $19
+E854 :    BCC    $17
+E856 :    BVS    $15
+E858 :    BPL    $13
+E85A :    CMP   #$97
+E85C :    BNE    $0F
+E85E :    CPY   #$58
+E860 :    BNE    $0B
+E862 :    CPX   #$B3
+E864 :    BNE    $07
+E866 :    LDA  $0556
+E869 :    CMP   #$93
+E86B :    BEQ    $04
+E86D :    LDA   #$8D
+E86F :    STA    $00
+E871 :    LDA   #$FF
+E873 :    STA    $49
+E875 :    LDY   #$FF
+E877 :    LDX   #$AA
+E879 :    LDA   #$55
+E87B :    BIT    $01
+E87D :    CLC 
+E87E :    SAX    $4A , Y
+E880 :    NOP 
+E881 :    NOP 
+E882 :    NOP 
+E883 :    NOP 
+E884 :    BEQ    $18
+E886 :    BCS    $16
+E888 :    BVC    $14
+E88A :    BPL    $12
+E88C :    CMP   #$55
+E88E :    BNE    $0E
+E890 :    CPY   #$FF
+E892 :    BNE    $0A
+E894 :    CPX   #$AA
+E896 :    BNE    $06
+E898 :    LDA    $49
+E89A :    CMP   #$00
+E89C :    BEQ    $04
+E89E :    LDA   #$8E
+E8A0 :    STA    $00
+E8A2 :    LDA   #$00
+E8A4 :    STA    $56
+E8A6 :    LDY   #$06
+E8A8 :    LDX   #$EF
+E8AA :    LDA   #$66
+E8AC :    SEC 
+E8AD :    CLV 
+E8AE :    SAX    $50 , Y
+E8B0 :    NOP 
+E8B1 :    NOP 
+E8B2 :    NOP 
+E8B3 :    NOP 
+E8B4 :    BEQ    $18
+E8B6 :    BCC    $16
+E8B8 :    BVS    $14
+E8BA :    BMI    $12
+E8BC :    CMP   #$66
+E8BE :    BNE    $0E
+E8C0 :    CPY   #$06
+E8C2 :    BNE    $0A
+E8C4 :    CPX   #$EF
+E8C6 :    BNE    $06
+E8C8 :    LDA    $56
+E8CA :    CMP   #$66
+E8CC :    BEQ    $04
+E8CE :    LDA   #$8F
+E8D0 :    STA    $00
+E8D2 :    RTS 
+E8D3 :    LDY   #$90
+E8D5 :    JSR  $F931
+E8D8 :    SBC   #$40               ;Illegal OPcode SBC
+E8DA :    NOP 
+E8DB :    NOP 
+E8DC :    NOP 
+E8DD :    NOP 
+E8DE :    JSR  $F937
+E8E1 :    INY 
+E8E2 :    JSR  $F947
+E8E5 :    SBC   #$3F               ;Illegal OPcode SBC
+E8E7 :    NOP 
+E8E8 :    NOP 
+E8E9 :    NOP 
+E8EA :    NOP 
+E8EB :    JSR  $F94C
+E8EE :    INY 
+E8EF :    JSR  $F95C
+E8F2 :    SBC   #$41               ;Illegal OPcode SBC
+E8F4 :    NOP 
+E8F5 :    NOP 
+E8F6 :    NOP 
+E8F7 :    NOP 
+E8F8 :    JSR  $F962
+E8FB :    INY 
+E8FC :    JSR  $F972
+E8FF :    SBC   #$00               ;Illegal OPcode SBC
+E901 :    NOP 
+E902 :    NOP 
+E903 :    NOP 
+E904 :    NOP 
+E905 :    JSR  $F976
+E908 :    INY 
+E909 :    JSR  $F980
+E90C :    SBC   #$7F               ;Illegal OPcode SBC
+E90E :    NOP 
+E90F :    NOP 
+E910 :    NOP 
+E911 :    NOP 
+E912 :    JSR  $F984
+E915 :    RTS 
+E916 :    LDA   #$FF
+E918 :    STA    $01
+E91A :    LDY   #$95
+E91C :    LDX   #$02
+E91E :    LDA   #$47
+E920 :    STA    $47
+E922 :    LDA   #$06
+E924 :    STA    $48
+E926 :    LDA   #$EB
+E928 :    STA  $0647
+E92B :    JSR  $FA31
+E92E :    DCP   ($45 , X)          ;Illegal OPcode DCP
+E930 :    NOP 
+E931 :    NOP 
+E932 :    NOP 
+E933 :    NOP 
+E934 :    JSR  $FA37
+E937 :    LDA  $0647
+E93A :    CMP   #$EA
+E93C :    BEQ    $02
+E93E :    STY    $00
+E940 :    INY 
+E941 :    LDA   #$00
+E943 :    STA  $0647
+E946 :    JSR  $FA42
+E949 :    DCP   ($45 , X)          ;Illegal OPcode DCP
+E94B :    NOP 
+E94C :    NOP 
+E94D :    NOP 
+E94E :    NOP 
+E94F :    JSR  $FA47
+E952 :    LDA  $0647
+E955 :    CMP   #$FF
+E957 :    BEQ    $02
+E959 :    STY    $00
+E95B :    INY 
+E95C :    LDA   #$37
+E95E :    STA  $0647
+E961 :    JSR  $FA54
+E964 :    DCP   ($45 , X)          ;Illegal OPcode DCP
+E966 :    NOP 
+E967 :    NOP 
+E968 :    NOP 
+E969 :    NOP 
+E96A :    JSR  $FA59
+E96D :    LDA  $0647
+E970 :    CMP   #$36
+E972 :    BEQ    $02
+E974 :    STY    $00
+E976 :    INY 
+E977 :    LDA   #$EB
+E979 :    STA    $47
+E97B :    JSR  $FA31
+E97E :    DCP    $47               ;Illegal OPcode DCP
+E980 :    NOP 
+E981 :    NOP 
+E982 :    NOP 
+E983 :    NOP 
+E984 :    JSR  $FA37
+E987 :    LDA    $47
+E989 :    CMP   #$EA
+E98B :    BEQ    $02
+E98D :    STY    $00
+E98F :    INY 
+E990 :    LDA   #$00
+E992 :    STA    $47
+E994 :    JSR  $FA42
+E997 :    DCP    $47               ;Illegal OPcode DCP
+E999 :    NOP 
+E99A :    NOP 
+E99B :    NOP 
+E99C :    NOP 
+E99D :    JSR  $FA47
+E9A0 :    LDA    $47
+E9A2 :    CMP   #$FF
+E9A4 :    BEQ    $02
+E9A6 :    STY    $00
+E9A8 :    INY 
+E9A9 :    LDA   #$37
+E9AB :    STA    $47
+E9AD :    JSR  $FA54
+E9B0 :    DCP    $47               ;Illegal OPcode DCP
+E9B2 :    NOP 
+E9B3 :    NOP 
+E9B4 :    NOP 
+E9B5 :    NOP 
+E9B6 :    JSR  $FA59
+E9B9 :    LDA    $47
+E9BB :    CMP   #$36
+E9BD :    BEQ    $02
+E9BF :    STY    $00
+E9C1 :    INY 
+E9C2 :    LDA   #$EB
+E9C4 :    STA  $0647
+E9C7 :    JSR  $FA31
+E9CA :    DCP  $0647               ;Illegal OPcode DCP
+E9CD :    NOP 
+E9CE :    NOP 
+E9CF :    NOP 
+E9D0 :    NOP 
+E9D1 :    JSR  $FA37
+E9D4 :    LDA  $0647
+E9D7 :    CMP   #$EA
+E9D9 :    BEQ    $02
+E9DB :    STY    $00
+E9DD :    INY 
+E9DE :    LDA   #$00
+E9E0 :    STA  $0647
+E9E3 :    JSR  $FA42
+E9E6 :    DCP  $0647               ;Illegal OPcode DCP
+E9E9 :    NOP 
+E9EA :    NOP 
+E9EB :    NOP 
+E9EC :    NOP 
+E9ED :    JSR  $FA47
+E9F0 :    LDA  $0647
+E9F3 :    CMP   #$FF
+E9F5 :    BEQ    $02
+E9F7 :    STY    $00
+E9F9 :    INY 
+E9FA :    LDA   #$37
+E9FC :    STA  $0647
+E9FF :    JSR  $FA54
+EA02 :    DCP  $0647               ;Illegal OPcode DCP
+EA05 :    NOP 
+EA06 :    NOP 
+EA07 :    NOP 
+EA08 :    NOP 
+EA09 :    JSR  $FA59
+EA0C :    LDA  $0647
+EA0F :    CMP   #$36
+EA11 :    BEQ    $02
+EA13 :    STY    $00
+EA15 :    LDA   #$EB
+EA17 :    STA  $0647
+EA1A :    LDA   #$48
+EA1C :    STA    $45
+EA1E :    LDA   #$05
+EA20 :    STA    $46
+EA22 :    LDY   #$FF
+EA24 :    JSR  $FA31
+EA27 :    DCP   ($45), Y           ;Illegal OPcode DCP
+EA29 :    NOP 
+EA2A :    NOP 
+EA2B :    PHP 
+EA2C :    PHA 
+EA2D :    LDY   #$9E
+EA2F :    PLA 
+EA30 :    PLP 
+EA31 :    JSR  $FA37
+EA34 :    LDA  $0647
+EA37 :    CMP   #$EA
+EA39 :    BEQ    $02
+EA3B :    STY    $00
+EA3D :    LDY   #$FF
+EA3F :    LDA   #$00
+EA41 :    STA  $0647
+EA44 :    JSR  $FA42
+EA47 :    DCP   ($45), Y           ;Illegal OPcode DCP
+EA49 :    NOP 
+EA4A :    NOP 
+EA4B :    PHP 
+EA4C :    PHA 
+EA4D :    LDY   #$9F
+EA4F :    PLA 
+EA50 :    PLP 
+EA51 :    JSR  $FA47
+EA54 :    LDA  $0647
+EA57 :    CMP   #$FF
+EA59 :    BEQ    $02
+EA5B :    STY    $00
+EA5D :    LDY   #$FF
+EA5F :    LDA   #$37
+EA61 :    STA  $0647
+EA64 :    JSR  $FA54
+EA67 :    DCP   ($45), Y           ;Illegal OPcode DCP
+EA69 :    NOP 
+EA6A :    NOP 
+EA6B :    PHP 
+EA6C :    PHA 
+EA6D :    LDY   #$A0
+EA6F :    PLA 
+EA70 :    PLP 
+EA71 :    JSR  $FA59
+EA74 :    LDA  $0647
+EA77 :    CMP   #$36
+EA79 :    BEQ    $02
+EA7B :    STY    $00
+EA7D :    LDY   #$A1
+EA7F :    LDX   #$FF
+EA81 :    LDA   #$EB
+EA83 :    STA    $47
+EA85 :    JSR  $FA31
+EA88 :    DCP    $48 , X           ;Illegal OPcode DCP
+EA8A :    NOP 
+EA8B :    NOP 
+EA8C :    NOP 
+EA8D :    NOP 
+EA8E :    JSR  $FA37
+EA91 :    LDA    $47
+EA93 :    CMP   #$EA
+EA95 :    BEQ    $02
+EA97 :    STY    $00
+EA99 :    INY 
+EA9A :    LDA   #$00
+EA9C :    STA    $47
+EA9E :    JSR  $FA42
+EAA1 :    DCP    $48 , X           ;Illegal OPcode DCP
+EAA3 :    NOP 
+EAA4 :    NOP 
+EAA5 :    NOP 
+EAA6 :    NOP 
+EAA7 :    JSR  $FA47
+EAAA :    LDA    $47
+EAAC :    CMP   #$FF
+EAAE :    BEQ    $02
+EAB0 :    STY    $00
+EAB2 :    INY 
+EAB3 :    LDA   #$37
+EAB5 :    STA    $47
+EAB7 :    JSR  $FA54
+EABA :    DCP    $48 , X           ;Illegal OPcode DCP
+EABC :    NOP 
+EABD :    NOP 
+EABE :    NOP 
+EABF :    NOP 
+EAC0 :    JSR  $FA59
+EAC3 :    LDA    $47
+EAC5 :    CMP   #$36
+EAC7 :    BEQ    $02
+EAC9 :    STY    $00
+EACB :    LDA   #$EB
+EACD :    STA  $0647
+EAD0 :    LDY   #$FF
+EAD2 :    JSR  $FA31
+EAD5 :    DCP  $0548 , Y           ;Illegal OPcode DCP
+EAD8 :    NOP 
+EAD9 :    NOP 
+EADA :    PHP 
+EADB :    PHA 
+EADC :    LDY   #$A4
+EADE :    PLA 
+EADF :    PLP 
+EAE0 :    JSR  $FA37
+EAE3 :    LDA  $0647
+EAE6 :    CMP   #$EA
+EAE8 :    BEQ    $02
+EAEA :    STY    $00
+EAEC :    LDY   #$FF
+EAEE :    LDA   #$00
+EAF0 :    STA  $0647
+EAF3 :    JSR  $FA42
+EAF6 :    DCP  $0548 , Y           ;Illegal OPcode DCP
+EAF9 :    NOP 
+EAFA :    NOP 
+EAFB :    PHP 
+EAFC :    PHA 
+EAFD :    LDY   #$A5
+EAFF :    PLA 
+EB00 :    PLP 
+EB01 :    JSR  $FA47
+EB04 :    LDA  $0647
+EB07 :    CMP   #$FF
+EB09 :    BEQ    $02
+EB0B :    STY    $00
+EB0D :    LDY   #$FF
+EB0F :    LDA   #$37
+EB11 :    STA  $0647
+EB14 :    JSR  $FA54
+EB17 :    DCP  $0548 , Y           ;Illegal OPcode DCP
+EB1A :    NOP 
+EB1B :    NOP 
+EB1C :    PHP 
+EB1D :    PHA 
+EB1E :    LDY   #$A6
+EB20 :    PLA 
+EB21 :    PLP 
+EB22 :    JSR  $FA59
+EB25 :    LDA  $0647
+EB28 :    CMP   #$36
+EB2A :    BEQ    $02
+EB2C :    STY    $00
+EB2E :    LDY   #$A7
+EB30 :    LDX   #$FF
+EB32 :    LDA   #$EB
+EB34 :    STA  $0647
+EB37 :    JSR  $FA31
+EB3A :    DCP  $0548               ;Illegal OPcode DCP
+EB3D :    NOP 
+EB3E :    NOP 
+EB3F :    NOP 
+EB40 :    NOP 
+EB41 :    JSR  $FA37
+EB44 :    LDA  $0647
+EB47 :    CMP   #$EA
+EB49 :    BEQ    $02
+EB4B :    STY    $00
+EB4D :    INY 
+EB4E :    LDA   #$00
+EB50 :    STA  $0647
+EB53 :    JSR  $FA42
+EB56 :    DCP  $0548               ;Illegal OPcode DCP
+EB59 :    NOP 
+EB5A :    NOP 
+EB5B :    NOP 
+EB5C :    NOP 
+EB5D :    JSR  $FA47
+EB60 :    LDA  $0647
+EB63 :    CMP   #$FF
+EB65 :    BEQ    $02
+EB67 :    STY    $00
+EB69 :    INY 
+EB6A :    LDA   #$37
+EB6C :    STA  $0647
+EB6F :    JSR  $FA54
+EB72 :    DCP  $0548               ;Illegal OPcode DCP
+EB75 :    NOP 
+EB76 :    NOP 
+EB77 :    NOP 
+EB78 :    NOP 
+EB79 :    JSR  $FA59
+EB7C :    LDA  $0647
+EB7F :    CMP   #$36
+EB81 :    BEQ    $02
+EB83 :    STY    $00
+EB85 :    RTS 
+EB86 :    LDA   #$FF
+EB88 :    STA    $01
+EB8A :    LDY   #$AA
+EB8C :    LDX   #$02
+EB8E :    LDA   #$47
+EB90 :    STA    $47
+EB92 :    LDA   #$06
+EB94 :    STA    $48
+EB96 :    LDA   #$EB
+EB98 :    STA  $0647
+EB9B :    JSR  $FAB1
+EB9E :    ISC   ($45 , X)          ;Illegal OPcode ISC
+EBA0 :    NOP 
+EBA1 :    NOP 
+EBA2 :    NOP 
+EBA3 :    NOP 
+EBA4 :    JSR  $FAB7
+EBA7 :    LDA  $0647
+EBAA :    CMP   #$EC
+EBAC :    BEQ    $02
+EBAE :    STY    $00
+EBB0 :    INY 
+EBB1 :    LDA   #$FF
+EBB3 :    STA  $0647
+EBB6 :    JSR  $FAC2
+EBB9 :    ISC   ($45 , X)          ;Illegal OPcode ISC
+EBBB :    NOP 
+EBBC :    NOP 
+EBBD :    NOP 
+EBBE :    NOP 
+EBBF :    JSR  $FAC7
+EBC2 :    LDA  $0647
+EBC5 :    CMP   #$00
+EBC7 :    BEQ    $02
+EBC9 :    STY    $00
+EBCB :    INY 
+EBCC :    LDA   #$37
+EBCE :    STA  $0647
+EBD1 :    JSR  $FAD4
+EBD4 :    ISC   ($45 , X)          ;Illegal OPcode ISC
+EBD6 :    NOP 
+EBD7 :    NOP 
+EBD8 :    NOP 
+EBD9 :    NOP 
+EBDA :    JSR  $FADA
+EBDD :    LDA  $0647
+EBE0 :    CMP   #$38
+EBE2 :    BEQ    $02
+EBE4 :    STY    $00
+EBE6 :    INY 
+EBE7 :    LDA   #$EB
+EBE9 :    STA    $47
+EBEB :    JSR  $FAB1
+EBEE :    ISC    $47               ;Illegal OPcode ISC
+EBF0 :    NOP 
+EBF1 :    NOP 
+EBF2 :    NOP 
+EBF3 :    NOP 
+EBF4 :    JSR  $FAB7
+EBF7 :    LDA    $47
+EBF9 :    CMP   #$EC
+EBFB :    BEQ    $02
+EBFD :    STY    $00
+EBFF :    INY 
+EC00 :    LDA   #$FF
+EC02 :    STA    $47
+EC04 :    JSR  $FAC2
+EC07 :    ISC    $47               ;Illegal OPcode ISC
+EC09 :    NOP 
+EC0A :    NOP 
+EC0B :    NOP 
+EC0C :    NOP 
+EC0D :    JSR  $FAC7
+EC10 :    LDA    $47
+EC12 :    CMP   #$00
+EC14 :    BEQ    $02
+EC16 :    STY    $00
+EC18 :    INY 
+EC19 :    LDA   #$37
+EC1B :    STA    $47
+EC1D :    JSR  $FAD4
+EC20 :    ISC    $47               ;Illegal OPcode ISC
+EC22 :    NOP 
+EC23 :    NOP 
+EC24 :    NOP 
+EC25 :    NOP 
+EC26 :    JSR  $FADA
+EC29 :    LDA    $47
+EC2B :    CMP   #$38
+EC2D :    BEQ    $02
+EC2F :    STY    $00
+EC31 :    INY 
+EC32 :    LDA   #$EB
+EC34 :    STA  $0647
+EC37 :    JSR  $FAB1
+EC3A :    ISC  $0647               ;Illegal OPcode ISC
+EC3D :    NOP 
+EC3E :    NOP 
+EC3F :    NOP 
+EC40 :    NOP 
+EC41 :    JSR  $FAB7
+EC44 :    LDA  $0647
+EC47 :    CMP   #$EC
+EC49 :    BEQ    $02
+EC4B :    STY    $00
+EC4D :    INY 
+EC4E :    LDA   #$FF
+EC50 :    STA  $0647
+EC53 :    JSR  $FAC2
+EC56 :    ISC  $0647               ;Illegal OPcode ISC
+EC59 :    NOP 
+EC5A :    NOP 
+EC5B :    NOP 
+EC5C :    NOP 
+EC5D :    JSR  $FAC7
+EC60 :    LDA  $0647
+EC63 :    CMP   #$00
+EC65 :    BEQ    $02
+EC67 :    STY    $00
+EC69 :    INY 
+EC6A :    LDA   #$37
+EC6C :    STA  $0647
+EC6F :    JSR  $FAD4
+EC72 :    ISC  $0647               ;Illegal OPcode ISC
+EC75 :    NOP 
+EC76 :    NOP 
+EC77 :    NOP 
+EC78 :    NOP 
+EC79 :    JSR  $FADA
+EC7C :    LDA  $0647
+EC7F :    CMP   #$38
+EC81 :    BEQ    $02
+EC83 :    STY    $00
+EC85 :    LDA   #$EB
+EC87 :    STA  $0647
+EC8A :    LDA   #$48
+EC8C :    STA    $45
+EC8E :    LDA   #$05
+EC90 :    STA    $46
+EC92 :    LDY   #$FF
+EC94 :    JSR  $FAB1
+EC97 :    ISC   ($45), Y           ;Illegal OPcode ISC
+EC99 :    NOP 
+EC9A :    NOP 
+EC9B :    PHP 
+EC9C :    PHA 
+EC9D :    LDY   #$B3
+EC9F :    PLA 
+ECA0 :    PLP 
+ECA1 :    JSR  $FAB7
+ECA4 :    LDA  $0647
+ECA7 :    CMP   #$EC
+ECA9 :    BEQ    $02
+ECAB :    STY    $00
+ECAD :    LDY   #$FF
+ECAF :    LDA   #$FF
+ECB1 :    STA  $0647
+ECB4 :    JSR  $FAC2
+ECB7 :    ISC   ($45), Y           ;Illegal OPcode ISC
+ECB9 :    NOP 
+ECBA :    NOP 
+ECBB :    PHP 
+ECBC :    PHA 
+ECBD :    LDY   #$B4
+ECBF :    PLA 
+ECC0 :    PLP 
+ECC1 :    JSR  $FAC7
+ECC4 :    LDA  $0647
+ECC7 :    CMP   #$00
+ECC9 :    BEQ    $02
+ECCB :    STY    $00
+ECCD :    LDY   #$FF
+ECCF :    LDA   #$37
+ECD1 :    STA  $0647
+ECD4 :    JSR  $FAD4
+ECD7 :    ISC   ($45), Y           ;Illegal OPcode ISC
+ECD9 :    NOP 
+ECDA :    NOP 
+ECDB :    PHP 
+ECDC :    PHA 
+ECDD :    LDY   #$B5
+ECDF :    PLA 
+ECE0 :    PLP 
+ECE1 :    JSR  $FADA
+ECE4 :    LDA  $0647
+ECE7 :    CMP   #$38
+ECE9 :    BEQ    $02
+ECEB :    STY    $00
+ECED :    LDY   #$B6
+ECEF :    LDX   #$FF
+ECF1 :    LDA   #$EB
+ECF3 :    STA    $47
+ECF5 :    JSR  $FAB1
+ECF8 :    ISC    $48 , X           ;Illegal OPcode ISC
+ECFA :    NOP 
+ECFB :    NOP 
+ECFC :    NOP 
+ECFD :    NOP 
+ECFE :    JSR  $FAB7
+ED01 :    LDA    $47
+ED03 :    CMP   #$EC
+ED05 :    BEQ    $02
+ED07 :    STY    $00
+ED09 :    INY 
+ED0A :    LDA   #$FF
+ED0C :    STA    $47
+ED0E :    JSR  $FAC2
+ED11 :    ISC    $48 , X           ;Illegal OPcode ISC
+ED13 :    NOP 
+ED14 :    NOP 
+ED15 :    NOP 
+ED16 :    NOP 
+ED17 :    JSR  $FAC7
+ED1A :    LDA    $47
+ED1C :    CMP   #$00
+ED1E :    BEQ    $02
+ED20 :    STY    $00
+ED22 :    INY 
+ED23 :    LDA   #$37
+ED25 :    STA    $47
+ED27 :    JSR  $FAD4
+ED2A :    ISC    $48 , X           ;Illegal OPcode ISC
+ED2C :    NOP 
+ED2D :    NOP 
+ED2E :    NOP 
+ED2F :    NOP 
+ED30 :    JSR  $FADA
+ED33 :    LDA    $47
+ED35 :    CMP   #$38
+ED37 :    BEQ    $02
+ED39 :    STY    $00
+ED3B :    LDA   #$EB
+ED3D :    STA  $0647
+ED40 :    LDY   #$FF
+ED42 :    JSR  $FAB1
+ED45 :    ISC  $0548 , Y           ;Illegal OPcode ISC
+ED48 :    NOP 
+ED49 :    NOP 
+ED4A :    PHP 
+ED4B :    PHA 
+ED4C :    LDY   #$B9
+ED4E :    PLA 
+ED4F :    PLP 
+ED50 :    JSR  $FAB7
+ED53 :    LDA  $0647
+ED56 :    CMP   #$EC
+ED58 :    BEQ    $02
+ED5A :    STY    $00
+ED5C :    LDY   #$FF
+ED5E :    LDA   #$FF
+ED60 :    STA  $0647
+ED63 :    JSR  $FAC2
+ED66 :    ISC  $0548 , Y           ;Illegal OPcode ISC
+ED69 :    NOP 
+ED6A :    NOP 
+ED6B :    PHP 
+ED6C :    PHA 
+ED6D :    LDY   #$BA
+ED6F :    PLA 
+ED70 :    PLP 
+ED71 :    JSR  $FAC7
+ED74 :    LDA  $0647
+ED77 :    CMP   #$00
+ED79 :    BEQ    $02
+ED7B :    STY    $00
+ED7D :    LDY   #$FF
+ED7F :    LDA   #$37
+ED81 :    STA  $0647
+ED84 :    JSR  $FAD4
+ED87 :    ISC  $0548 , Y           ;Illegal OPcode ISC
+ED8A :    NOP 
+ED8B :    NOP 
+ED8C :    PHP 
+ED8D :    PHA 
+ED8E :    LDY   #$BB
+ED90 :    PLA 
+ED91 :    PLP 
+ED92 :    JSR  $FADA
+ED95 :    LDA  $0647
+ED98 :    CMP   #$38
+ED9A :    BEQ    $02
+ED9C :    STY    $00
+ED9E :    LDY   #$BC
+EDA0 :    LDX   #$FF
+EDA2 :    LDA   #$EB
+EDA4 :    STA  $0647
+EDA7 :    JSR  $FAB1
+EDAA :    ISC  $0548 , X           ;Illegal OPcode ISC
+EDAD :    NOP 
+EDAE :    NOP 
+EDAF :    NOP 
+EDB0 :    NOP 
+EDB1 :    JSR  $FAB7
+EDB4 :    LDA  $0647
+EDB7 :    CMP   #$EC
+EDB9 :    BEQ    $02
+EDBB :    STY    $00
+EDBD :    INY 
+EDBE :    LDA   #$FF
+EDC0 :    STA  $0647
+EDC3 :    JSR  $FAC2
+EDC6 :    ISC  $0548 , X           ;Illegal OPcode ISC
+EDC9 :    NOP 
+EDCA :    NOP 
+EDCB :    NOP 
+EDCC :    NOP 
+EDCD :    JSR  $FAC7
+EDD0 :    LDA  $0647
+EDD3 :    CMP   #$00
+EDD5 :    BEQ    $02
+EDD7 :    STY    $00
+EDD9 :    INY 
+EDDA :    LDA   #$37
+EDDC :    STA  $0647
+EDDF :    JSR  $FAD4
+EDE2 :    ISC  $0548 , X           ;Illegal OPcode ISC
+EDE5 :    NOP 
+EDE6 :    NOP 
+EDE7 :    NOP 
+EDE8 :    NOP 
+EDE9 :    JSR  $FADA
+EDEC :    LDA  $0647
+EDEF :    CMP   #$38
+EDF1 :    BEQ    $02
+EDF3 :    STY    $00
+EDF5 :    RTS 
+EDF6 :    LDA   #$FF
+EDF8 :    STA    $01
+EDFA :    LDY   #$BF
+EDFC :    LDX   #$02
+EDFE :    LDA   #$47
+EE00 :    STA    $47
+EE02 :    LDA   #$06
+EE04 :    STA    $48
+EE06 :    LDA   #$A5
+EE08 :    STA  $0647
+EE0B :    JSR  $FA7B
+EE0E :    SLO   ($45 , X)          ;Illegal OPcode SLO
+EE10 :    NOP 
+EE11 :    NOP 
+EE12 :    NOP 
+EE13 :    NOP 
+EE14 :    JSR  $FA81
+EE17 :    LDA  $0647
+EE1A :    CMP   #$4A
+EE1C :    BEQ    $02
+EE1E :    STY    $00
+EE20 :    INY 
+EE21 :    LDA   #$29
+EE23 :    STA  $0647
+EE26 :    JSR  $FA8C
+EE29 :    SLO   ($45 , X)          ;Illegal OPcode SLO
+EE2B :    NOP 
+EE2C :    NOP 
+EE2D :    NOP 
+EE2E :    NOP 
+EE2F :    JSR  $FA91
+EE32 :    LDA  $0647
+EE35 :    CMP   #$52
+EE37 :    BEQ    $02
+EE39 :    STY    $00
+EE3B :    INY 
+EE3C :    LDA   #$37
+EE3E :    STA  $0647
+EE41 :    JSR  $FA9E
+EE44 :    SLO   ($45 , X)          ;Illegal OPcode SLO
+EE46 :    NOP 
+EE47 :    NOP 
+EE48 :    NOP 
+EE49 :    NOP 
+EE4A :    JSR  $FAA4
+EE4D :    LDA  $0647
+EE50 :    CMP   #$6E
+EE52 :    BEQ    $02
+EE54 :    STY    $00
+EE56 :    INY 
+EE57 :    LDA   #$A5
+EE59 :    STA    $47
+EE5B :    JSR  $FA7B
+EE5E :    SLO    $47               ;Illegal OPcode SLO
+EE60 :    NOP 
+EE61 :    NOP 
+EE62 :    NOP 
+EE63 :    NOP 
+EE64 :    JSR  $FA81
+EE67 :    LDA    $47
+EE69 :    CMP   #$4A
+EE6B :    BEQ    $02
+EE6D :    STY    $00
+EE6F :    INY 
+EE70 :    LDA   #$29
+EE72 :    STA    $47
+EE74 :    JSR  $FA8C
+EE77 :    SLO    $47               ;Illegal OPcode SLO
+EE79 :    NOP 
+EE7A :    NOP 
+EE7B :    NOP 
+EE7C :    NOP 
+EE7D :    JSR  $FA91
+EE80 :    LDA    $47
+EE82 :    CMP   #$52
+EE84 :    BEQ    $02
+EE86 :    STY    $00
+EE88 :    INY 
+EE89 :    LDA   #$37
+EE8B :    STA    $47
+EE8D :    JSR  $FA9E
+EE90 :    SLO    $47               ;Illegal OPcode SLO
+EE92 :    NOP 
+EE93 :    NOP 
+EE94 :    NOP 
+EE95 :    NOP 
+EE96 :    JSR  $FAA4
+EE99 :    LDA    $47
+EE9B :    CMP   #$6E
+EE9D :    BEQ    $02
+EE9F :    STY    $00
+EEA1 :    INY 
+EEA2 :    LDA   #$A5
+EEA4 :    STA  $0647
+EEA7 :    JSR  $FA7B
+EEAA :    SLO  $0647               ;Illegal OPcode SLO
+EEAD :    NOP 
+EEAE :    NOP 
+EEAF :    NOP 
+EEB0 :    NOP 
+EEB1 :    JSR  $FA81
+EEB4 :    LDA  $0647
+EEB7 :    CMP   #$4A
+EEB9 :    BEQ    $02
+EEBB :    STY    $00
+EEBD :    INY 
+EEBE :    LDA   #$29
+EEC0 :    STA  $0647
+EEC3 :    JSR  $FA8C
+EEC6 :    SLO  $0647               ;Illegal OPcode SLO
+EEC9 :    NOP 
+EECA :    NOP 
+EECB :    NOP 
+EECC :    NOP 
+EECD :    JSR  $FA91
+EED0 :    LDA  $0647
+EED3 :    CMP   #$52
+EED5 :    BEQ    $02
+EED7 :    STY    $00
+EED9 :    INY 
+EEDA :    LDA   #$37
+EEDC :    STA  $0647
+EEDF :    JSR  $FA9E
+EEE2 :    SLO  $0647               ;Illegal OPcode SLO
+EEE5 :    NOP 
+EEE6 :    NOP 
+EEE7 :    NOP 
+EEE8 :    NOP 
+EEE9 :    JSR  $FAA4
+EEEC :    LDA  $0647
+EEEF :    CMP   #$6E
+EEF1 :    BEQ    $02
+EEF3 :    STY    $00
+EEF5 :    LDA   #$A5
+EEF7 :    STA  $0647
+EEFA :    LDA   #$48
+EEFC :    STA    $45
+EEFE :    LDA   #$05
+EF00 :    STA    $46
+EF02 :    LDY   #$FF
+EF04 :    JSR  $FA7B
+EF07 :    SLO   ($45), Y           ;Illegal OPcode SLO
+EF09 :    NOP 
+EF0A :    NOP 
+EF0B :    PHP 
+EF0C :    PHA 
+EF0D :    LDY   #$C8
+EF0F :    PLA 
+EF10 :    PLP 
+EF11 :    JSR  $FA81
+EF14 :    LDA  $0647
+EF17 :    CMP   #$4A
+EF19 :    BEQ    $02
+EF1B :    STY    $00
+EF1D :    LDY   #$FF
+EF1F :    LDA   #$29
+EF21 :    STA  $0647
+EF24 :    JSR  $FA8C
+EF27 :    SLO   ($45), Y           ;Illegal OPcode SLO
+EF29 :    NOP 
+EF2A :    NOP 
+EF2B :    PHP 
+EF2C :    PHA 
+EF2D :    LDY   #$C9
+EF2F :    PLA 
+EF30 :    PLP 
+EF31 :    JSR  $FA91
+EF34 :    LDA  $0647
+EF37 :    CMP   #$52
+EF39 :    BEQ    $02
+EF3B :    STY    $00
+EF3D :    LDY   #$FF
+EF3F :    LDA   #$37
+EF41 :    STA  $0647
+EF44 :    JSR  $FA9E
+EF47 :    SLO   ($45), Y           ;Illegal OPcode SLO
+EF49 :    NOP 
+EF4A :    NOP 
+EF4B :    PHP 
+EF4C :    PHA 
+EF4D :    LDY   #$CA
+EF4F :    PLA 
+EF50 :    PLP 
+EF51 :    JSR  $FAA4
+EF54 :    LDA  $0647
+EF57 :    CMP   #$6E
+EF59 :    BEQ    $02
+EF5B :    STY    $00
+EF5D :    LDY   #$CB
+EF5F :    LDX   #$FF
+EF61 :    LDA   #$A5
+EF63 :    STA    $47
+EF65 :    JSR  $FA7B
+EF68 :    SLO    $48 , X           ;Illegal OPcode SLO
+EF6A :    NOP 
+EF6B :    NOP 
+EF6C :    NOP 
+EF6D :    NOP 
+EF6E :    JSR  $FA81
+EF71 :    LDA    $47
+EF73 :    CMP   #$4A
+EF75 :    BEQ    $02
+EF77 :    STY    $00
+EF79 :    INY 
+EF7A :    LDA   #$29
+EF7C :    STA    $47
+EF7E :    JSR  $FA8C
+EF81 :    SLO    $48 , X           ;Illegal OPcode SLO
+EF83 :    NOP 
+EF84 :    NOP 
+EF85 :    NOP 
+EF86 :    NOP 
+EF87 :    JSR  $FA91
+EF8A :    LDA    $47
+EF8C :    CMP   #$52
+EF8E :    BEQ    $02
+EF90 :    STY    $00
+EF92 :    INY 
+EF93 :    LDA   #$37
+EF95 :    STA    $47
+EF97 :    JSR  $FA9E
+EF9A :    SLO    $48 , X           ;Illegal OPcode SLO
+EF9C :    NOP 
+EF9D :    NOP 
+EF9E :    NOP 
+EF9F :    NOP 
+EFA0 :    JSR  $FAA4
+EFA3 :    LDA    $47
+EFA5 :    CMP   #$6E
+EFA7 :    BEQ    $02
+EFA9 :    STY    $00
+EFAB :    LDA   #$A5
+EFAD :    STA  $0647
+EFB0 :    LDY   #$FF
+EFB2 :    JSR  $FA7B
+EFB5 :    SLO  $0548 , Y           ;Illegal OPcode SLO
+EFB8 :    NOP 
+EFB9 :    NOP 
+EFBA :    PHP 
+EFBB :    PHA 
+EFBC :    LDY   #$CE
+EFBE :    PLA 
+EFBF :    PLP 
+EFC0 :    JSR  $FA81
+EFC3 :    LDA  $0647
+EFC6 :    CMP   #$4A
+EFC8 :    BEQ    $02
+EFCA :    STY    $00
+EFCC :    LDY   #$FF
+EFCE :    LDA   #$29
+EFD0 :    STA  $0647
+EFD3 :    JSR  $FA8C
+EFD6 :    SLO  $0548 , Y           ;Illegal OPcode SLO
+EFD9 :    NOP 
+EFDA :    NOP 
+EFDB :    PHP 
+EFDC :    PHA 
+EFDD :    LDY   #$CF
+EFDF :    PLA 
+EFE0 :    PLP 
+EFE1 :    JSR  $FA91
+EFE4 :    LDA  $0647
+EFE7 :    CMP   #$52
+EFE9 :    BEQ    $02
+EFEB :    STY    $00
+EFED :    LDY   #$FF
+EFEF :    LDA   #$37
+EFF1 :    STA  $0647
+EFF4 :    JSR  $FA9E
+EFF7 :    SLO  $0548 , Y           ;Illegal OPcode SLO
+EFFA :    NOP 
+EFFB :    NOP 
+EFFC :    PHP 
+EFFD :    PHA 
+EFFE :    LDY   #$D0
+F000 :    PLA 
+F001 :    PLP 
+F002 :    JSR  $FAA4
+F005 :    LDA  $0647
+F008 :    CMP   #$6E
+F00A :    BEQ    $02
+F00C :    STY    $00
+F00E :    LDY   #$D1
+F010 :    LDX   #$FF
+F012 :    LDA   #$A5
+F014 :    STA  $0647
+F017 :    JSR  $FA7B
+F01A :    SLO  $0548 , X           ;Illegal OPcode SLO
+F01D :    NOP 
+F01E :    NOP 
+F01F :    NOP 
+F020 :    NOP 
+F021 :    JSR  $FA81
+F024 :    LDA  $0647
+F027 :    CMP   #$4A
+F029 :    BEQ    $02
+F02B :    STY    $00
+F02D :    INY 
+F02E :    LDA   #$29
+F030 :    STA  $0647
+F033 :    JSR  $FA8C
+F036 :    SLO  $0548 , X           ;Illegal OPcode SLO
+F039 :    NOP 
+F03A :    NOP 
+F03B :    NOP 
+F03C :    NOP 
+F03D :    JSR  $FA91
+F040 :    LDA  $0647
+F043 :    CMP   #$52
+F045 :    BEQ    $02
+F047 :    STY    $00
+F049 :    INY 
+F04A :    LDA   #$37
+F04C :    STA  $0647
+F04F :    JSR  $FA9E
+F052 :    SLO  $0548 , X           ;Illegal OPcode SLO
+F055 :    NOP 
+F056 :    NOP 
+F057 :    NOP 
+F058 :    NOP 
+F059 :    JSR  $FAA4
+F05C :    LDA  $0647
+F05F :    CMP   #$6E
+F061 :    BEQ    $02
+F063 :    STY    $00
+F065 :    RTS 
+F066 :    LDA   #$FF
+F068 :    STA    $01
+F06A :    LDY   #$D4
+F06C :    LDX   #$02
+F06E :    LDA   #$47
+F070 :    STA    $47
+F072 :    LDA   #$06
+F074 :    STA    $48
+F076 :    LDA   #$A5
+F078 :    STA  $0647
+F07B :    JSR  $FB53
+F07E :    RLA   ($45 , X)          ;Illegal OPcode RLA
+F080 :    NOP 
+F081 :    NOP 
+F082 :    NOP 
+F083 :    NOP 
+F084 :    JSR  $FB59
+F087 :    LDA  $0647
+F08A :    CMP   #$4A
+F08C :    BEQ    $02
+F08E :    STY    $00
+F090 :    INY 
+F091 :    LDA   #$29
+F093 :    STA  $0647
+F096 :    JSR  $FB64
+F099 :    RLA   ($45 , X)          ;Illegal OPcode RLA
+F09B :    NOP 
+F09C :    NOP 
+F09D :    NOP 
+F09E :    NOP 
+F09F :    JSR  $FB69
+F0A2 :    LDA  $0647
+F0A5 :    CMP   #$52
+F0A7 :    BEQ    $02
+F0A9 :    STY    $00
+F0AB :    INY 
+F0AC :    LDA   #$37
+F0AE :    STA  $0647
+F0B1 :    JSR  $FA68
+F0B4 :    RLA   ($45 , X)          ;Illegal OPcode RLA
+F0B6 :    NOP 
+F0B7 :    NOP 
+F0B8 :    NOP 
+F0B9 :    NOP 
+F0BA :    JSR  $FA6E
+F0BD :    LDA  $0647
+F0C0 :    CMP   #$6F
+F0C2 :    BEQ    $02
+F0C4 :    STY    $00
+F0C6 :    INY 
+F0C7 :    LDA   #$A5
+F0C9 :    STA    $47
+F0CB :    JSR  $FB53
+F0CE :    RLA    $47               ;Illegal OPcode RLA
+F0D0 :    NOP 
+F0D1 :    NOP 
+F0D2 :    NOP 
+F0D3 :    NOP 
+F0D4 :    JSR  $FB59
+F0D7 :    LDA    $47
+F0D9 :    CMP   #$4A
+F0DB :    BEQ    $02
+F0DD :    STY    $00
+F0DF :    INY 
+F0E0 :    LDA   #$29
+F0E2 :    STA    $47
+F0E4 :    JSR  $FB64
+F0E7 :    RLA    $47               ;Illegal OPcode RLA
+F0E9 :    NOP 
+F0EA :    NOP 
+F0EB :    NOP 
+F0EC :    NOP 
+F0ED :    JSR  $FB69
+F0F0 :    LDA    $47
+F0F2 :    CMP   #$52
+F0F4 :    BEQ    $02
+F0F6 :    STY    $00
+F0F8 :    INY 
+F0F9 :    LDA   #$37
+F0FB :    STA    $47
+F0FD :    JSR  $FA68
+F100 :    RLA    $47               ;Illegal OPcode RLA
+F102 :    NOP 
+F103 :    NOP 
+F104 :    NOP 
+F105 :    NOP 
+F106 :    JSR  $FA6E
+F109 :    LDA    $47
+F10B :    CMP   #$6F
+F10D :    BEQ    $02
+F10F :    STY    $00
+F111 :    INY 
+F112 :    LDA   #$A5
+F114 :    STA  $0647
+F117 :    JSR  $FB53
+F11A :    RLA  $0647               ;Illegal OPcode RLA
+F11D :    NOP 
+F11E :    NOP 
+F11F :    NOP 
+F120 :    NOP 
+F121 :    JSR  $FB59
+F124 :    LDA  $0647
+F127 :    CMP   #$4A
+F129 :    BEQ    $02
+F12B :    STY    $00
+F12D :    INY 
+F12E :    LDA   #$29
+F130 :    STA  $0647
+F133 :    JSR  $FB64
+F136 :    RLA  $0647               ;Illegal OPcode RLA
+F139 :    NOP 
+F13A :    NOP 
+F13B :    NOP 
+F13C :    NOP 
+F13D :    JSR  $FB69
+F140 :    LDA  $0647
+F143 :    CMP   #$52
+F145 :    BEQ    $02
+F147 :    STY    $00
+F149 :    INY 
+F14A :    LDA   #$37
+F14C :    STA  $0647
+F14F :    JSR  $FA68
+F152 :    RLA  $0647               ;Illegal OPcode RLA
+F155 :    NOP 
+F156 :    NOP 
+F157 :    NOP 
+F158 :    NOP 
+F159 :    JSR  $FA6E
+F15C :    LDA  $0647
+F15F :    CMP   #$6F
+F161 :    BEQ    $02
+F163 :    STY    $00
+F165 :    LDA   #$A5
+F167 :    STA  $0647
+F16A :    LDA   #$48
+F16C :    STA    $45
+F16E :    LDA   #$05
+F170 :    STA    $46
+F172 :    LDY   #$FF
+F174 :    JSR  $FB53
+F177 :    RLA   ($45), Y           ;Illegal OPcode RLA
+F179 :    NOP 
+F17A :    NOP 
+F17B :    PHP 
+F17C :    PHA 
+F17D :    LDY   #$DD
+F17F :    PLA 
+F180 :    PLP 
+F181 :    JSR  $FB59
+F184 :    LDA  $0647
+F187 :    CMP   #$4A
+F189 :    BEQ    $02
+F18B :    STY    $00
+F18D :    LDY   #$FF
+F18F :    LDA   #$29
+F191 :    STA  $0647
+F194 :    JSR  $FB64
+F197 :    RLA   ($45), Y           ;Illegal OPcode RLA
+F199 :    NOP 
+F19A :    NOP 
+F19B :    PHP 
+F19C :    PHA 
+F19D :    LDY   #$DE
+F19F :    PLA 
+F1A0 :    PLP 
+F1A1 :    JSR  $FB69
+F1A4 :    LDA  $0647
+F1A7 :    CMP   #$52
+F1A9 :    BEQ    $02
+F1AB :    STY    $00
+F1AD :    LDY   #$FF
+F1AF :    LDA   #$37
+F1B1 :    STA  $0647
+F1B4 :    JSR  $FA68
+F1B7 :    RLA   ($45), Y           ;Illegal OPcode RLA
+F1B9 :    NOP 
+F1BA :    NOP 
+F1BB :    PHP 
+F1BC :    PHA 
+F1BD :    LDY   #$DF
+F1BF :    PLA 
+F1C0 :    PLP 
+F1C1 :    JSR  $FA6E
+F1C4 :    LDA  $0647
+F1C7 :    CMP   #$6F
+F1C9 :    BEQ    $02
+F1CB :    STY    $00
+F1CD :    LDY   #$E0
+F1CF :    LDX   #$FF
+F1D1 :    LDA   #$A5
+F1D3 :    STA    $47
+F1D5 :    JSR  $FB53
+F1D8 :    RLA    $48 , X           ;Illegal OPcode RLA
+F1DA :    NOP 
+F1DB :    NOP 
+F1DC :    NOP 
+F1DD :    NOP 
+F1DE :    JSR  $FB59
+F1E1 :    LDA    $47
+F1E3 :    CMP   #$4A
+F1E5 :    BEQ    $02
+F1E7 :    STY    $00
+F1E9 :    INY 
+F1EA :    LDA   #$29
+F1EC :    STA    $47
+F1EE :    JSR  $FB64
+F1F1 :    RLA    $48 , X           ;Illegal OPcode RLA
+F1F3 :    NOP 
+F1F4 :    NOP 
+F1F5 :    NOP 
+F1F6 :    NOP 
+F1F7 :    JSR  $FB69
+F1FA :    LDA    $47
+F1FC :    CMP   #$52
+F1FE :    BEQ    $02
+F200 :    STY    $00
+F202 :    INY 
+F203 :    LDA   #$37
+F205 :    STA    $47
+F207 :    JSR  $FA68
+F20A :    RLA    $48 , X           ;Illegal OPcode RLA
+F20C :    NOP 
+F20D :    NOP 
+F20E :    NOP 
+F20F :    NOP 
+F210 :    JSR  $FA6E
+F213 :    LDA    $47
+F215 :    CMP   #$6F
+F217 :    BEQ    $02
+F219 :    STY    $00
+F21B :    LDA   #$A5
+F21D :    STA  $0647
+F220 :    LDY   #$FF
+F222 :    JSR  $FB53
+F225 :    RLA  $0548 , Y           ;Illegal OPcode RLA
+F228 :    NOP 
+F229 :    NOP 
+F22A :    PHP 
+F22B :    PHA 
+F22C :    LDY   #$E3
+F22E :    PLA 
+F22F :    PLP 
+F230 :    JSR  $FB59
+F233 :    LDA  $0647
+F236 :    CMP   #$4A
+F238 :    BEQ    $02
+F23A :    STY    $00
+F23C :    LDY   #$FF
+F23E :    LDA   #$29
+F240 :    STA  $0647
+F243 :    JSR  $FB64
+F246 :    RLA  $0548 , Y           ;Illegal OPcode RLA
+F249 :    NOP 
+F24A :    NOP 
+F24B :    PHP 
+F24C :    PHA 
+F24D :    LDY   #$E4
+F24F :    PLA 
+F250 :    PLP 
+F251 :    JSR  $FB69
+F254 :    LDA  $0647
+F257 :    CMP   #$52
+F259 :    BEQ    $02
+F25B :    STY    $00
+F25D :    LDY   #$FF
+F25F :    LDA   #$37
+F261 :    STA  $0647
+F264 :    JSR  $FA68
+F267 :    RLA  $0548 , Y           ;Illegal OPcode RLA
+F26A :    NOP 
+F26B :    NOP 
+F26C :    PHP 
+F26D :    PHA 
+F26E :    LDY   #$E5
+F270 :    PLA 
+F271 :    PLP 
+F272 :    JSR  $FA6E
+F275 :    LDA  $0647
+F278 :    CMP   #$6F
+F27A :    BEQ    $02
+F27C :    STY    $00
+F27E :    LDY   #$E6
+F280 :    LDX   #$FF
+F282 :    LDA   #$A5
+F284 :    STA  $0647
+F287 :    JSR  $FB53
+F28A :    RLA  $0548 , X           ;Illegal OPcode RLA
+F28D :    NOP 
+F28E :    NOP 
+F28F :    NOP 
+F290 :    NOP 
+F291 :    JSR  $FB59
+F294 :    LDA  $0647
+F297 :    CMP   #$4A
+F299 :    BEQ    $02
+F29B :    STY    $00
+F29D :    INY 
+F29E :    LDA   #$29
+F2A0 :    STA  $0647
+F2A3 :    JSR  $FB64
+F2A6 :    RLA  $0548 , X           ;Illegal OPcode RLA
+F2A9 :    NOP 
+F2AA :    NOP 
+F2AB :    NOP 
+F2AC :    NOP 
+F2AD :    JSR  $FB69
+F2B0 :    LDA  $0647
+F2B3 :    CMP   #$52
+F2B5 :    BEQ    $02
+F2B7 :    STY    $00
+F2B9 :    INY 
+F2BA :    LDA   #$37
+F2BC :    STA  $0647
+F2BF :    JSR  $FA68
+F2C2 :    RLA  $0548 , X           ;Illegal OPcode RLA
+F2C5 :    NOP 
+F2C6 :    NOP 
+F2C7 :    NOP 
+F2C8 :    NOP 
+F2C9 :    JSR  $FA6E
+F2CC :    LDA  $0647
+F2CF :    CMP   #$6F
+F2D1 :    BEQ    $02
+F2D3 :    STY    $00
+F2D5 :    RTS 
+F2D6 :    LDA   #$FF
+F2D8 :    STA    $01
+F2DA :    LDY   #$E9
+F2DC :    LDX   #$02
+F2DE :    LDA   #$47
+F2E0 :    STA    $47
+F2E2 :    LDA   #$06
+F2E4 :    STA    $48
+F2E6 :    LDA   #$A5
+F2E8 :    STA  $0647
+F2EB :    JSR  $FB1D
+F2EE :    SRE   ($45 , X)          ;Illegal OPcode SRE
+F2F0 :    NOP 
+F2F1 :    NOP 
+F2F2 :    NOP 
+F2F3 :    NOP 
+F2F4 :    JSR  $FB23
+F2F7 :    LDA  $0647
+F2FA :    CMP   #$52
+F2FC :    BEQ    $02
+F2FE :    STY    $00
+F300 :    INY 
+F301 :    LDA   #$29
+F303 :    STA  $0647
+F306 :    JSR  $FB2E
+F309 :    SRE   ($45 , X)          ;Illegal OPcode SRE
+F30B :    NOP 
+F30C :    NOP 
+F30D :    NOP 
+F30E :    NOP 
+F30F :    JSR  $FB33
+F312 :    LDA  $0647
+F315 :    CMP   #$14
+F317 :    BEQ    $02
+F319 :    STY    $00
+F31B :    INY 
+F31C :    LDA   #$37
+F31E :    STA  $0647
+F321 :    JSR  $FB40
+F324 :    SRE   ($45 , X)          ;Illegal OPcode SRE
+F326 :    NOP 
+F327 :    NOP 
+F328 :    NOP 
+F329 :    NOP 
+F32A :    JSR  $FB46
+F32D :    LDA  $0647
+F330 :    CMP   #$1B
+F332 :    BEQ    $02
+F334 :    STY    $00
+F336 :    INY 
+F337 :    LDA   #$A5
+F339 :    STA    $47
+F33B :    JSR  $FB1D
+F33E :    SRE    $47               ;Illegal OPcode SRE
+F340 :    NOP 
+F341 :    NOP 
+F342 :    NOP 
+F343 :    NOP 
+F344 :    JSR  $FB23
+F347 :    LDA    $47
+F349 :    CMP   #$52
+F34B :    BEQ    $02
+F34D :    STY    $00
+F34F :    INY 
+F350 :    LDA   #$29
+F352 :    STA    $47
+F354 :    JSR  $FB2E
+F357 :    SRE    $47               ;Illegal OPcode SRE
+F359 :    NOP 
+F35A :    NOP 
+F35B :    NOP 
+F35C :    NOP 
+F35D :    JSR  $FB33
+F360 :    LDA    $47
+F362 :    CMP   #$14
+F364 :    BEQ    $02
+F366 :    STY    $00
+F368 :    INY 
+F369 :    LDA   #$37
+F36B :    STA    $47
+F36D :    JSR  $FB40
+F370 :    SRE    $47               ;Illegal OPcode SRE
+F372 :    NOP 
+F373 :    NOP 
+F374 :    NOP 
+F375 :    NOP 
+F376 :    JSR  $FB46
+F379 :    LDA    $47
+F37B :    CMP   #$1B
+F37D :    BEQ    $02
+F37F :    STY    $00
+F381 :    INY 
+F382 :    LDA   #$A5
+F384 :    STA  $0647
+F387 :    JSR  $FB1D
+F38A :    SRE  $0647               ;Illegal OPcode SRE
+F38D :    NOP 
+F38E :    NOP 
+F38F :    NOP 
+F390 :    NOP 
+F391 :    JSR  $FB23
+F394 :    LDA  $0647
+F397 :    CMP   #$52
+F399 :    BEQ    $02
+F39B :    STY    $00
+F39D :    INY 
+F39E :    LDA   #$29
+F3A0 :    STA  $0647
+F3A3 :    JSR  $FB2E
+F3A6 :    SRE  $0647               ;Illegal OPcode SRE
+F3A9 :    NOP 
+F3AA :    NOP 
+F3AB :    NOP 
+F3AC :    NOP 
+F3AD :    JSR  $FB33
+F3B0 :    LDA  $0647
+F3B3 :    CMP   #$14
+F3B5 :    BEQ    $02
+F3B7 :    STY    $00
+F3B9 :    INY 
+F3BA :    LDA   #$37
+F3BC :    STA  $0647
+F3BF :    JSR  $FB40
+F3C2 :    SRE  $0647               ;Illegal OPcode SRE
+F3C5 :    NOP 
+F3C6 :    NOP 
+F3C7 :    NOP 
+F3C8 :    NOP 
+F3C9 :    JSR  $FB46
+F3CC :    LDA  $0647
+F3CF :    CMP   #$1B
+F3D1 :    BEQ    $02
+F3D3 :    STY    $00
+F3D5 :    LDA   #$A5
+F3D7 :    STA  $0647
+F3DA :    LDA   #$48
+F3DC :    STA    $45
+F3DE :    LDA   #$05
+F3E0 :    STA    $46
+F3E2 :    LDY   #$FF
+F3E4 :    JSR  $FB1D
+F3E7 :    SRE   ($45), Y           ;Illegal OPcode SRE
+F3E9 :    NOP 
+F3EA :    NOP 
+F3EB :    PHP 
+F3EC :    PHA 
+F3ED :    LDY   #$F2
+F3EF :    PLA 
+F3F0 :    PLP 
+F3F1 :    JSR  $FB23
+F3F4 :    LDA  $0647
+F3F7 :    CMP   #$52
+F3F9 :    BEQ    $02
+F3FB :    STY    $00
+F3FD :    LDY   #$FF
+F3FF :    LDA   #$29
+F401 :    STA  $0647
+F404 :    JSR  $FB2E
+F407 :    SRE   ($45), Y           ;Illegal OPcode SRE
+F409 :    NOP 
+F40A :    NOP 
+F40B :    PHP 
+F40C :    PHA 
+F40D :    LDY   #$F3
+F40F :    PLA 
+F410 :    PLP 
+F411 :    JSR  $FB33
+F414 :    LDA  $0647
+F417 :    CMP   #$14
+F419 :    BEQ    $02
+F41B :    STY    $00
+F41D :    LDY   #$FF
+F41F :    LDA   #$37
+F421 :    STA  $0647
+F424 :    JSR  $FB40
+F427 :    SRE   ($45), Y           ;Illegal OPcode SRE
+F429 :    NOP 
+F42A :    NOP 
+F42B :    PHP 
+F42C :    PHA 
+F42D :    LDY   #$F4
+F42F :    PLA 
+F430 :    PLP 
+F431 :    JSR  $FB46
+F434 :    LDA  $0647
+F437 :    CMP   #$1B
+F439 :    BEQ    $02
+F43B :    STY    $00
+F43D :    LDY   #$F5
+F43F :    LDX   #$FF
+F441 :    LDA   #$A5
+F443 :    STA    $47
+F445 :    JSR  $FB1D
+F448 :    SRE    $48 , X           ;Illegal OPcode SRE
+F44A :    NOP 
+F44B :    NOP 
+F44C :    NOP 
+F44D :    NOP 
+F44E :    JSR  $FB23
+F451 :    LDA    $47
+F453 :    CMP   #$52
+F455 :    BEQ    $02
+F457 :    STY    $00
+F459 :    INY 
+F45A :    LDA   #$29
+F45C :    STA    $47
+F45E :    JSR  $FB2E
+F461 :    SRE    $48 , X           ;Illegal OPcode SRE
+F463 :    NOP 
+F464 :    NOP 
+F465 :    NOP 
+F466 :    NOP 
+F467 :    JSR  $FB33
+F46A :    LDA    $47
+F46C :    CMP   #$14
+F46E :    BEQ    $02
+F470 :    STY    $00
+F472 :    INY 
+F473 :    LDA   #$37
+F475 :    STA    $47
+F477 :    JSR  $FB40
+F47A :    SRE    $48 , X           ;Illegal OPcode SRE
+F47C :    NOP 
+F47D :    NOP 
+F47E :    NOP 
+F47F :    NOP 
+F480 :    JSR  $FB46
+F483 :    LDA    $47
+F485 :    CMP   #$1B
+F487 :    BEQ    $02
+F489 :    STY    $00
+F48B :    LDA   #$A5
+F48D :    STA  $0647
+F490 :    LDY   #$FF
+F492 :    JSR  $FB1D
+F495 :    SRE  $0548 , Y           ;Illegal OPcode SRE
+F498 :    NOP 
+F499 :    NOP 
+F49A :    PHP 
+F49B :    PHA 
+F49C :    LDY   #$F8
+F49E :    PLA 
+F49F :    PLP 
+F4A0 :    JSR  $FB23
+F4A3 :    LDA  $0647
+F4A6 :    CMP   #$52
+F4A8 :    BEQ    $02
+F4AA :    STY    $00
+F4AC :    LDY   #$FF
+F4AE :    LDA   #$29
+F4B0 :    STA  $0647
+F4B3 :    JSR  $FB2E
+F4B6 :    SRE  $0548 , Y           ;Illegal OPcode SRE
+F4B9 :    NOP 
+F4BA :    NOP 
+F4BB :    PHP 
+F4BC :    PHA 
+F4BD :    LDY   #$F9
+F4BF :    PLA 
+F4C0 :    PLP 
+F4C1 :    JSR  $FB33
+F4C4 :    LDA  $0647
+F4C7 :    CMP   #$14
+F4C9 :    BEQ    $02
+F4CB :    STY    $00
+F4CD :    LDY   #$FF
+F4CF :    LDA   #$37
+F4D1 :    STA  $0647
+F4D4 :    JSR  $FB40
+F4D7 :    SRE  $0548 , Y           ;Illegal OPcode SRE
+F4DA :    NOP 
+F4DB :    NOP 
+F4DC :    PHP 
+F4DD :    PHA 
+F4DE :    LDY   #$FA
+F4E0 :    PLA 
+F4E1 :    PLP 
+F4E2 :    JSR  $FB46
+F4E5 :    LDA  $0647
+F4E8 :    CMP   #$1B
+F4EA :    BEQ    $02
+F4EC :    STY    $00
+F4EE :    LDY   #$FB
+F4F0 :    LDX   #$FF
+F4F2 :    LDA   #$A5
+F4F4 :    STA  $0647
+F4F7 :    JSR  $FB1D
+F4FA :    SRE  $0548 , X           ;Illegal OPcode SRE
+F4FD :    NOP 
+F4FE :    NOP 
+F4FF :    NOP 
+F500 :    NOP 
+F501 :    JSR  $FB23
+F504 :    LDA  $0647
+F507 :    CMP   #$52
+F509 :    BEQ    $02
+F50B :    STY    $00
+F50D :    INY 
+F50E :    LDA   #$29
+F510 :    STA  $0647
+F513 :    JSR  $FB2E
+F516 :    SRE  $0548 , X           ;Illegal OPcode SRE
+F519 :    NOP 
+F51A :    NOP 
+F51B :    NOP 
+F51C :    NOP 
+F51D :    JSR  $FB33
+F520 :    LDA  $0647
+F523 :    CMP   #$14
+F525 :    BEQ    $02
+F527 :    STY    $00
+F529 :    INY 
+F52A :    LDA   #$37
+F52C :    STA  $0647
+F52F :    JSR  $FB40
+F532 :    SRE  $0548 , X           ;Illegal OPcode SRE
+F535 :    NOP 
+F536 :    NOP 
+F537 :    NOP 
+F538 :    NOP 
+F539 :    JSR  $FB46
+F53C :    LDA  $0647
+F53F :    CMP   #$1B
+F541 :    BEQ    $02
+F543 :    STY    $00
+F545 :    RTS 
+F546 :    LDA   #$FF
+F548 :    STA    $01
+F54A :    LDY   #$01
+F54C :    LDX   #$02
+F54E :    LDA   #$47
+F550 :    STA    $47
+F552 :    LDA   #$06
+F554 :    STA    $48
+F556 :    LDA   #$A5
+F558 :    STA  $0647
+F55B :    JSR  $FAE9
+F55E :    RRA   ($45 , X)          ;Illegal OPcode RRA
+F560 :    NOP 
+F561 :    NOP 
+F562 :    NOP 
+F563 :    NOP 
+F564 :    JSR  $FAEF
+F567 :    LDA  $0647
+F56A :    CMP   #$52
+F56C :    BEQ    $02
+F56E :    STY    $00
+F570 :    INY 
+F571 :    LDA   #$29
+F573 :    STA  $0647
+F576 :    JSR  $FAFA
+F579 :    RRA   ($45 , X)          ;Illegal OPcode RRA
+F57B :    NOP 
+F57C :    NOP 
+F57D :    NOP 
+F57E :    NOP 
+F57F :    JSR  $FAFF
+F582 :    LDA  $0647
+F585 :    CMP   #$14
+F587 :    BEQ    $02
+F589 :    STY    $00
+F58B :    INY 
+F58C :    LDA   #$37
+F58E :    STA  $0647
+F591 :    JSR  $FB0A
+F594 :    RRA   ($45 , X)          ;Illegal OPcode RRA
+F596 :    NOP 
+F597 :    NOP 
+F598 :    NOP 
+F599 :    NOP 
+F59A :    JSR  $FB10
+F59D :    LDA  $0647
+F5A0 :    CMP   #$9B
+F5A2 :    BEQ    $02
+F5A4 :    STY    $00
+F5A6 :    INY 
+F5A7 :    LDA   #$A5
+F5A9 :    STA    $47
+F5AB :    JSR  $FAE9
+F5AE :    RRA    $47               ;Illegal OPcode RRA
+F5B0 :    NOP 
+F5B1 :    NOP 
+F5B2 :    NOP 
+F5B3 :    NOP 
+F5B4 :    JSR  $FAEF
+F5B7 :    LDA    $47
+F5B9 :    CMP   #$52
+F5BB :    BEQ    $02
+F5BD :    STY    $00
+F5BF :    INY 
+F5C0 :    LDA   #$29
+F5C2 :    STA    $47
+F5C4 :    JSR  $FAFA
+F5C7 :    RRA    $47               ;Illegal OPcode RRA
+F5C9 :    NOP 
+F5CA :    NOP 
+F5CB :    NOP 
+F5CC :    NOP 
+F5CD :    JSR  $FAFF
+F5D0 :    LDA    $47
+F5D2 :    CMP   #$14
+F5D4 :    BEQ    $02
+F5D6 :    STY    $00
+F5D8 :    INY 
+F5D9 :    LDA   #$37
+F5DB :    STA    $47
+F5DD :    JSR  $FB0A
+F5E0 :    RRA    $47               ;Illegal OPcode RRA
+F5E2 :    NOP 
+F5E3 :    NOP 
+F5E4 :    NOP 
+F5E5 :    NOP 
+F5E6 :    JSR  $FB10
+F5E9 :    LDA    $47
+F5EB :    CMP   #$9B
+F5ED :    BEQ    $02
+F5EF :    STY    $00
+F5F1 :    INY 
+F5F2 :    LDA   #$A5
+F5F4 :    STA  $0647
+F5F7 :    JSR  $FAE9
+F5FA :    RRA  $0647               ;Illegal OPcode RRA
+F5FD :    NOP 
+F5FE :    NOP 
+F5FF :    NOP 
+F600 :    NOP 
+F601 :    JSR  $FAEF
+F604 :    LDA  $0647
+F607 :    CMP   #$52
+F609 :    BEQ    $02
+F60B :    STY    $00
+F60D :    INY 
+F60E :    LDA   #$29
+F610 :    STA  $0647
+F613 :    JSR  $FAFA
+F616 :    RRA  $0647               ;Illegal OPcode RRA
+F619 :    NOP 
+F61A :    NOP 
+F61B :    NOP 
+F61C :    NOP 
+F61D :    JSR  $FAFF
+F620 :    LDA  $0647
+F623 :    CMP   #$14
+F625 :    BEQ    $02
+F627 :    STY    $00
+F629 :    INY 
+F62A :    LDA   #$37
+F62C :    STA  $0647
+F62F :    JSR  $FB0A
+F632 :    RRA  $0647               ;Illegal OPcode RRA
+F635 :    NOP 
+F636 :    NOP 
+F637 :    NOP 
+F638 :    NOP 
+F639 :    JSR  $FB10
+F63C :    LDA  $0647
+F63F :    CMP   #$9B
+F641 :    BEQ    $02
+F643 :    STY    $00
+F645 :    LDA   #$A5
+F647 :    STA  $0647
+F64A :    LDA   #$48
+F64C :    STA    $45
+F64E :    LDA   #$05
+F650 :    STA    $46
+F652 :    LDY   #$FF
+F654 :    JSR  $FAE9
+F657 :    RRA   ($45), Y           ;Illegal OPcode RRA
+F659 :    NOP 
+F65A :    NOP 
+F65B :    PHP 
+F65C :    PHA 
+F65D :    LDY   #$0A
+F65F :    PLA 
+F660 :    PLP 
+F661 :    JSR  $FAEF
+F664 :    LDA  $0647
+F667 :    CMP   #$52
+F669 :    BEQ    $02
+F66B :    STY    $00
+F66D :    LDY   #$FF
+F66F :    LDA   #$29
+F671 :    STA  $0647
+F674 :    JSR  $FAFA
+F677 :    RRA   ($45), Y           ;Illegal OPcode RRA
+F679 :    NOP 
+F67A :    NOP 
+F67B :    PHP 
+F67C :    PHA 
+F67D :    LDY   #$0B
+F67F :    PLA 
+F680 :    PLP 
+F681 :    JSR  $FAFF
+F684 :    LDA  $0647
+F687 :    CMP   #$14
+F689 :    BEQ    $02
+F68B :    STY    $00
+F68D :    LDY   #$FF
+F68F :    LDA   #$37
+F691 :    STA  $0647
+F694 :    JSR  $FB0A
+F697 :    RRA   ($45), Y           ;Illegal OPcode RRA
+F699 :    NOP 
+F69A :    NOP 
+F69B :    PHP 
+F69C :    PHA 
+F69D :    LDY   #$0C
+F69F :    PLA 
+F6A0 :    PLP 
+F6A1 :    JSR  $FB10
+F6A4 :    LDA  $0647
+F6A7 :    CMP   #$9B
+F6A9 :    BEQ    $02
+F6AB :    STY    $00
+F6AD :    LDY   #$0D
+F6AF :    LDX   #$FF
+F6B1 :    LDA   #$A5
+F6B3 :    STA    $47
+F6B5 :    JSR  $FAE9
+F6B8 :    RRA    $48 , X           ;Illegal OPcode RRA
+F6BA :    NOP 
+F6BB :    NOP 
+F6BC :    NOP 
+F6BD :    NOP 
+F6BE :    JSR  $FAEF
+F6C1 :    LDA    $47
+F6C3 :    CMP   #$52
+F6C5 :    BEQ    $02
+F6C7 :    STY    $00
+F6C9 :    INY 
+F6CA :    LDA   #$29
+F6CC :    STA    $47
+F6CE :    JSR  $FAFA
+F6D1 :    RRA    $48 , X           ;Illegal OPcode RRA
+F6D3 :    NOP 
+F6D4 :    NOP 
+F6D5 :    NOP 
+F6D6 :    NOP 
+F6D7 :    JSR  $FAFF
+F6DA :    LDA    $47
+F6DC :    CMP   #$14
+F6DE :    BEQ    $02
+F6E0 :    STY    $00
+F6E2 :    INY 
+F6E3 :    LDA   #$37
+F6E5 :    STA    $47
+F6E7 :    JSR  $FB0A
+F6EA :    RRA    $48 , X           ;Illegal OPcode RRA
+F6EC :    NOP 
+F6ED :    NOP 
+F6EE :    NOP 
+F6EF :    NOP 
+F6F0 :    JSR  $FB10
+F6F3 :    LDA    $47
+F6F5 :    CMP   #$9B
+F6F7 :    BEQ    $02
+F6F9 :    STY    $00
+F6FB :    LDA   #$A5
+F6FD :    STA  $0647
+F700 :    LDY   #$FF
+F702 :    JSR  $FAE9
+F705 :    RRA  $0548 , Y           ;Illegal OPcode RRA
+F708 :    NOP 
+F709 :    NOP 
+F70A :    PHP 
+F70B :    PHA 
+F70C :    LDY   #$10
+F70E :    PLA 
+F70F :    PLP 
+F710 :    JSR  $FAEF
+F713 :    LDA  $0647
+F716 :    CMP   #$52
+F718 :    BEQ    $02
+F71A :    STY    $00
+F71C :    LDY   #$FF
+F71E :    LDA   #$29
+F720 :    STA  $0647
+F723 :    JSR  $FAFA
+F726 :    RRA  $0548 , Y           ;Illegal OPcode RRA
+F729 :    NOP 
+F72A :    NOP 
+F72B :    PHP 
+F72C :    PHA 
+F72D :    LDY   #$11
+F72F :    PLA 
+F730 :    PLP 
+F731 :    JSR  $FAFF
+F734 :    LDA  $0647
+F737 :    CMP   #$14
+F739 :    BEQ    $02
+F73B :    STY    $00
+F73D :    LDY   #$FF
+F73F :    LDA   #$37
+F741 :    STA  $0647
+F744 :    JSR  $FB0A
+F747 :    RRA  $0548 , Y           ;Illegal OPcode RRA
+F74A :    NOP 
+F74B :    NOP 
+F74C :    PHP 
+F74D :    PHA 
+F74E :    LDY   #$12
+F750 :    PLA 
+F751 :    PLP 
+F752 :    JSR  $FB10
+F755 :    LDA  $0647
+F758 :    CMP   #$9B
+F75A :    BEQ    $02
+F75C :    STY    $00
+F75E :    LDY   #$13
+F760 :    LDX   #$FF
+F762 :    LDA   #$A5
+F764 :    STA  $0647
+F767 :    JSR  $FAE9
+F76A :    RRA  $0548 , X           ;Illegal OPcode RRA
+F76D :    NOP 
+F76E :    NOP 
+F76F :    NOP 
+F770 :    NOP 
+F771 :    JSR  $FAEF
+F774 :    LDA  $0647
+F777 :    CMP   #$52
+F779 :    BEQ    $02
+F77B :    STY    $00
+F77D :    INY 
+F77E :    LDA   #$29
+F780 :    STA  $0647
+F783 :    JSR  $FAFA
+F786 :    RRA  $0548 , X           ;Illegal OPcode RRA
+F789 :    NOP 
+F78A :    NOP 
+F78B :    NOP 
+F78C :    NOP 
+F78D :    JSR  $FAFF
+F790 :    LDA  $0647
+F793 :    CMP   #$14
+F795 :    BEQ    $02
+F797 :    STY    $00
+F799 :    INY 
+F79A :    LDA   #$37
+F79C :    STA  $0647
+F79F :    JSR  $FB0A
+F7A2 :    RRA  $0548 , X           ;Illegal OPcode RRA
+F7A5 :    NOP 
+F7A6 :    NOP 
+F7A7 :    NOP 
+F7A8 :    NOP 
+F7A9 :    JSR  $FB10
+F7AC :    LDA  $0647
+F7AF :    CMP   #$9B
+F7B1 :    BEQ    $02
+F7B3 :    STY    $00
+F7B5 :    RTS 
+F7B6 :    CLC 
+F7B7 :    LDA   #$FF
+F7B9 :    STA    $01
+F7BB :    BIT    $01
+F7BD :    LDA   #$55
+F7BF :    RTS 
+F7C0 :    BCS    $09
+F7C2 :    BPL    $07
+F7C4 :    CMP   #$FF
+F7C6 :    BNE    $03
+F7C8 :    BVC    $01
+F7CA :    RTS 
+F7CB :    STY    $00
+F7CD :    RTS 
+F7CE :    SEC 
+F7CF :    CLV 
+F7D0 :    LDA   #$00
+F7D2 :    RTS 
+F7D3 :    BNE    $07
+F7D5 :    BVS    $05
+F7D7 :    BCC    $03
+F7D9 :    BMI    $01
+F7DB :    RTS 
+F7DC :    STY    $00
+F7DE :    RTS 
+F7DF :    CLC 
+F7E0 :    BIT    $01
+F7E2 :    LDA   #$55
+F7E4 :    RTS 
+F7E5 :    BNE    $07
+F7E7 :    BVC    $05
+F7E9 :    BCS    $03
+F7EB :    BMI    $01
+F7ED :    RTS 
+F7EE :    STY    $00
+F7F0 :    RTS 
+F7F1 :    SEC 
+F7F2 :    CLV 
+F7F3 :    LDA   #$F8
+F7F5 :    RTS 
+F7F6 :    BCC    $09
+F7F8 :    BPL    $07
+F7FA :    CMP   #$E8
+F7FC :    BNE    $03
+F7FE :    BVS    $01
+F800 :    RTS 
+F801 :    STY    $00
+F803 :    RTS 
+F804 :    CLC 
+F805 :    BIT    $01
+F807 :    LDA   #$5F
+F809 :    RTS 
+F80A :    BCS    $09
+F80C :    BPL    $07
+F80E :    CMP   #$F5
+F810 :    BNE    $03
+F812 :    BVC    $01
+F814 :    RTS 
+F815 :    STY    $00
+F817 :    RTS 
+F818 :    SEC 
+F819 :    CLV 
+F81A :    LDA   #$70
+F81C :    RTS 
+F81D :    BNE    $07
+F81F :    BVS    $05
+F821 :    BCC    $03
+F823 :    BMI    $01
+F825 :    RTS 
+F826 :    STY    $00
+F828 :    RTS 
+F829 :    CLC 
+F82A :    BIT    $01
+F82C :    LDA   #$00
+F82E :    RTS 
+F82F :    BMI    $09
+F831 :    BCS    $07
+F833 :    CMP   #$69
+F835 :    BNE    $03
+F837 :    BVS    $01
+F839 :    RTS 
+F83A :    STY    $00
+F83C :    RTS 
+F83D :    SEC 
+F83E :    BIT    $01
+F840 :    LDA   #$00
+F842 :    RTS 
+F843 :    BMI    $09
+F845 :    BCS    $07
+F847 :    CMP   #$6A
+F849 :    BNE    $03
+F84B :    BVS    $01
+F84D :    RTS 
+F84E :    STY    $00
+F850 :    RTS 
+F851 :    SEC 
+F852 :    CLV 
+F853 :    LDA   #$7F
+F855 :    RTS 
+F856 :    BPL    $09
+F858 :    BCS    $07
+F85A :    CMP   #$FF
+F85C :    BNE    $03
+F85E :    BVC    $01
+F860 :    RTS 
+F861 :    STY    $00
+F863 :    RTS 
+F864 :    CLC 
+F865 :    BIT    $01
+F867 :    LDA   #$7F
+F869 :    RTS 
+F86A :    BPL    $09
+F86C :    BCS    $07
+F86E :    CMP   #$FF
+F870 :    BNE    $03
+F872 :    BVS    $01
+F874 :    RTS 
+F875 :    STY    $00
+F877 :    RTS 
+F878 :    SEC 
+F879 :    CLV 
+F87A :    LDA   #$7F
+F87C :    RTS 
+F87D :    BNE    $07
+F87F :    BMI    $05
+F881 :    BVS    $03
+F883 :    BCC    $01
+F885 :    RTS 
+F886 :    STY    $00
+F888 :    RTS 
+F889 :    BIT    $01
+F88B :    LDA   #$40
+F88D :    RTS 
+F88E :    BMI    $07
+F890 :    BCC    $05
+F892 :    BNE    $03
+F894 :    BVC    $01
+F896 :    RTS 
+F897 :    STY    $00
+F899 :    RTS 
+F89A :    CLV 
+F89B :    RTS 
+F89C :    BEQ    $07
+F89E :    BMI    $05
+F8A0 :    BCC    $03
+F8A2 :    BVS    $01
+F8A4 :    RTS 
+F8A5 :    STY    $00
+F8A7 :    RTS 
+F8A8 :    BEQ    $05
+F8AA :    BPL    $03
+F8AC :    BPL    $01
+F8AE :    RTS 
+F8AF :    STY    $00
+F8B1 :    RTS 
+F8B2 :    LDA   #$80
+F8B4 :    RTS 
+F8B5 :    BEQ    $05
+F8B7 :    BPL    $03
+F8B9 :    BCC    $01
+F8BB :    RTS 
+F8BC :    STY    $00
+F8BE :    RTS 
+F8BF :    BNE    $05
+F8C1 :    BMI    $03
+F8C3 :    BCC    $01
+F8C5 :    RTS 
+F8C6 :    STY    $00
+F8C8 :    RTS 
+F8C9 :    BCS    $05
+F8CB :    BEQ    $03
+F8CD :    BPL    $01
+F8CF :    RTS 
+F8D0 :    STY    $00
+F8D2 :    RTS 
+F8D3 :    BCC    $05
+F8D5 :    BEQ    $03
+F8D7 :    BMI    $01
+F8D9 :    RTS 
+F8DA :    STY    $00
+F8DC :    RTS 
+F8DD :    BIT    $01
+F8DF :    LDY   #$40
+F8E1 :    RTS 
+F8E2 :    BMI    $07
+F8E4 :    BCC    $05
+F8E6 :    BNE    $03
+F8E8 :    BVC    $01
+F8EA :    RTS 
+F8EB :    STX    $00
+F8ED :    RTS 
+F8EE :    CLV 
+F8EF :    RTS 
+F8F0 :    BEQ    $07
+F8F2 :    BMI    $05
+F8F4 :    BCC    $03
+F8F6 :    BVS    $01
+F8F8 :    RTS 
+F8F9 :    STX    $00
+F8FB :    RTS 
+F8FC :    BEQ    $05
+F8FE :    BPL    $03
+F900 :    BPL    $01
+F902 :    RTS 
+F903 :    STX    $00
+F905 :    RTS 
+F906 :    LDY   #$80
+F908 :    RTS 
+F909 :    BEQ    $05
+F90B :    BPL    $03
+F90D :    BCC    $01
+F90F :    RTS 
+F910 :    STX    $00
+F912 :    RTS 
+F913 :    BNE    $05
+F915 :    BMI    $03
+F917 :    BCC    $01
+F919 :    RTS 
+F91A :    STX    $00
+F91C :    RTS 
+F91D :    BCS    $05
+F91F :    BEQ    $03
+F921 :    BPL    $01
+F923 :    RTS 
+F924 :    STX    $00
+F926 :    RTS 
+F927 :    BCC    $05
+F929 :    BEQ    $03
+F92B :    BMI    $01
+F92D :    RTS 
+F92E :    STX    $00
+F930 :    RTS 
+F931 :    BIT    $01
+F933 :    LDA   #$40
+F935 :    SEC 
+F936 :    RTS 
+F937 :    BMI    $0B
+F939 :    BCC    $09
+F93B :    BNE    $07
+F93D :    BVS    $05
+F93F :    CMP   #$00
+F941 :    BNE    $01
+F943 :    RTS 
+F944 :    STY    $00
+F946 :    RTS 
+F947 :    CLV 
+F948 :    SEC 
+F949 :    LDA   #$40
+F94B :    RTS 
+F94C :    BEQ    $0B
+F94E :    BMI    $09
+F950 :    BCC    $07
+F952 :    BVS    $05
+F954 :    CMP   #$01
+F956 :    BNE    $01
+F958 :    RTS 
+F959 :    STY    $00
+F95B :    RTS 
+F95C :    LDA   #$40
+F95E :    SEC 
+F95F :    BIT    $01
+F961 :    RTS 
+F962 :    BCS    $0B
+F964 :    BEQ    $09
+F966 :    BPL    $07
+F968 :    BVS    $05
+F96A :    CMP   #$FF
+F96C :    BNE    $01
+F96E :    RTS 
+F96F :    STY    $00
+F971 :    RTS 
+F972 :    CLC 
+F973 :    LDA   #$80
+F975 :    RTS 
+F976 :    BCC    $05
+F978 :    CMP   #$7F
+F97A :    BNE    $01
+F97C :    RTS 
+F97D :    STY    $00
+F97F :    RTS 
+F980 :    SEC 
+F981 :    LDA   #$81
+F983 :    RTS 
+F984 :    BVC    $07
+F986 :    BCC    $05
+F988 :    CMP   #$02
+F98A :    BNE    $01
+F98C :    RTS 
+F98D :    STY    $00
+F98F :    RTS 
+F990 :    LDX   #$55
+F992 :    LDA   #$FF
+F994 :    STA    $01
+F996 :    NOP 
+F997 :    BIT    $01
+F999 :    SEC 
+F99A :    LDA   #$01
+F99C :    RTS 
+F99D :    BCC    $1B
+F99F :    BNE    $19
+F9A1 :    BMI    $17
+F9A3 :    BVC    $15
+F9A5 :    CMP   #$00
+F9A7 :    BNE    $11
+F9A9 :    CLV 
+F9AA :    LDA   #$AA
+F9AC :    RTS 
+F9AD :    BCS    $0B
+F9AF :    BEQ    $09
+F9B1 :    BMI    $07
+F9B3 :    BVS    $05
+F9B5 :    CMP   #$55
+F9B7 :    BNE    $01
+F9B9 :    RTS 
+F9BA :    STY    $00
+F9BC :    RTS 
+F9BD :    BIT    $01
+F9BF :    SEC 
+F9C0 :    LDA   #$80
+F9C2 :    RTS 
+F9C3 :    BCC    $1C
+F9C5 :    BNE    $1A
+F9C7 :    BMI    $18
+F9C9 :    BVC    $16
+F9CB :    CMP   #$00
+F9CD :    BNE    $12
+F9CF :    CLV 
+F9D0 :    LDA   #$55
+F9D2 :    SEC 
+F9D3 :    RTS 
+F9D4 :    BCS    $0B
+F9D6 :    BEQ    $09
+F9D8 :    BPL    $07
+F9DA :    BVS    $05
+F9DC :    CMP   #$AA
+F9DE :    BNE    $01
+F9E0 :    RTS 
+F9E1 :    STY    $00
+F9E3 :    RTS 
+F9E4 :    BIT    $01
+F9E6 :    SEC 
+F9E7 :    LDA   #$01
+F9E9 :    RTS 
+F9EA :    BCC    $1C
+F9EC :    BEQ    $1A
+F9EE :    BPL    $18
+F9F0 :    BVC    $16
+F9F2 :    CMP   #$80
+F9F4 :    BNE    $12
+F9F6 :    CLV 
+F9F7 :    CLC 
+F9F8 :    LDA   #$55
+F9FA :    RTS 
+F9FB :    BCC    $0B
+F9FD :    BEQ    $09
+F9FF :    BMI    $07
+FA01 :    BVS    $05
+FA03 :    CMP   #$2A
+FA05 :    BNE    $01
+FA07 :    RTS 
+FA08 :    STY    $00
+FA0A :    BIT    $01
+FA0C :    SEC 
+FA0D :    LDA   #$80
+FA0F :    RTS 
+FA10 :    BCC    $1C
+FA12 :    BEQ    $1A
+FA14 :    BMI    $18
+FA16 :    BVC    $16
+FA18 :    CMP   #$01
+FA1A :    BNE    $12
+FA1C :    CLV 
+FA1D :    CLC 
+FA1E :    LDA   #$55
+FA20 :    RTS 
+FA21 :    BCS    $0B
+FA23 :    BEQ    $09
+FA25 :    BPL    $07
+FA27 :    BVS    $05
+FA29 :    CMP   #$AA
+FA2B :    BNE    $01
+FA2D :    RTS 
+FA2E :    STY    $00
+FA30 :    RTS 
+FA31 :    BIT    $01
+FA33 :    CLC 
+FA34 :    LDA   #$40
+FA36 :    RTS 
+FA37 :    BVC    $2C
+FA39 :    BCS    $2A
+FA3B :    BMI    $28
+FA3D :    CMP   #$40
+FA3F :    BNE    $24
+FA41 :    RTS 
+FA42 :    CLV 
+FA43 :    SEC 
+FA44 :    LDA   #$FF
+FA46 :    RTS 
+FA47 :    BVS    $1C
+FA49 :    BNE    $1A
+FA4B :    BMI    $18
+FA4D :    BCC    $16
+FA4F :    CMP   #$FF
+FA51 :    BNE    $12
+FA53 :    RTS 
+FA54 :    BIT    $01
+FA56 :    LDA   #$F0
+FA58 :    RTS 
+FA59 :    BVC    $0A
+FA5B :    BEQ    $08
+FA5D :    BPL    $06
+FA5F :    BCC    $04
+FA61 :    CMP   #$F0
+FA63 :    BEQ    $02
+FA65 :    STY    $00
+FA67 :    RTS 
+FA68 :    BIT    $01
+FA6A :    SEC 
+FA6B :    LDA   #$75
+FA6D :    RTS 
+FA6E :    BVC    $76
+FA70 :    BEQ    $74
+FA72 :    BMI    $72
+FA74 :    BCS    $70
+FA76 :    CMP   #$65
+FA78 :    BNE    $6C
+FA7A :    RTS 
+FA7B :    BIT    $01
+FA7D :    CLC 
+FA7E :    LDA   #$B3
+FA80 :    RTS 
+FA81 :    BVC    $63
+FA83 :    BCC    $61
+FA85 :    BPL    $5F
+FA87 :    CMP   #$FB
+FA89 :    BNE    $5B
+FA8B :    RTS 
+FA8C :    CLV 
+FA8D :    CLC 
+FA8E :    LDA   #$C3
+FA90 :    RTS 
+FA91 :    BVS    $53
+FA93 :    BEQ    $51
+FA95 :    BPL    $4F
+FA97 :    BCS    $4D
+FA99 :    CMP   #$D3
+FA9B :    BNE    $49
+FA9D :    RTS 
+FA9E :    BIT    $01
+FAA0 :    SEC 
+FAA1 :    LDA   #$10
+FAA3 :    RTS 
+FAA4 :    BVC    $40
+FAA6 :    BEQ    $3E
+FAA8 :    BMI    $3C
+FAAA :    BCS    $3A
+FAAC :    CMP   #$7E
+FAAE :    BNE    $36
+FAB0 :    RTS 
+FAB1 :    BIT    $01
+FAB3 :    CLC 
+FAB4 :    LDA   #$40
+FAB6 :    RTS 
+FAB7 :    BVS    $2D
+FAB9 :    BCS    $2B
+FABB :    BMI    $29
+FABD :    CMP   #$53
+FABF :    BNE    $25
+FAC1 :    RTS 
+FAC2 :    CLV 
+FAC3 :    SEC 
+FAC4 :    LDA   #$FF
+FAC6 :    RTS 
+FAC7 :    BVS    $1D
+FAC9 :    BEQ    $1B
+FACB :    BPL    $19
+FACD :    BCC    $17
+FACF :    CMP   #$FF
+FAD1 :    BNE    $13
+FAD3 :    RTS 
+FAD4 :    BIT    $01
+FAD6 :    SEC 
+FAD7 :    LDA   #$F0
+FAD9 :    RTS 
+FADA :    BVS    $0A
+FADC :    BEQ    $08
+FADE :    BPL    $06
+FAE0 :    BCC    $04
+FAE2 :    CMP   #$B8
+FAE4 :    BEQ    $02
+FAE6 :    STY    $00
+FAE8 :    RTS 
+FAE9 :    BIT    $01
+FAEB :    CLC 
+FAEC :    LDA   #$B2
+FAEE :    RTS 
+FAEF :    BVS    $2A
+FAF1 :    BCC    $28
+FAF3 :    BMI    $26
+FAF5 :    CMP   #$05
+FAF7 :    BNE    $22
+FAF9 :    RTS 
+FAFA :    CLV 
+FAFB :    CLC 
+FAFC :    LDA   #$42
+FAFE :    RTS 
+FAFF :    BVS    $1A
+FB01 :    BMI    $18
+FB03 :    BCS    $16
+FB05 :    CMP   #$57
+FB07 :    BNE    $12
+FB09 :    RTS 
+FB0A :    BIT    $01
+FB0C :    SEC 
+FB0D :    LDA   #$75
+FB0F :    RTS 
+FB10 :    BVS    $09
+FB12 :    BMI    $07
+FB14 :    BCC    $05
+FB16 :    CMP   #$11
+FB18 :    BNE    $01
+FB1A :    RTS 
+FB1B :    STA    $00
+FB1D :    BIT    $01
+FB1F :    CLC 
+FB20 :    LDA   #$B3
+FB22 :    RTS 
+FB23 :    BVC    $50
+FB25 :    BCC    $4E
+FB27 :    BPL    $4C
+FB29 :    CMP   #$E1
+FB2B :    BNE    $48
+FB2D :    RTS 
+FB2E :    CLV 
+FB2F :    CLC 
+FB30 :    LDA   #$42
+FB32 :    RTS 
+FB33 :    BVS    $40
+FB35 :    BEQ    $3E
+FB37 :    BMI    $3C
+FB39 :    BCC    $3A
+FB3B :    CMP   #$56
+FB3D :    BNE    $36
+FB3F :    RTS 
+FB40 :    BIT    $01
+FB42 :    SEC 
+FB43 :    LDA   #$75
+FB45 :    RTS 
+FB46 :    BVC    $2D
+FB48 :    BEQ    $2B
+FB4A :    BMI    $29
+FB4C :    BCC    $27
+FB4E :    CMP   #$6E
+FB50 :    BNE    $23
+FB52 :    RTS 
+FB53 :    BIT    $01
+FB55 :    CLC 
+FB56 :    LDA   #$B3
+FB58 :    RTS 
+FB59 :    BVC    $1A
+FB5B :    BCC    $18
+FB5D :    BMI    $16
+FB5F :    CMP   #$02
+FB61 :    BNE    $12
+FB63 :    RTS 
+FB64 :    CLV 
+FB65 :    CLC 
+FB66 :    LDA   #$42
+FB68 :    RTS 
+FB69 :    BVS    $0A
+FB6B :    BEQ    $08
+FB6D :    BMI    $06
+FB6F :    BCS    $04
+FB71 :    CMP   #$42
+FB73 :    BEQ    $02
+FB75 :    STY    $00
+FB77 :    RTS 
+FB78 :    BRK 
+FB79 :    BRK 
+FB7A :    BRK 
+FB7B :    BRK 
+FB7C :    BRK 
+FB7D :    BRK 
+FB7E :    BRK 
+FB7F :    BRK 
+FB80 :    BRK 
+FB81 :    BRK 
+FB82 :    BRK 
+FB83 :    BRK 
+FB84 :    BRK 
+FB85 :    BRK 
+FB86 :    BRK 
+FB87 :    BRK 
+FB88 :    NOP   #$80               ;Illegal OPcode NOP
+FB8A :    ISC  $8080 , X           ;Illegal OPcode ISC
+FB8D :    BRK 
+FB8E :    BRK 
+FB8F :    BRK 
+FB90 :    BRK 
+FB91 :    BRK 
+FB92 :    ISC  $0000 , X           ;Illegal OPcode ISC
+FB95 :    BRK 
+FB96 :    BRK 
+FB97 :    BRK 
+FB98 :    ORA   ($01 , X)
+FB9A :    ISC  $0101 , X           ;Illegal OPcode ISC
+FB9D :    BRK 
+FB9E :    BRK 
+FB9F :    BRK 
+FBA0 :    BRK 
+FBA1 :    BRK 
+FBA2 :    BRK 
+FBA3 :    BRK 
+FBA4 :    BRK 
+FBA5 :    BRK 
+FBA6 :    BRK 
+FBA7 :    BRK 
+FBA8 :    NOP  $00FE , X           ;Illegal OPcode NOP
+FBAB :    CPY   #$C0
+FBAD :    INC  $007C , X
+FBB0 :    INC  $00FE , X
+FBB3 :    BEQ    $C0
+FBB5 :    INC  $00FE , X
+FBB8 :    DEC    $C6
+FBBA :    KIL                      ;Illegal OPcode KIL
+FBBB :    INC  $C6C6 , X
+FBBE :    DEC    $00
+FBC0 :    CPY  $00D8
+FBC3 :    BEQ    $D8
+FBC5 :    CPY  $00C6
+FBC8 :    DEC    $EE
+FBCA :    KIL                      ;Illegal OPcode KIL
+FBCB :    DEC    $C6 , X
+FBCD :    DEC    $C6
+FBCF :    BRK 
+FBD0 :    DEC    $C6
+FBD2 :    KIL                      ;Illegal OPcode KIL
+FBD3 :    DEC    $CE , X
+FBD5 :    DEC    $C6
+FBD7 :    BRK 
+FBD8 :    NOP  $02FE , X           ;Illegal OPcode NOP
+FBDB :    DEC    $C6
+FBDD :    INC  $007C , X
+FBE0 :    NOP  $02FE , X           ;Illegal OPcode NOP
+FBE3 :    NOP  $C0C0 , X           ;Illegal OPcode NOP
+FBE6 :    CPY   #$00
+FBE8 :    CPY  $00CC
+FBEB :    SEI 
+FBEC :    BMI    $30
+FBEE :    BMI    $00
+FBF0 :    CLC 
+FBF1 :    CLC 
+FBF2 :    CLC 
+FBF3 :    CLC 
+FBF4 :    CLC 
+FBF5 :    CLC 
+FBF6 :    CLC 
+FBF7 :    BRK 
+FBF8 :    NOP  $02FE , X           ;Illegal OPcode NOP
+FBFB :    ASL    $1C
+FBFD :    BVS    $FE
+FBFF :    BRK 
+FC00 :    NOP  $02FE , X           ;Illegal OPcode NOP
+FC03 :    NOP  $023C , X           ;Illegal OPcode NOP
+FC06 :    INC  $1800 , X
+FC09 :    CLC 
+FC0A :    CLD 
+FC0B :    CLD 
+FC0C :    INC  $1818 , X
+FC0F :    BRK 
+FC10 :    INC  $00FE , X
+FC13 :    NOP   #$FC               ;Illegal OPcode NOP
+FC15 :    ASL    $FE
+FC17 :    BRK 
+FC18 :    NOP  $00FE , X           ;Illegal OPcode NOP
+FC1B :    CPY   #$FC
+FC1D :    DEC    $FE
+FC1F :    BRK 
+FC20 :    INC  $06FE , X
+FC23 :    NOP  $1018               ;Illegal OPcode NOP
+FC26 :    BMI    $00
+FC28 :    BRK 
+FC29 :    BRK 
+FC2A :    BRK 
+FC2B :    BRK 
+FC2C :    BRK 
+FC2D :    BRK 
+FC2E :    BRK 
+FC2F :    BRK 
+FC30 :    BRK 
+FC31 :    BRK 
+FC32 :    BRK 
+FC33 :    BRK 
+FC34 :    BRK 
+FC35 :    BRK 
+FC36 :    BRK 
+FC37 :    BRK 
+FC38 :    BRK 
+FC39 :    BRK 
+FC3A :    BRK 
+FC3B :    BRK 
+FC3C :    BRK 
+FC3D :    BRK 
+FC3E :    BRK 
+FC3F :    BRK 
+FC40 :    BRK 
+FC41 :    BRK 
+FC42 :    BRK 
+FC43 :    BRK 
+FC44 :    BRK 
+FC45 :    BRK 
+FC46 :    BRK 
+FC47 :    BRK 
+FC48 :    BRK 
+FC49 :    BRK 
+FC4A :    BRK 
+FC4B :    BRK 
+FC4C :    BRK 
+FC4D :    BRK 
+FC4E :    BRK 
+FC4F :    BRK 
+FC50 :    BRK 
+FC51 :    BRK 
+FC52 :    BRK 
+FC53 :    BRK 
+FC54 :    BRK 
+FC55 :    BRK 
+FC56 :    BRK 
+FC57 :    BRK 
+FC58 :    BRK 
+FC59 :    BRK 
+FC5A :    BRK 
+FC5B :    BRK 
+FC5C :    BRK 
+FC5D :    BRK 
+FC5E :    BRK 
+FC5F :    BRK 
+FC60 :    BRK 
+FC61 :    BRK 
+FC62 :    BRK 
+FC63 :    BRK 
+FC64 :    BRK 
+FC65 :    BRK 
+FC66 :    BRK 
+FC67 :    BRK 
+FC68 :    CLC 
+FC69 :    CLC 
+FC6A :    CLC 
+FC6B :    ISC  $18FF , X           ;Illegal OPcode ISC
+FC6E :    CLC 
+FC6F :    CLC 
+FC70 :    CLC 
+FC71 :    CLC 
+FC72 :    CLC 
+FC73 :    ISC  $00FF , X           ;Illegal OPcode ISC
+FC76 :    BRK 
+FC77 :    BRK 
+FC78 :    BRK 
+FC79 :    BRK 
+FC7A :    BRK 
+FC7B :    BRK 
+FC7C :    BRK 
+FC7D :    BRK 
+FC7E :    BRK 
+FC7F :    BRK 
+FC80 :    CLC 
+FC81 :    CLC 
+FC82 :    CLC 
+FC83 :    CLC 
+FC84 :    BRK 
+FC85 :    CLC 
+FC86 :    CLC 
+FC87 :    BRK 
+FC88 :    RLA   ($33), Y           ;Illegal OPcode RLA
+FC8A :    ROR    $00
+FC8C :    BRK 
+FC8D :    BRK 
+FC8E :    BRK 
+FC8F :    BRK 
+FC90 :    ROR    $66
+FC92 :    ISC  $FF66 , X           ;Illegal OPcode ISC
+FC95 :    ROR    $66
+FC97 :    BRK 
+FC98 :    CLC 
+FC99 :    ROL  $3C60 , X
+FC9C :    ASL    $7C
+FC9E :    CLC 
+FC9F :    BRK 
+FCA0 :    KIL   ($66 , X)          ;Illegal OPcode KIL
+FCA2 :    NOP  $3018               ;Illegal OPcode NOP
+FCA5 :    ROR    $46
+FCA7 :    BRK 
+FCA8 :    NOP  $3C66 , X           ;Illegal OPcode NOP
+FCAB :    SEC 
+FCAC :    RRA    $66               ;Illegal OPcode RRA
+FCAE :    RLA  $0C00 , X           ;Illegal OPcode RLA
+FCB1 :    NOP  $0018               ;Illegal OPcode NOP
+FCB4 :    BRK 
+FCB5 :    BRK 
+FCB6 :    BRK 
+FCB7 :    BRK 
+FCB8 :    NOP  $3018               ;Illegal OPcode NOP
+FCBB :    BMI    $30
+FCBD :    CLC 
+FCBE :    NOP  $3000               ;Illegal OPcode NOP
+FCC1 :    CLC 
+FCC2 :    NOP  $0C0C               ;Illegal OPcode NOP
+FCC5 :    CLC 
+FCC6 :    BMI    $00
+FCC8 :    BRK 
+FCC9 :    ROR    $3C
+FCCB :    ISC  $663C , X           ;Illegal OPcode ISC
+FCCE :    BRK 
+FCCF :    BRK 
+FCD0 :    BRK 
+FCD1 :    CLC 
+FCD2 :    CLC 
+FCD3 :    ROR  $1818 , X
+FCD6 :    BRK 
+FCD7 :    BRK 
+FCD8 :    BRK 
+FCD9 :    BRK 
+FCDA :    BRK 
+FCDB :    BRK 
+FCDC :    BRK 
+FCDD :    CLC 
+FCDE :    CLC 
+FCDF :    BMI    $00
+FCE1 :    BRK 
+FCE2 :    BRK 
+FCE3 :    ROR  $003B
+FCE6 :    BRK 
+FCE7 :    BRK 
+FCE8 :    BRK 
+FCE9 :    BRK 
+FCEA :    BRK 
+FCEB :    BRK 
+FCEC :    BRK 
+FCED :    CLC 
+FCEE :    CLC 
+FCEF :    BRK 
+FCF0 :    BRK 
+FCF1 :    SLO   ($06 , X)          ;Illegal OPcode SLO
+FCF3 :    NOP  $3018               ;Illegal OPcode NOP
+FCF6 :    RTS 
+FCF7 :    BRK 
+FCF8 :    ROL  $6763 , X
+FCFB :    ARR   #$73               ;Illegal OPcode ARR
+FCFD :    RRA   ($3E , X)          ;Illegal OPcode RRA
+FCFF :    BRK 
+FD00 :    NOP  $0C1C               ;Illegal OPcode NOP
+FD03 :    NOP  $0C0C               ;Illegal OPcode NOP
+FD06 :    RLA  $3E00 , X           ;Illegal OPcode RLA
+FD09 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FD0B :    ASL  $6338
+FD0E :    RRA  $3E00 , X           ;Illegal OPcode RRA
+FD11 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FD13 :    ASL  $6363
+FD16 :    ROL  $0600 , X
+FD19 :    ASL  $261E
+FD1C :    RRA  $0606 , X           ;Illegal OPcode RRA
+FD1F :    BRK 
+FD20 :    RRA  $6063 , X           ;Illegal OPcode RRA
+FD23 :    ROR  $6303 , X
+FD26 :    ROL  $3E00 , X
+FD29 :    RRA   ($60 , X)          ;Illegal OPcode RRA
+FD2B :    ROR  $6363 , X
+FD2E :    ROL  $7F00 , X
+FD31 :    RRA   ($06 , X)          ;Illegal OPcode RRA
+FD33 :    NOP  $1818               ;Illegal OPcode NOP
+FD36 :    NOP  $3E00 , X           ;Illegal OPcode NOP
+FD39 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FD3B :    ROL  $6363 , X
+FD3E :    ROL  $3E00 , X
+FD41 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FD43 :    RLA  $6303 , X           ;Illegal OPcode RLA
+FD46 :    ROL  $0000 , X
+FD49 :    BRK 
+FD4A :    CLC 
+FD4B :    CLC 
+FD4C :    BRK 
+FD4D :    CLC 
+FD4E :    CLC 
+FD4F :    BRK 
+FD50 :    BRK 
+FD51 :    BRK 
+FD52 :    CLC 
+FD53 :    CLC 
+FD54 :    BRK 
+FD55 :    CLC 
+FD56 :    CLC 
+FD57 :    BMI    $0E
+FD59 :    CLC 
+FD5A :    BMI    $60
+FD5C :    BMI    $18
+FD5E :    ASL  $0000
+FD61 :    BRK 
+FD62 :    ROR  $7E00 , X
+FD65 :    BRK 
+FD66 :    BRK 
+FD67 :    BRK 
+FD68 :    BVS    $18
+FD6A :    NOP  $0C06               ;Illegal OPcode NOP
+FD6D :    CLC 
+FD6E :    BVS    $00
+FD70 :    ROR  $0363 , X
+FD73 :    ASL    $1C
+FD75 :    BRK 
+FD76 :    CLC 
+FD77 :    CLC 
+FD78 :    NOP  $CEC6 , X           ;Illegal OPcode NOP
+FD7B :    INC  $E6E0
+FD7E :    NOP  $1C00 , X           ;Illegal OPcode NOP
+FD81 :    ROL    $63 , X
+FD83 :    RRA  $6363 , X           ;Illegal OPcode RRA
+FD86 :    RRA   ($00 , X)          ;Illegal OPcode RRA
+FD88 :    ROR  $6373
+FD8B :    ROR  $6363 , X
+FD8E :    ROR  $1E00 , X
+FD91 :    RLA   ($60), Y           ;Illegal OPcode RLA
+FD93 :    RTS 
+FD94 :    RTS 
+FD95 :    RLA   ($1E), Y           ;Illegal OPcode RLA
+FD97 :    BRK 
+FD98 :    JMP  $6376
+FD9B :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FD9D :    ROR    $7C
+FD9F :    BRK 
+FDA0 :    RRA  $3031 , X           ;Illegal OPcode RRA
+FDA3 :    NOP  $3130 , X           ;Illegal OPcode NOP
+FDA6 :    RRA  $7F00 , X           ;Illegal OPcode RRA
+FDA9 :    AND   ($30), Y
+FDAB :    NOP  $3030 , X           ;Illegal OPcode NOP
+FDAE :    SEI 
+FDAF :    BRK 
+FDB0 :    ASL  $6033 , X
+FDB3 :    RRA    $63               ;Illegal OPcode RRA
+FDB5 :    RLA    $1D , X           ;Illegal OPcode RLA
+FDB7 :    BRK 
+FDB8 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FDBA :    RRA   ($7F , X)          ;Illegal OPcode RRA
+FDBC :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FDBE :    RRA   ($00 , X)          ;Illegal OPcode RRA
+FDC0 :    NOP  $1818 , X           ;Illegal OPcode NOP
+FDC3 :    CLC 
+FDC4 :    CLC 
+FDC5 :    CLC 
+FDC6 :    NOP  $1F00 , X           ;Illegal OPcode NOP
+FDC9 :    ASL    $06
+FDCB :    ASL    $06
+FDCD :    ROR    $3C
+FDCF :    BRK 
+FDD0 :    ROR    $66
+FDD2 :    JMP  $6C78
+FDD5 :    RRA    $63               ;Illegal OPcode RRA
+FDD7 :    BRK 
+FDD8 :    SEI 
+FDD9 :    BMI    $60
+FDDB :    RTS 
+FDDC :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FDDE :    ROR  $6300 , X
+FDE1 :    RRA    $7F , X           ;Illegal OPcode RRA
+FDE3 :    ARR   #$63               ;Illegal OPcode ARR
+FDE5 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FDE7 :    BRK 
+FDE8 :    RRA   ($73 , X)          ;Illegal OPcode RRA
+FDEA :    RRA  $676F , Y           ;Illegal OPcode RRA
+FDED :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FDEF :    BRK 
+FDF0 :    NOP  $6336 , X           ;Illegal OPcode NOP
+FDF3 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FDF5 :    ROL    $1C , X
+FDF7 :    BRK 
+FDF8 :    ROR  $6373
+FDFB :    ROR  $6060 , X
+FDFE :    RTS 
+FDFF :    BRK 
+FE00 :    NOP  $6336 , X           ;Illegal OPcode NOP
+FE03 :    ARR   #$67               ;Illegal OPcode ARR
+FE05 :    ROL    $1D , X
+FE07 :    BRK 
+FE08 :    ROR  $6373
+FE0B :    ROR  $676C , X
+FE0E :    RRA   ($00 , X)          ;Illegal OPcode RRA
+FE10 :    ROL  $6063 , X
+FE13 :    ROL  $6303 , X
+FE16 :    ROL  $7E00 , X
+FE19 :    NOP                      ;Illegal OPcode NOP
+FE1A :    CLC 
+FE1B :    CLC 
+FE1C :    CLC 
+FE1D :    CLC 
+FE1E :    NOP  $7300 , X           ;Illegal OPcode NOP
+FE21 :    RLA   ($63), Y           ;Illegal OPcode RLA
+FE23 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FE25 :    ROR    $3C , X
+FE27 :    BRK 
+FE28 :    RRA   ($33), Y           ;Illegal OPcode RRA
+FE2A :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FE2C :    ROR    $3C
+FE2E :    CLC 
+FE2F :    BRK 
+FE30 :    RRA   ($33), Y           ;Illegal OPcode RRA
+FE32 :    RRA   ($6B , X)          ;Illegal OPcode RRA
+FE34 :    RRA  $6377 , X           ;Illegal OPcode RRA
+FE37 :    BRK 
+FE38 :    RRA   ($63 , X)          ;Illegal OPcode RRA
+FE3A :    ROL    $1C , X
+FE3C :    ROL    $63 , X
+FE3E :    RRA   ($00 , X)          ;Illegal OPcode RRA
+FE40 :    RLA   ($63), Y           ;Illegal OPcode RLA
+FE42 :    RRA   ($36 , X)          ;Illegal OPcode RRA
+FE44 :    NOP  $7078 , X           ;Illegal OPcode NOP
+FE47 :    BRK 
+FE48 :    RRA  $0663 , X           ;Illegal OPcode RRA
+FE4B :    NOP  $6333 , X           ;Illegal OPcode NOP
+FE4E :    ROR  $3C00 , X
+FE51 :    BMI    $30
+FE53 :    BMI    $30
+FE55 :    BMI    $3C
+FE57 :    BRK 
+FE58 :    RTI 
+FE59 :    RTS 
+FE5A :    BMI    $18
+FE5C :    NOP  $0206               ;Illegal OPcode NOP
+FE5F :    BRK 
+FE60 :    NOP  $0C0C , X           ;Illegal OPcode NOP
+FE63 :    NOP  $0C0C               ;Illegal OPcode NOP
+FE66 :    NOP  $0000 , X           ;Illegal OPcode NOP
+FE69 :    CLC 
+FE6A :    NOP  $187E , X           ;Illegal OPcode NOP
+FE6D :    CLC 
+FE6E :    CLC 
+FE6F :    CLC 
+FE70 :    BRK 
+FE71 :    BRK 
+FE72 :    BRK 
+FE73 :    BRK 
+FE74 :    BRK 
+FE75 :    BRK 
+FE76 :    ISC  $30FF , X           ;Illegal OPcode ISC
+FE79 :    BMI    $18
+FE7B :    BRK 
+FE7C :    BRK 
+FE7D :    BRK 
+FE7E :    BRK 
+FE7F :    BRK 
+FE80 :    BRK 
+FE81 :    BRK 
+FE82 :    RLA  $6363 , X           ;Illegal OPcode RLA
+FE85 :    RRA    $3B               ;Illegal OPcode RRA
+FE87 :    BRK 
+FE88 :    RTS 
+FE89 :    RTS 
+FE8A :    ROR  $6373
+FE8D :    RRA   ($3E , X)          ;Illegal OPcode RRA
+FE8F :    BRK 
+FE90 :    BRK 
+FE91 :    BRK 
+FE92 :    ROL  $6063 , X
+FE95 :    RRA   ($3E , X)          ;Illegal OPcode RRA
+FE97 :    BRK 
+FE98 :    SLO   ($03 , X)          ;Illegal OPcode SLO
+FE9A :    RLA  $6367 , Y           ;Illegal OPcode RLA
+FE9D :    RRA   ($3E , X)          ;Illegal OPcode RRA
+FE9F :    BRK 
+FEA0 :    BRK 
+FEA1 :    BRK 
+FEA2 :    ROL  $7F61 , X
+FEA5 :    RTS 
+FEA6 :    ROL  $0E00 , X
+FEA9 :    CLC 
+FEAA :    CLC 
+FEAB :    NOP  $1818 , X           ;Illegal OPcode NOP
+FEAE :    NOP  $0000 , X           ;Illegal OPcode NOP
+FEB1 :    BRK 
+FEB2 :    ROL  $6360 , X
+FEB5 :    RRA   ($3D , X)          ;Illegal OPcode RRA
+FEB7 :    BRK 
+FEB8 :    RTS 
+FEB9 :    RTS 
+FEBA :    ROR  $6373
+FEBD :    ROR    $67
+FEBF :    BRK 
+FEC0 :    BRK 
+FEC1 :    BRK 
+FEC2 :    ASL  $0C0C , X
+FEC5 :    NOP  $001E               ;Illegal OPcode NOP
+FEC8 :    BRK 
+FEC9 :    BRK 
+FECA :    RLA  $0606 , X           ;Illegal OPcode RLA
+FECD :    ASL    $66
+FECF :    NOP  $6060 , X           ;Illegal OPcode NOP
+FED2 :    ROR    $6E
+FED4 :    NOP  $6367 , X           ;Illegal OPcode NOP
+FED7 :    BRK 
+FED8 :    NOP  $0C0C , X           ;Illegal OPcode NOP
+FEDB :    NOP  $0C0C               ;Illegal OPcode NOP
+FEDE :    ASL  $0000 , X
+FEE1 :    BRK 
+FEE2 :    ROR  $6B7F
+FEE5 :    KIL   ($67 , X)          ;Illegal OPcode KIL
+FEE7 :    BRK 
+FEE8 :    BRK 
+FEE9 :    BRK 
+FEEA :    ROR  $6373
+FEED :    ROR    $67
+FEEF :    BRK 
+FEF0 :    BRK 
+FEF1 :    BRK 
+FEF2 :    ROL  $6363 , X
+FEF5 :    RRA   ($3E , X)          ;Illegal OPcode RRA
+FEF7 :    BRK 
+FEF8 :    BRK 
+FEF9 :    BRK 
+FEFA :    ROL  $7363 , X
+FEFD :    ROR  $6060
+FF00 :    BRK 
+FF01 :    BRK 
+FF02 :    ROL  $6763 , X
+FF05 :    RLA  $0303 , Y           ;Illegal OPcode RLA
+FF08 :    BRK 
+FF09 :    BRK 
+FF0A :    ROR  $6373
+FF0D :    ROR  $0063 , X
+FF10 :    BRK 
+FF11 :    BRK 
+FF12 :    ROL  $1C71 , X
+FF15 :    SRE    $3E               ;Illegal OPcode SRE
+FF17 :    BRK 
+FF18 :    ASL    $0C
+FF1A :    RLA  $1818 , X           ;Illegal OPcode RLA
+FF1D :    SLO  $000E , Y           ;Illegal OPcode SLO
+FF20 :    BRK 
+FF21 :    BRK 
+FF22 :    RRA   ($33), Y           ;Illegal OPcode RRA
+FF24 :    RRA   ($67 , X)          ;Illegal OPcode RRA
+FF26 :    RLA  $0000 , Y           ;Illegal OPcode RLA
+FF29 :    BRK 
+FF2A :    RRA   ($33), Y           ;Illegal OPcode RRA
+FF2C :    RRA   ($66 , X)          ;Illegal OPcode RRA
+FF2E :    NOP  $0000 , X           ;Illegal OPcode NOP
+FF31 :    BRK 
+FF32 :    RRA   ($6B , X)          ;Illegal OPcode RRA
+FF34 :    RRA  $6377 , X           ;Illegal OPcode RRA
+FF37 :    BRK 
+FF38 :    BRK 
+FF39 :    BRK 
+FF3A :    RRA   ($36 , X)          ;Illegal OPcode RRA
+FF3C :    NOP  $6336 , X           ;Illegal OPcode NOP
+FF3F :    BRK 
+FF40 :    BRK 
+FF41 :    BRK 
+FF42 :    RLA   ($63), Y           ;Illegal OPcode RLA
+FF44 :    RRA   ($3F , X)          ;Illegal OPcode RRA
+FF46 :    SLO   ($3E , X)          ;Illegal OPcode SLO
+FF48 :    BRK 
+FF49 :    BRK 
+FF4A :    RRA  $1C0E , X           ;Illegal OPcode RRA
+FF4D :    SEC 
+FF4E :    RRA  $3C00 , X           ;Illegal OPcode RRA
+FF51 :    KIL                      ;Illegal OPcode KIL
+FF52 :    STA  $A1A1 , Y
+FF55 :    STA  $3C42 , Y
+FF58 :    BRK 
+FF59 :    BRK 
+FF5A :    BRK 
+FF5B :    BRK 
+FF5C :    BRK 
+FF5D :    BRK 
+FF5E :    BRK 
+FF5F :    BRK 
+FF60 :    BRK 
+FF61 :    BRK 
+FF62 :    BRK 
+FF63 :    BRK 
+FF64 :    BRK 
+FF65 :    BRK 
+FF66 :    BRK 
+FF67 :    BRK 
+FF68 :    BRK 
+FF69 :    BRK 
+FF6A :    BRK 
+FF6B :    BRK 
+FF6C :    BRK 
+FF6D :    BRK 
+FF6E :    BRK 
+FF6F :    BRK 
+FF70 :    BRK 
+FF71 :    BRK 
+FF72 :    BRK 
+FF73 :    BRK 
+FF74 :    BRK 
+FF75 :    BRK 
+FF76 :    BRK 
+FF77 :    BRK 
+FF78 :    SLO  $1206               ;Illegal OPcode SLO
+FF7B :    RLA   ($33), Y           ;Illegal OPcode RLA
+FF7D :    ASL    $12
+FF7F :    RLA   ($38), Y           ;Illegal OPcode RLA
+FF81 :    ASL    $12
+FF83 :    RLA   ($3A), Y           ;Illegal OPcode RLA
+FF85 :    ASL    $12
+FF87 :    RLA   ($0F), Y           ;Illegal OPcode RLA
+FF89 :    ASL    $12
+FF8B :    RLA   ($33), Y           ;Illegal OPcode RLA
+FF8D :    ASL    $12
+FF8F :    RLA   ($38), Y           ;Illegal OPcode RLA
+FF91 :    ASL    $12
+FF93 :    RLA   ($3A), Y           ;Illegal OPcode RLA
+FF95 :    ASL    $12
+FF97 :    RLA   ($00), Y           ;Illegal OPcode RLA
+FF99 :    BRK 
+FF9A :    BRK 
+FF9B :    BRK 
+FF9C :    BRK 
+FF9D :    BRK 
+FF9E :    BRK 
+FF9F :    BRK 
+FFA0 :    BRK 
+FFA1 :    BRK 
+FFA2 :    BRK 
+FFA3 :    BRK 
+FFA4 :    BRK 
+FFA5 :    BRK 
+FFA6 :    BRK 
+FFA7 :    BRK 
+FFA8 :    BRK 
+FFA9 :    BRK 
+FFAA :    BRK 
+FFAB :    BRK 
+FFAC :    BRK 
+FFAD :    BRK 
+FFAE :    BRK 
+FFAF :    BRK 
+FFB0 :    BRK 
+FFB1 :    BRK 
+FFB2 :    BRK 
+FFB3 :    BRK 
+FFB4 :    BRK 
+FFB5 :    BRK 
+FFB6 :    BRK 
+FFB7 :    BRK 
+FFB8 :    BRK 
+FFB9 :    BRK 
+FFBA :    BRK 
+FFBB :    BRK 
+FFBC :    BRK 
+FFBD :    BRK 
+FFBE :    BRK 
+FFBF :    BRK 
+FFC0 :    BRK 
+FFC1 :    BRK 
+FFC2 :    BRK 
+FFC3 :    BRK 
+FFC4 :    BRK 
+FFC5 :    BRK 
+FFC6 :    BRK 
+FFC7 :    BRK 
+FFC8 :    BRK 
+FFC9 :    BRK 
+FFCA :    BRK 
+FFCB :    BRK 
+FFCC :    BRK 
+FFCD :    BRK 
+FFCE :    BRK 
+FFCF :    BRK 
+FFD0 :    BRK 
+FFD1 :    BRK 
+FFD2 :    BRK 
+FFD3 :    BRK 
+FFD4 :    BRK 
+FFD5 :    BRK 
+FFD6 :    BRK 
+FFD7 :    BRK 
+FFD8 :    BRK 
+FFD9 :    BRK 
+FFDA :    BRK 
+FFDB :    BRK 
+FFDC :    BRK 
+FFDD :    BRK 
+FFDE :    BRK 
+FFDF :    BRK 
+FFE0 :    BRK 
+FFE1 :    BRK 
+FFE2 :    BRK 
+FFE3 :    BRK 
+FFE4 :    BRK 
+FFE5 :    BRK 
+FFE6 :    BRK 
+FFE7 :    BRK 
+FFE8 :    BRK 
+FFE9 :    BRK 
+FFEA :    BRK 
+FFEB :    BRK 
+FFEC :    BRK 
+FFED :    BRK 
+FFEE :    BRK 
+FFEF :    BRK 
+FFF0 :    BRK 
+FFF1 :    BRK 
+FFF2 :    BRK 
+FFF3 :    BRK 
+FFF4 :    BRK 
+FFF5 :    BRK 
+FFF6 :    BRK 
+FFF7 :    BRK 
+FFF8 :    BRK 
+FFF9 :    BRK 
+FFFA :    LAX  $04C5               ;Illegal OPcode LAX
+FFFD :    CPY   #$F4
+------------------------
+End of PRG section :   |
+------------------------
+--------------------------------------------------------------------------------------------------
+Disassembling done !
